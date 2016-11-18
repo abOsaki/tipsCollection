@@ -1,0 +1,9 @@
+//動く
+SELECT * FROM studyLog 
+RIGHT JOIN studyPlan ON studyLog.userID=studyPlan.userID and studyLog.curriculumID=studyPlan.curriculumID and studyLog.targetDate=studyPlan.targetDate 
+where studyPlan.targetDate = '2016-11-15' 
+union 
+SELECT * FROM studyLog
+left JOIN studyPlan ON studyLog.userID=studyPlan.userID and studyLog.curriculumID=studyPlan.curriculumID and studyLog.targetDate=studyPlan.targetDate 
+where studyLog.targetDate = '2016-11-15'
+//動く
