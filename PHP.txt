@@ -1,0 +1,97 @@
+============
+ajax基本利用
+
+<?php
+
+//js側からのデータ
+$data = file_get_contents("php://input");
+//JSONをデコード
+$param = json_decode($data, true);
+
+$response = null;
+
+//コマンド要素によって分岐
+if($param['command']=='getCookieValue'){
+    $response = getCookieValue($param);
+}else if($param['command']=='setCookieValue'){
+    $response = setCookieValue($param);
+}
+
+//レスポンスをJSON形式にして返却
+echo json_encode($response,JSON_UNESCAPED_UNICODE);
+
+function getCookieValue($param){
+    $key = $param['key'];
+    
+    $result = $_COOKIE[$key];
+    
+    return $result;
+}
+
+
+========
+DBの取得
+//pdoを取得する
+$pdo = $model -> connectInfo();
+//sql
+$sql="select * from ".'studyLog '
+." where `userID` = ? and `periodID` = ? order by targetDate desc limit 1";
+//pdoのプリペアメソッドにセットし、stmtを取得する
+$stmt = $pdo->prepare($sql);
+
+//？の値をバインドする
+$stmt->bindValue(1, $param['userID'],       PDO::PARAM_INT);
+$stmt->bindValue(2, $param['periodID'],       PDO::PARAM_INT);
+
+//stmtのエグゼキュート実行
+$stmt->execute();
+//結果を取得する
+$result = $stmt->fetchAll();
+//結果を返却する
+return $result;
+
+class dbConnect {
+    private $host;
+    private $user;
+    private $pass;
+    private $dbname;
+    private $pdo;
+    
+    //DB情報
+    public function __construct($dbname) {
+        date_default_timezone_set('Asia/Tokyo');
+        $this -> host = HOST;
+        $this -> user = USER;
+        $this -> pass = PASS;
+        $this -> dbname = $dbname;
+        $this -> connect();
+    }
+    //DB接続
+    public function connect() {
+        $dsn = sprintf('mysql:host=%s;dbname=%s;charset=utf8;',
+                       $this->host,
+                       $this->dbname
+                      );
+        $this -> pdo = new PDO($dsn, $this -> user, $this -> pass);
+
+        //SQLエラーを表示
+        $this -> pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    
+    //DB接続
+    public function connectInfo() {
+        return $this -> pdo;
+    }
+    
+    //SQL実行
+    public function fetch($sql) {
+        $stmt = $this -> pdo -> prepare($sql);
+        $stmt -> execute(null);
+        while($result = $stmt -> fetch(PDO::FETCH_ASSOC)) {
+            $array[] = json_encode($result);
+        }
+        $data = $array;
+        
+        return $data;
+    }
+}

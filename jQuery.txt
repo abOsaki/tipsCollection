@@ -1,0 +1,63 @@
+readyメソッドの省略形、DOMを読み込んだ後
+$(function () {
+});
+
+
+===========
+onメソッド：イベントを付ける、下記はクリックイベント
+$("#modoru_Button").on('click',function(){
+    window.history.back(-1);
+    return false;
+});
+
+下記のように#contantContainerの下で.contentAreaにクリックイベントをつけることも可能
+$('#contantContainer').on('click', '.contentArea', function () {
+    addDetail(this);
+});
+
+
+========
+ajax通信（phpファイル）
+
+var sendData = {
+    'command' : "getStudyPlanLogFromDate",
+    'userID' : userID,
+    'periodID' : 0,
+    'targetDate' : taishoDate.getToString()
+};
+$.ajax({
+    url: 'ajax.php',
+    type: 'POST',
+    dataType: 'json',
+    data: JSON.stringify(sendData)
+}).done(function(data){
+    //返ってくるデータはオブジェクト形式になっている
+    alert('データの取得に成功しました');
+}).fail(function(data){
+    alert('データの取得に失敗しました');
+});
+
+
+=======================
+DOMとjQueryオブジェクト
+DOMからjQueryオブジェクト
+DOM → $(DOM)
+
+jQueryオブジェクトからDOM
+$(DOM) → $(DOM)[0]
+
+DOM
+$(DOM):jQueryオブジェクト
+$(DOM)[0]:DOM
+
+$(DOM)[0] = DOM だいたい一緒
+
+
+=======
+DOM操作
+
+append
+$(fusenParent).append($(contents))
+
+find
+$(contentArea).find('.kyouzaiSelect')

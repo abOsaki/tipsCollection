@@ -1,0 +1,32 @@
+========
+JSON形式
+
+//JSON形式へ
+result = JSON.stringify(result);
+
+//JSON形式戻す
+JSON.parse(result);
+
+==============
+XMLHttpRequest（PHPとの通信）
+XMLHttpRequest は、クライアントとサーバーの間でデータを伝送するための機能をクライアント側で提供する API です。ページ全体を再読み込みすることなく、URL からデータを読み出す簡単な方法を提供します。この API によって、ユーザの作業を中断させることなく Web ページの一部を更新することができます。 XMLHttpRequest は AJAX プログラミングで多く使用されます。
+
+phpUrl = "./php/questionSave.php";
+xmlhr = new XMLHttpRequest();
+xmlhr.open("POST", phpUrl, true);
+xmlhr.onreadystatechange = function() {
+    if (xmlhr.readyState === 4) {
+        response = xmlhr.responseText;
+        modalView("saveFin")
+    }
+};
+//bはオブジェクト
+xmlhr.send(JSON.stringify(b));
+
+
+====================
+セッションストレージ（cookieを利用したブラウザ側で値を保存し、ブラウザが閉じるまで有効）
+セット
+sessionStorage.setItem('userID', cvUserID);
+ゲット
+var userID = sessionStorage.getItem('userID');
