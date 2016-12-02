@@ -30,3 +30,30 @@ xmlhr.send(JSON.stringify(b));
 sessionStorage.setItem('userID', cvUserID);
 ゲット
 var userID = sessionStorage.getItem('userID');
+
+
+==========
+ハッシュ化
+
+//ハッシュ化のライブラリ
+<script src="./jsSHA-2.0.1/src/sha256.js"></script>
+//繰り返し数
+stretchCount = 1000;
+
+//ハッシュ化のインスタンス
+saltObj = new jsSHA("SHA-256", "TEXT");
+//ユーザＩＤをアップデートメソッドで渡す
+saltObj.update(userId);
+//ハッシュオブジェクトからハッシュを取得する
+salt = saltObj.getHash("HEX");
+hash = "";
+
+//１０００回の繰り返し
+for (i = 0; i < stretchCount; i += 1) {
+    //ハッシュオブジェクトのインスタンス作成
+    shaObj = new jsSHA("SHA-256", "TEXT");
+    //アップデートメソッドでハッシュとユーザＩＤをハッシュしたものと、パスワードをアップデートメソッドで渡す
+    shaObj.update(hash + salt + password);
+    //ハッシュを取得する
+    hash = shaObj.getHash("HEX");
+}

@@ -95,3 +95,24 @@ class dbConnect {
         return $data;
     }
 }
+
+
+============================
+ＩＤ、パスワードのハッシュ化
+
+function get_stretched_password($password, $userId) {
+    //ユーザＩＤをsha256でハッシュ化
+    $salt = get_sha256($userId);
+    //
+    $hash = "";
+    //１０００回の繰り返し（STRETCH_COUNTは定数で１０００にセットされていた）
+    for ($i = 0; $i < STRETCH_COUNT; $i++) {
+        //ハッシュにユーザＩＤのハッシュとパスワード（生パスワード）を連結させたものをハッシュ化する
+        $hash = get_sha256($hash . $salt . $password);
+    }
+    return $hash;
+}
+
+function get_sha256($target) {
+    return hash("sha256", $target);
+}
