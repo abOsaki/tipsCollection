@@ -1,6 +1,0 @@
-DB接続情報の記述部：
-場所　fuel\app\config\development\db.phpに記述
-
-コントローラー：一番最初にプログラムが走るところ、モデル（DB接続やデータ部）とビュー（表示用のHTML等）の橋渡し役
-場所　fuel\app\classes\controller
-
