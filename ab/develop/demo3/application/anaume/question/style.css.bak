@@ -1,0 +1,190 @@
+.ui-helper-hidden display,
+.ui-helper-hidden-accessible,
+.ui-helper-reset,
+.ui-helper-clearfix,
+.ui-helper-zfix,
+.ui-widget,
+.ui-widget-header,
+.ui-widget-content,
+.ui-state-default,
+.ui-state-hover,
+.ui-state-focus,
+.ui-state-active,
+.ui-state-highlight,
+.ui-state-error,
+.ui-state-error-text,
+.ui-state-disabled,
+.ui-priority-primary,
+.ui-priority-secondary,
+.ui-icon,
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-bl,
+.ui-corner-br,
+.ui-corner-top,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-left,
+.ui-corner-all,
+.ui-widget-overlay,
+.ui-widget-shadow {
+    border: initial!important;
+        box-sizing: initial!important;}
+#container{
+    min-width:1366px!important;
+}
+#category,
+#school,
+#grade,
+#curriculum,
+#unit {
+    width: 80px;
+}
+#share {
+    width: 60px;
+}
+#title {
+    width: 220px;
+}
+#headerInfo {
+    font-size: 0;
+}
+.ctrlButton {
+    padding: 0;
+    width: 80px;
+    height: 25px;
+    font-size: 0.9rem;
+    vertical-align: top;
+}
+#nav {
+    position: absolute;
+    display: inline-block;
+    width: 550px;
+    right: 0;
+}
+#nav li {
+    display: inline-block;
+}
+#viewArea{
+    overflow:hidden;
+}
+#boxWrapper{
+    overflow:hidden;
+}
+.boxView{
+    overflow:hidden;
+}
+#textContents {
+    font-size: 30pt;
+    text-align: justify;
+    box-sizing: border-box;
+    ime-mode: active;
+    min-height:initial;
+}
+#imageContents_wrapper{
+    overflow:scroll;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+}
+#textContents_wrapper{
+    overflow:scroll;
+    position: absolute;
+    width: 100%;
+}
+
+.boxView_horizon{
+    overflow-y:hidden!important;
+}
+.textContents_wrapper_horizon{
+    overflow-y:visible!important;
+    overflow-x:hidden!important;
+}
+.textContents_horizon{
+    overflow-x:hidden;
+    overflow-y:hidden;
+}
+.imageContents_wrapper_horizon{
+   overflow-y:visible!important;
+    overflow-x:hidden!important;
+}
+.imageContents_horizon{
+    overflow-x:hidden;
+}
+
+
+.boxView_vertical{
+    overflow:hidden!important;
+}
+.textContents_wrapper_vertical{
+    overflow:hidden!important;
+    overflow-x:hidden!important;
+}
+.imageContents_wrapper_vertical{
+    overflow-y:hidden!important; 
+    overflow-x:hidden!important;
+}
+.imageContents_vertical {
+    transition: 0s; -webkit-transition: 0s; -webkit-transform: translate3d(1px, 0px, 10px);
+    overflow-x:visible;
+}
+.textContents_vertical{
+    height:820px;
+    -ms-writing-mode: tb-rl; 
+    writing-mode: tb-rl;
+    -webkit-writing-mode : vertical-rl ;
+    font-family: 'HG教科書体';
+    z-index: 0;
+    overflow-x:scroll;
+    padding:40px 80px 40px 0!important
+}
+
+.boxView {
+    width:1920px;
+    transform-origin:left top;
+    position:relative;
+    display: inline-block;
+}
+#textContents ,#imageContents{
+    position:absolute;
+    left:0;
+    right:0;
+    min-height:600px;
+}
+#imageContents{
+    padding:40px;
+    position:absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    width:100%;
+}
+#imageContents div,
+#imageContents img
+{
+    pointer-events: initial;
+}
+#imageContents .ui-draggable{
+    text-align:center;
+}
+#nav ul li {
+    cursor: pointer;
+    width: 45px;
+    display: inline-block!important;
+    text-align: center;
+}
+#headerInfo ul li {
+    display: inline;
+}
+.droppy{
+    background-color:initial;
+}
+.droppy ul{
+    width:85px;
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}

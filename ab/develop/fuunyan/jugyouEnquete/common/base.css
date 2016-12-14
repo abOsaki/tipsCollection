@@ -1,0 +1,191 @@
+tbody {
+    height: 50vh;
+    display: block;
+    overflow-y: scroll;
+}
+
+tbody * {
+    font-size: 1vw;
+}
+
+.indexHeader {
+    width: 5vw;
+    text-align: right;
+}
+
+.questionContents {
+    width: 80vw;
+}
+
+html,
+body,
+div,
+ul,
+ol,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+html,
+body {
+    background-image: url(../common/images/bg_green.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-color: #a2d8fe;
+}
+
+header {
+    padding: 0 25px;
+}
+
+#header {
+    position: relative;
+    /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    padding-top: 10px;
+    width: 600px;
+    float: left;
+    height: 40px;
+}
+
+#header span {
+    /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #06C;
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+#contents {
+    position: relative;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 97%;
+}
+
+#contents {
+    /*　コンテンツ */
+    position: relative;
+    height: 94%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4) inset;
+}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 80vw;
+    margin-left: 5vw;
+}
+
+/*小さいボタン*/
+
+#img_menu {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+#img_modoru {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+
+/*ログアウト追加*/
+
+#img_logout {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+.title {
+    margin-top: 2vh;
+    font-size: 2vw;
+    margin-left: 6vw;
+}
+
+* {
+    font-size: 2vw;
+}
+
+table {
+    margin-top: 3vh;
+}
+
+table *{
+    font-size: 1.5vw;
+}
+
+table thead *{
+    color: white;
+    background-color: rgb(91,155,213);
+}
+
+.btnBase {
+    width: 8vw;
+    font-size: 1.5vw;
+}
+
+tbody tr:nth-child(2n) {
+    background-color:  rgb(210,222,239);
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color:  rgb(234,239,247);
+}
+
+.dummy {
+    width: 1px;
+    height: 1px;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.okBtn {
+    position: absolute;
+    top : 5vh;
+    left : 75vw;
+    width: 8vw;
+}
+
+/*下記テーブルのスクロール
+thead, tbody {
+    display: block;
+}
+tbody {
+    overflow-y: scroll;
+    height: 150px;
+}
+*/

@@ -1,0 +1,541 @@
+＊2016年10月からの運用のため、既存のコードは準じていない部分が多々ある可能性が高い
+＊既存のコードが規約に従っていない場合、動作に影響が無い範囲で修正する（無理には修正しない）
+＊基本的にGoogle HTML/CSS Style Guideに従う、以下和訳
+
+======================
+一般的なスタイルルール
+======================
+
+***プロトコル***
+
+imageやmedia、scriptなどを指定するときに、http:,https:は省略する。
+<!-- 非推奨 -->
+<script src="http://www.google.com/js/gweb/analytics/autotrack.js"></script>
+
+<!-- 推奨 -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+/* 非推奨 */
+.example {
+  background: url(http://www.google.com/images/example);
+}
+
+/* 推奨 */
+.example {
+  background: url(//www.google.com/images/example);
+}
+
+========================
+一般的な書式設定のルール
+========================
+
+***インデント***
+
+インデントはスペース2つにする。Tabは使用しない。
+<ul>
+  <li>Fantastic
+  <li>Great
+</ul>
+.example {
+  color: blue;
+}
+
+***大文字/小文字***
+
+小文字のみ使用します。
+すべてのコードが小文字である必要があります。但しalt属性など値が文字列の場合は除きます。
+
+ソースを表示印刷SyntaxHighlighterについて
+<!-- 推奨しません -->
+<A HREF="/">Home</A>
+ 
+<!-- 推奨-->
+<img src="google.png" alt="Google">
+
+***文末のスペース***
+
+文末のスペースを削除します。
+
+<!-- 推奨しません -->
+<p>What?_
+ 
+<!-- 推奨 -->
+<p>Yes please.
+
+==================
+一般的なメタルール
+==================
+
+***エンコーディング***
+
+UTF-8（BOMなし）を使用します。
+
+<meta charset="utf-8">
+ほとんどの方がUTF-8で記述していると思います。エンコーディング詳細Character Sets & Encodings in XHTML, HTML and CSS(英語)
+
+コメント
+
+可能であれば、必要に応じてコードを説明します。
+（この項目は省略可能です）
+
+***アクションアイテム***
+
+コードにTODO（ユーザー名やメーリングリスト）をコメントとして記述する。
+@@のような他のものではなくTODOキーワードを使う。
+
+ソースを表示印刷SyntaxHighlighterについて
+{# TODO(john.doe): revisit centering #}
+<center>Test</center>
+ 
+<!-- TODO: remove optional tags -->
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+</ul>
+
+==================
+HTMLスタイルルール
+==================
+
+***ドキュメントの種類***
+
+HTML5を使用しています。
+HTML5は、（HTML構文）すべてのHTMLドキュメントに適しています。
+
+<!DOCTYPE html>
+GoogleはHTML5をすすめてます。
+
+***HTMLのバリデート***
+
+可能な限り有効なHTMLを使用します。
+
+HTML5コードはW3C HTML validatorでテスト出来ます。
+
+***セマンティックに書く***
+
+目的に応じてHTMLを使用します。
+見出しなら見出し要素、段落ならp要素、アンカーならa要素など目的に応じたHTML要素を使用します。
+
+<!-- 推奨しません -->
+<div onclick="goToRecommendations();">All recommendations</div>
+ 
+<!-- 推奨 -->
+<a href="recommendations/">All recommendations</a>
+
+***マルチメディアのフォールバック***
+
+html5ではalt属性がアクシビリティー向上のために画像が何を意味しているのかを要求されています。
+
+ソースを表示印刷SyntaxHighlighterについて
+<!-- 推奨しません -->
+<img src="spreadsheet.png">
+ 
+<!-- 推奨 -->
+<img src="spreadsheet.png" alt="Spreadsheet screenshot.">
+
+***構造を分離***
+
+文書構造（マークアップ）、プレゼンテーション（スタイリング）、動作（スクリプト）に分けて構築しましょう。
+要素ごとにスタイルは記述しないでスタイルシートで記述しましょう。
+スタイルシートやスクリプトは可能な限り一つにまとめましょう。
+
+ソースを表示印刷SyntaxHighlighterについて
+<!-- 推奨しません -->
+<!DOCTYPE html>
+<title>HTML sucks</title>
+<link rel="stylesheet" href="base.css" media="screen">
+<link rel="stylesheet" href="grid.css" media="screen">
+<link rel="stylesheet" href="print.css" media="print">
+<h1 style="font-size: 1em;">HTML sucks</h1>
+<p>I’ve read about this on a few sites but now I’m sure:
+  <u>HTML is stupid!!1</u>
+<center>I can’t believe there’s no way to control the styling of
+  my website without doing everything all over again!</center>
+ 
+<!-- 推奨 -->
+<!DOCTYPE html>
+<title>My first CSS-only redesign</title>
+<link rel="stylesheet" href="default.css">
+<h1>My first CSS-only redesign</h1>
+<p>I’ve read about this on a few sites but today I’m actually
+  doing it: separating concerns and avoiding anything in the HTML of
+  my website that is presentational.
+<p>It’s awesome!
+
+***実体参照***
+
+実体参照を使用しないでください。
+UTF-8においては、?, ”, や ?, のような文字は実体参照を使う必要はありません。
+唯一の例外は、HTMLで特殊な意味を持つ文字（ < や & など）は例外です。
+
+<!-- 推奨しません -->
+The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+ 
+<!-- 推奨 -->
+The currency symbol for the Euro is “?”.
+
+***任意のタグ***
+
+任意のタグ（オプション）を省略します。
+ファイルサイズの最適化のために、任意のタグを省略することを検討してください。 HTML5 specificationでは省略することのできるタグが定義されています。
+（ただし一般的にはタグを省略しないことがすでに認知されすぎているのでオプション扱いです。）
+
+ソースを表示印刷SyntaxHighlighterについて
+<!-- 推奨しません -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spending money, spending bytes</title>
+  </head>
+  <body>
+    <p>Sic.</p>
+  </body>
+</html>
+ 
+<!-- 推奨 -->
+<!DOCTYPE html>
+<title>Saving money, saving bytes</title>
+<p>Qed.
+
+***type属性***
+
+CSSとJavaScriptのtype属性は省略できます。
+HTML5ではtype属性は必要ありません。これは安全に古いブラウザでも行うことができます。
+
+<!-- 推奨しません -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css"
+  type="text/css">
+<!-- 推奨 -->
+<link rel="stylesheet" href="//www.google.com/css/maia.css">
+ 
+<!-- 推奨しません -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"
+  type="text/javascript"></script>
+<!-- 推奨 -->
+<script src="//www.google.com/js/gweb/analytics/autotrack.js"></script>
+直接CSSとJavaScriptを記述する時も<style>?</style>や<script>?</script>のような記述をします。
+
+================
+HTMLの書式ルール
+================
+
+***一般的な書式***
+
+ブロックごとに、リスト、またはテーブル要素の新しい行を使用して、すべてのそのような子要素をインデントします。
+横並びリストなど改行による空白が問題になる場合は、li要素をすべて一行で書いてもOKです。
+
+<blockquote>
+  <p><em>Space</em>, the final frontier.</p>
+</blockquote>
+ 
+<ul>
+  <li>Moe
+  <li>Larry
+  <li>Curly
+</ul>
+ 
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Income
+      <th scope="col">Taxes
+  <tbody>
+    <tr>
+      <td>$ 5.00
+      <td>$ 4.50
+</table>
+半角2つのスペースでインデントします。
+
+***HTMLの引用符***
+
+必要に応じて属性値を二重引用符を使用ます。
+
+ソースを表示印刷SyntaxHighlighterについて
+<!-- 推奨しません -->
+<a class='maia-button maia-button-secondary'>Sign in</a>
+ 
+<!-- 推奨 -->
+<a class="maia-button maia-button-secondary">Sign in</a>
+
+=================
+CSSスタイルルール
+=================
+
+***CSSのバリデート***
+
+可能な限り有効なCSSを使用ます。
+CSSバリデーターのバグに対処するや独自の構文を必要としない限り、有効なCSSコードを使用します。
+css3のコードチェックはW3C CSS Validatorで出来ます。
+
+***IDとクラスの命名***
+
+意味のある、または一般的なIDとクラス名を使用します。
+見た目を表した名前や不可解な名前ではなく、固有のものであり、要素の目的や役割を反映した名前を付ける。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません：無意味 */
+#yee-1901 {}
+ 
+/* 推奨しません：見た目を表した名前 */
+.button-green {}
+.clear {}
+ 
+/* 推奨：固有の名前 */
+#gallery {}
+#login {}
+.video {}
+ 
+/* 推奨：一般的な名前 */
+.aux {}
+.alt {}
+
+***IDとクラス名のスタイル***
+
+IDやクラスは、できるだけ簡潔でありながら何を意味してるか分かる名前にしてください。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+#navigation {}
+.atr {}
+ 
+/* 推奨 */
+#nav {}
+.author {}
+
+***タイプセレクタ***
+
+タイプセレクタでIDとクラス名を修飾することは避けてください。
+不要なタイプセレクタを省くことでCSSのパフォーマンスの向上にもつながるみたいですperformance reasons.。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+ul#example {}
+div.error {}
+ 
+/* 推奨 */
+#example {}
+.error {}
+
+***プロパティは一括して指定する***
+
+可能な限りプロパティは一括して指定します。
+プロパティを一括指定することはコードの効率性とわかりやすさのために有用です。
+
+/* 推奨しません */
+border-top-style: none;
+font-family: palatino, georgia, serif;
+font-size: 100%;
+line-height: 1.6;
+padding-bottom: 2em;
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 0;
+ 
+/* 推奨 */
+border-top: 0;
+font: 100%/1.6 palatino, georgia, serif;
+padding: 0 1em 2em;
+
+***0と単位***
+
+“0”の値の単位は省略します。
+
+margin: 0;
+padding: 0;
+
+***小数点数値0の省略***
+
+小数点の数値0は省略して記述します。
+
+font-size: .8em;
+
+16進法
+
+可能であれば3文字の16進数表記を使用します。
+
+/* 推奨しません */
+color: #eebbcc;
+ 
+/* 推奨 */
+color: #ebc;
+
+***接頭辞***
+
+IDやクラス名には固有の接頭辞を付けます。（オプション）
+大規模なプロジェクトの場合や、外部サイトに埋め込まれるコードを開発する場合など、IDとクラス名が重複しないように接頭辞（名前空間など）付けます。
+接頭辞は後ろにハイフンを付けて繋げます。
+
+.adw-help {} /* AdWords */
+#maia-note {} /* Maia */
+
+***IDとクラス名の区切り文字***
+
+ハイフン以外でセレクタ内の単語や略語を連結しないでください。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません: "demo"と"image"がそのまま連結されています。 */
+.demoimage {}
+ 
+/* 推奨しません: アンダースコアーで連結してあります */
+.error_status {}
+ 
+/* 推奨 */
+#video-id {}
+.ads-sample {}
+
+***CSSハック***
+
+ユーザーエージェント別の対応のためにCSSハックを使う前に別の方法を試してみること。 CSSハックは、ユーザーエージェントごとの違いを吸収するためには簡単で魅力的な方法だけど、プロジェクト全体のコードの品質を落とすことにもなるので「最後の手段」として考えること。
+
+===================
+CSSの書式設定ルール
+===================
+
+***宣言順***
+
+宣言をアルファベット順に。
+ただし、特定のCSSプロパティの複数のベンダー固有の接頭辞（例えばの-moz接頭辞は、-webkitの前にくる）にソートに保つ必要があります。
+
+ソースを表示印刷SyntaxHighlighterについて
+background: fuchsia;
+border: 1px solid;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+color: black;
+text-align: center;
+text-indent: 2em;
+
+***コンテンツのブロックのインデント***
+
+すべてのブロックの内容をインデントします。
+すべてのインデントブロックの内容を、それはその階層を反映していると理解を向上させるためのルールです。
+
+@media screen, projection {
+ 
+  html {
+    background: #fff;
+    color: #444;
+  }
+ 
+}
+半角2つのスペースでインデントしていきます
+
+***宣言の終端***
+
+すべての宣言の後にセミコロンを使用しています。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+.test {
+  display: block;
+  height: 100px
+}
+ 
+/* 推奨 */
+.test {
+  display: block;
+  height: 100px;
+}
+
+***プロパティ名の終端***
+
+プロパティ名のコロンの後にスペースを使用します。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+h3 {
+  font-weight:bold;
+}
+/* 推奨 */
+h3 {
+  font-weight: bold;
+}
+
+***セレクタと宣言の分離***
+
+別々のセレクタと宣言は改行して記述していきます。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+a:focus, a:active {
+  position: relative; top: 1px;
+}
+ 
+/* 推奨 */
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+***ルールの分離***
+
+ルールの間には一行間をあけて記述します。
+
+ソースを表示印刷SyntaxHighlighterについて
+html {
+  background: #fff;
+}
+ 
+body {
+  margin: auto;
+  width: 50%;
+}
+
+***CSSの引用符***
+
+属性セレクタとプロパティ値を必要に応じ単一引用符を使用します。
+URIの値には引用符を使用しないでください。
+
+ソースを表示印刷SyntaxHighlighterについて
+/* 推奨しません */
+@import url("//www.google.com/css/maia.css");
+ 
+html {
+  font-family: "open sans", arial, sans-serif;
+}
+ 
+/* 推奨 */
+@import url(//www.google.com/css/maia.css);
+ 
+html {
+  font-family: 'open sans', arial, sans-serif;
+}
+
+===========
+CSSメタ規則
+===========
+
+***セクションのコメント***
+
+セクションごとにコメント（オプション）を記述する。
+
+/* Header */
+ 
+#adw-header {}
+ 
+/* Footer */
+ 
+#adw-footer {}
+ 
+/* Gallery */
+ 
+.adw-gallery {}
+又これ以外でもW3CのHTMLバリデータを行いエラーが出そうな項目を紹介します。
+
+=========================================
+W3CのHTMLバリデータでエラーが出そうな項目
+=========================================
+
+コード内の&は&amp;と書く
+imgコードのwidthとheightの単位(px)は必要ありません。
+基本ですが<style>、<link>は<head>内に記述<script>は<head>内もしくは<body>内に記述
+あとはWordPressをやっている方だとWPのテンプレートタグ(the_category)が自動生成するrel属性値(rel=”category tag”)でエラーが出ます。これの回避の仕方は彩の国デザイナーの雑記帳さんの記事「WPタグ【the_category】が生成する【rel=”category tag”】を削除する」に関数が公開されていてそれをfunctions.phpに追加すれば(rel=”category tag”)が削除されエラーが出ません。
+
+ソースを表示印刷SyntaxHighlighterについて
+add_filter('the_category', 'remove_rel');
+function remove_rel($src){
+  $src = str_replace(' rel="category tag"', "", $src);
+  return $src;
+}

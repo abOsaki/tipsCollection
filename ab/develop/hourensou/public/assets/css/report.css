@@ -1,0 +1,400 @@
+/* 報告一覧用スタイル(editと共通部分が多いため再設定or新規設定) */
+/* 業務 */
+
+#reportListView .schoolCol {
+    width: 130px;
+}
+
+#reportListView .timetableCol,
+#reportListView .lacationCol {
+    width: 100px;
+}
+
+#reportListView .gradeCol,
+#reportListView .classCol,
+#reportListView .curriculumCol {
+    width: 80px;
+}
+
+#reportListView .unitCol {
+    width: 264px;
+}
+/* ICT */
+
+#ictListView .schoolCol {
+    width: 85px;
+}
+
+#ictListView .suportCol {
+    width: 90px;
+}
+
+#ictListView .lessonCol {
+    width: 90px;
+}
+
+#ictListView .gradeCol,
+#ictListView .classCol,
+#ictListView .curriculumCol {
+    width: 80px;
+}
+
+#ictListView .purposeCol,
+#ictListView .equipmentCol {
+    width: 100px;
+}
+
+#ictListView .appliCol {
+    width: 160px;
+}
+/* トラブル */
+
+#demandListView .schoolCol,
+#demandListView .userCol {
+    width: 90px;
+}
+
+#demandListView .titleCol {
+    width: 70px;
+}
+
+#demandListView .troubleCol {
+    width: 80px;
+}
+
+#demandListView .souceCol {
+    width: 100px;
+}
+
+#demandListView .memoCol,
+#demandListView .commentCol {
+    width: 222px;
+}
+
+#demandListView .checkCol {
+    width: 60px;
+    text-align: center;
+}
+
+#demandListView .submitCol {
+    width: 100px;
+    text-align: center;
+}
+
+#demandListView .submitImg {
+    width: 100%;
+}
+
+#demandListView .commentItem {
+    width: 96%;
+}
+
+#demandListView .checkButton {
+    width: 100%;
+    font-weight: bold;
+}
+/* container追加スタイル */
+
+#headerInfo {
+    top: 30px;
+}
+
+#dateSelecter {
+    float: left;
+    position: absolute;
+    left: 300px;
+    top: 30px;
+}
+
+#dateSelecterSubmit {
+    float: left;
+    position: absolute;
+    left: 320px;
+    top: -4px;
+}
+
+#dateDataFrom {
+    float: left;
+    padding-left: 20px;
+}
+
+#dateDataTo {
+    float: left;
+    padding-left: 20px;
+}
+
+#userName {
+    float: left;
+    padding-left: 20px;
+}
+
+#csvDownloadButton {
+    float: left;
+    position: absolute;
+    left: 440px;
+    top: -4px;
+}
+
+#list {
+    border: 1px solid #2b82e6;
+    margin: 10px;
+    padding: 5px;
+    width: auto;
+}
+
+#graph_title {
+    display: inline-block;
+    font-size: 14pt;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#graph_kikan {
+    display: inline-block;
+    font-size: 10pt;
+    margin: 0;
+}
+
+.graphArea {
+    border: 2px solid #2b82e6;
+    text-align: center;
+}
+
+#reportA_graph {
+    position: relative;
+    height: 445px;
+    width: 620px;
+    margin-top: 10px;
+    margin-left: 28px;
+    float: left;
+}
+
+#reportA_graph_2 {
+    position: relative;
+    height: 445px;
+    width: 620px;
+    margin-top: 10px;
+    margin-left: 28px;
+    float: left;
+}
+
+#ictA_graph {
+    position: relative;
+    height: 445px;
+    width: 1270px;
+    margin-top: 10px;
+    margin-left: 28px;
+    float: left;
+}
+
+#ictA_graphArea {
+    position: relative;
+    top: 20px;
+    height: 370px;
+    width: 520px;
+/*    padding-left: 100px;*/
+    margin-right: 180px;
+    text-align: left;
+/*    float: left;*/
+}
+
+
+#demandA_graph {
+    position: relative;
+    height: 445px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 26px;
+    float: left;
+}
+
+#demandA_graph_2 {
+    position: relative;
+    height: 445px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 26px;
+    float: left;
+}
+
+#demandA_graph_3 {
+    position: relative;
+    height: 445px;
+    width: 615px;
+    margin-top: 10px;
+    margin-left: 26px;
+    float: left;
+}
+/*
+#reportA_graph {
+    width: 600px;
+    height: 300px;
+    display: block;
+    margin: auto;
+}
+*/
+#demandA_graphArea {
+    position: relative;
+    top: 20px;
+    height: 220px;
+    width: 220px;
+}
+#demandA_graphArea_2 {
+    position: relative;
+    top: 20px;
+    height: 220px;
+    width: 220px;
+}
+#demandA_graphArea_3 {
+    position: relative;
+    top: 20px;
+    height: 320px;
+    width: 320px;
+}
+
+#reportA_outline {
+    margin: 15px;
+    float: left;
+/*    width: 250px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+#reportA_outline_2 {
+    margin: 15px;
+    float: left;
+/*    width: 250px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+
+#ictA_outline {
+    margin-top: 15px;
+    margin-left: 220px;
+/*    margin-right: 20px;*/
+    float: left;
+/*    width: 320px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+#ictA_outline table {
+    width: 250px;
+}
+
+#demandA_outline {
+    margin-top: 30px;
+    margin-left: 55px;
+    float: left;
+/*    width: 100px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+#demandA_outline table {
+    width: 180px;
+}
+#demandA_outline_2 {
+    margin-top: 30px;
+    margin-left: 55px;
+    float: left;
+/*    width: 100px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+#demandA_outline_2 table {
+    width: 180px;
+}
+#demandA_outline_3 {
+    margin-top: 10px;
+    margin-left: 25px;
+    float: left;
+/*    width: 100px;*/
+    height: 300px;
+    overflow-y: auto;
+}
+
+.outline {
+/*    border: 1px solid #2b82e6;*/
+    padding: 5px;
+}
+
+.outline table {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: left;
+}
+
+.outline table th {
+    padding: 5px;
+    font-weight: bold;
+    color: #06C;
+    background-color: #CFE6FF;
+/*    width: 100px;*/
+}
+
+.outline table td.legendText {
+    padding-left: 5px;
+    padding-right: 15px;
+}
+.outline table td.goukei {
+    padding: 5px;
+    font-weight: bold;
+    color: #2576C7;
+    background-color: #C2EFFE;
+/*    width: 100px;*/
+    padding-left: 5px;
+    padding-right: 5px;
+}
+/* 円グラフ関連 */
+
+#position {
+    position: absolute;
+    width: 280px;
+    top: 50px;
+    left: 640px;
+    text-align: center;
+}
+
+#button {
+    position: absolute;
+    top: 110px;
+    left: 760px;
+}
+
+#legend {
+    position: absolute;
+    top: 150px;
+    left: 750px;
+    width: 150px;
+    text-align: left;
+}
+
+/* 追加 */
+
+#reportA_list {
+    background-color: #F3EFCD;
+    padding: 7px;
+}
+
+#ictA_list {
+    background-color: #F3EFCD;
+    padding: 7px;
+}
+
+#demandA_list {
+    background-color: #F3EFCD;
+    padding: 7px;
+}
+
+#reportA_graphArea{
+    height: 300px;
+    width: 300px;
+}
+#reportA_graphArea_2 {
+    height: 300px;
+    width: 300px;
+}
+
+.legendArea {
+    height: 30px;
+    font-size: 14pt;
+    margin-top: 5px;
+}

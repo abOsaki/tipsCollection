@@ -116,3 +116,4 @@ function get_stretched_password($password, $userId) {
 function get_sha256($target) {
     return hash("sha256", $target);
 }
+

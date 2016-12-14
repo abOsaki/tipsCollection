@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="style.css">
+        <!-- JavaScript読み込み -->
+        <script src="./script.js"></script>
+        <script src="./goalObject.js"></script>
+        <script src="../common/common.js"></script>
+        
+        <title>学習記録メニュー</title>
+    </head>
+    <body>
+        <div id="contentPane">
+            <div class="text-center" id="aisatu"></div>
+            <div class="text-center" id="title"><span>試験まであと</span><span id="nissuu"></span><span>日</span></div>
+            <div class="text-center" id="imgPane"></div>
+            <div class="text-center" id="messagePane"></div>
+            <div class="text-center">
+                <button type="button" id="mokuhyoBtn" class="btn btn-warning menuButton topButton">Step1　目標設定</button>
+            </div>
+            <div class="text-center">
+                <div>⇓</div>
+                <button type="button" id="gakushuukeikakuBtn" class="btn btn-primary menuButton">Step2　学習計画</button>
+            </div>
+            <div class="text-center">
+                <div>⇓</div>
+                <button type="button" id="gakushuukirokuBtn" class="btn btn-primary menuButton">Step3　学習記録</button>
+            </div>
+            <div class="text-center">
+                <div>⇓</div>
+                <button type="button" id="sikenkekkaBtn" class="btn btn-primary menuButton">Step4　試験結果</button>
+            </div>
+        </div>
+        
+    </body>
+</html>

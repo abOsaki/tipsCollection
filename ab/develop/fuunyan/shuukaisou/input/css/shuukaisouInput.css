@@ -1,0 +1,288 @@
+.inputHeader {
+    margin-top: 0.2%;
+    margin-bottom: 0.2%;
+    width: 90%;
+}
+
+#stopWatch {
+    font-size: 75px;
+    /*
+    border: 4px ridge rgb(70, 160, 226);
+    */
+    
+    background-color: black;
+    color: white;
+    
+}
+
+.inputHeaderMargin {
+    width: 0%;
+}
+
+.ketteiButtonArea{
+    width: 8%;
+}
+
+#ketteiButton {
+    width: 100%;
+    font-size: 1.2vw;
+    height: 84px;
+    background-color: rgb(66, 180, 237);
+}
+
+.startButtonArea{
+    
+    width: 40%;
+}
+
+#startButtonParentPane {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.startbButton {
+    font-size: 3vw;
+    
+    height: 84px;
+    width: 100%;
+    
+    /*
+    margin-left: 5%;
+    width: 90%;
+    margin-left: 15%;*/
+}
+
+.resetButtonArea {
+    width: 20%;
+}
+
+.resetButton {
+    margin-left: 5%;
+    width: 100%;
+    font-size: 1.8vw;
+    height: 84px;
+}
+
+#shukaisouStartButton {
+    background-color: rgb(66, 180, 237);
+    
+}
+
+#shukaisouStartButton:disabled{
+    background-color: silver;
+}
+
+#shukaisouWrapButton {
+    background-color: rgb(130,177,44);
+}
+
+#shukaisouEndButton {
+    background-color: orange;
+}
+
+#graph {
+    width: 104%;
+    height: 100%;
+    /*margin-left: 1.7%;*/
+    margin-left: -2%;
+}
+
+.footerLapHeader {
+	padding: 5px; border: 1px solid rgb(66, 180, 237); border-image: none; font-weight: bold; background-color: rgb(237, 245, 249); font-size: 20px;
+}
+
+#mokuhyoTimeTitle {
+    margin-top: -30%;
+}
+
+.mokuhyoLap {
+    color: blue;
+    font-size: 1.2vw;
+}
+
+#dataTable {
+    margin-bottom: 1%;
+}
+
+#memoriParent *{
+    margin-bottom: 50%;
+}
+
+#memoriParent div:last-child{
+    margin-bottom: 0%;
+}
+
+.mokuhyoTime {
+    font-size: 1.2vw;
+}
+
+.recordSize {
+    font-size: 25px;
+}
+
+#averageiLap {
+    font-size: 25px;
+}
+
+#sumTime {
+    font-size: 25px;
+}
+
+.shuukaiHeader{
+    font-size: 20px;
+}
+
+#headerInfo{
+    width: 45%;
+}
+
+#headerInfo *{
+    font-size: 1.2vw;
+}
+
+#headerInfoTable{
+    margin-left: 5%;
+}
+
+.headerInfoHeader{
+    width: 22%;
+    text-align: center;
+}
+
+.tanni{
+    float: right;
+}
+
+/*
+#tryTable {
+    margin-bottom: 0.2%;
+}
+*/
+
+#tryTable *{
+    font-size: 20px;
+    width: 150px;
+    background-color: white;
+    border-color: rgb(84,147,189);
+}
+
+#tryTable *:disabled{
+    background-color: rgb(66, 180, 237);
+    color: white;
+    /*border-color: aqua;*/
+}
+
+.headerHeader{
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 25px;
+    color: white;
+    background-color: rgb(84,147,189);
+}
+
+.headerHeaderData{
+    padding: 5px;
+    border: 1px solid rgb(66, 180, 237);
+    background-color: rgb(237, 245, 249);
+    font-size: 25px;
+}
+
+.soukouKyoriTanni{
+    border-style: solid;
+    font-size: 25px;
+}
+
+#sumKyoriHeaderTd{
+    vertical-align: bottom;
+}
+
+#sumPane *{
+    float: left;
+}
+
+#sumPane :nth-child(1){
+    width: 30%;
+}
+
+#sumPane :nth-child(2){
+    width: 70%;
+}
+
+
+#averagePane *{
+    float: left;
+}
+
+#averagePane :nth-child(1){
+    width: 30%;
+}
+
+#averagePane :nth-child(2){
+    width: 70%;
+}
+
+#timeHeader{
+    padding: 1%;
+}
+
+#lapHeader{
+    padding: 1%;
+}
+
+#mokuhyoTimeHeaderTd{
+    width: 33%;
+}
+
+#tryTable {
+    margin-bottom: -7px;
+}
+
+/*
+#headerH {
+    background: red;
+}
+*/
+
+#headImg {
+    left : auto;
+    top: 8px; 
+    right: 25px; 
+    position: absolute;
+}
+
+#kyoriSelect {
+    width: 3vw;
+}
+
+@media print{
+    #img_logout {
+        visibility: collapse;
+    }
+    
+    body {
+        transform: scale(10);
+    }
+    
+    #container {
+        transform: scale(0.1) translate(0,50px);
+    }
+    
+    #headerInfo {
+        width: 70%;
+    }
+    
+    .ketteiButtonArea{
+        visibility: collapse;
+    }
+    
+    .resetButtonArea {
+        visibility: collapse;
+    }
+    
+    .startButtonArea {
+        visibility: collapse;
+    }
+    
+    
+    
+}

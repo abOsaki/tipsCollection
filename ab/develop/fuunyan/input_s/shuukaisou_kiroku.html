@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>みまもりふぅーにゃん│入力</title>
+
+    <link rel="stylesheet" href="../common/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../common/css/common.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./shukaisouStyle.css">
+
+    <!--jquery読み込み-->
+    <script src="../common/js/jquery.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <script src="../common/js/datepicker-ja"></script>
+    <script src="../common/js/jqfloat.min.js"></script>
+
+    <!--JavaScript読み込み-->
+    <script src="../common/js/smartRollover.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="../common/js/shukaisouSession.js"></script>
+    <script src="../common/js/shuukaisouMokuhyoObject.js"></script>
+    <!--<script src="./script.js"></script>-->
+    <script src="./shukaisou.js"></script>
+    <script src="./shukaisouDBAccess.js"></script>
+    <script src="./shuukaisouRecodeObject.js"></script>
+    <script src="./shuukaisou_Kiroku_HeaderOperation.js"></script>
+    <script src="./shuukaisou_kiroku.js"></script>
+    <script src="./shuukaisou_shuukeiPane.js"></script>
+    <script src="./wrapTime.js"></script>
+    <script src="../common/js/ccchart.js"></script>
+    
+
+    <!-- [if lt IE 9]>
+  	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif] -->
+</head>
+
+<body id="student">
+    <div id="container">
+        <div class="container_input" id="containerInput">
+            <div class="content_inner">
+                <section id="content">
+                    <img id="baseImg" src="../common/images/binder.png">
+                    
+                    <div class="info">
+                        
+                        <div id="studentInfo" ></div>
+                    </div>
+                    
+                    
+                    
+                    <div id="shitsumon">
+                        <spam>
+                            <button id="hidukeButton">日付別</button>
+                            <button id="shuukeiButton">集計</button>
+                            <button id="lapBunsekiButton">ラップ分析</button>
+                        </spam>
+                        <table class="shitsumon">
+                            <tbody class="scrollBody">
+                            </tbody>
+                        </table>
+                        <div id="shitumonContent"></div>
+                        <div id="shuukeiContent">
+                            <div id="shuukei1Row">
+                                <div>期間:</div>
+                                <input type="date" cmanCLDat="USE:ON" id="shuukeiStartCalender" >
+                                <div>　～　</div>
+                                <input type="date" cmanCLDat="USE:ON" id="shuukeiEndCalender" >
+                                <button>表示</button>
+                            </div>
+                            <div id="shuukei2Row">
+                                <div>区分:</div>
+                                <select>
+                                    <option>平均ラップ</option>
+                                    <option>合計タイム</option>
+                                </select>
+                            </div>
+                            <canvas id="shuukeiGraph"></canvas>
+                        </div>
+                        <div id="lapBunsekiContent">分析</div>
+                    </div>
+                    <div id="img_tsugi" class="fu_button"><ruby>次<rt>つぎ</rt></ruby>へ</div>
+                    <div id="img_modoru" class="fu_button"><ruby>戻<rt>もど</rt></ruby>る</div>
+                </section>
+
+                <!--content-->
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

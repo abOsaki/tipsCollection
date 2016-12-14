@@ -1,0 +1,246 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 2vh;
+}
+
+.koumoku {
+    margin-bottom: 2vh;
+}
+
+.buttonStyle {
+    width: 40vw;
+    font-size: 5vw;
+}
+
+.contentArea {
+    width : 80vw;
+    margin: auto;
+    background-color: azure;
+    border-style: solid;
+}
+
+select {
+    font-size: 4vw;
+    margin: 2vw;
+}
+
+select * {
+    font-size: 4vw;
+}
+
+.kamokuSelect {
+    width: 15vw;
+}
+
+.hourSelect {
+    width: 15vw;
+}
+
+.kyouzaiSelect {
+    width: 35vw;
+    margin-top: 0vw;
+}
+
+.pageSelect {
+    width: 15vw;
+    margin-top: 0vw;
+}
+
+.contentKoumoku {
+    margin-bottom: 1vh;
+}
+
+.spanBasic {
+    font-size: 4vw;
+}
+
+li * {
+    font-size: 4vw;
+}
+
+li {
+    font-size: 4vw;
+}
+
+.breadcrumb > li + li:before {
+  content: ">";
+}
+
+.backgroundPink {
+    background-color: deeppink;
+}
+
+img {
+    width: 5vw;
+    vertical-align: auto;
+}
+
+
+
+
+
+/* カレンダー自体を大きく */
+.ui-datepicker {
+	
+	width: 70vw;
+	height: 67vw;
+}
+
+/* タイトルと矢印 */
+.ui-datepicker .ui-datepicker-header {
+	padding: 6px;
+	
+	font-size: 4vw;
+
+}
+
+/* 曜日 */
+.ui-datepicker th {
+	padding: 9px 6px;
+	
+	font-size: 4vw;
+
+}
+
+/* 日付の文字と余白を大きく */
+.ui-datepicker td span,
+.ui-datepicker td a {
+	
+	font-size: 4vw;
+	text-align: center;
+
+}
+
+/* 選択中 */
+.ui-datepicker td a.ui-state-active {
+    /*
+	color: #fff;
+	background: #E71063;
+	
+	box-shadow: inset 0 0 0 1px #fff;
+    */
+    
+    
+}
+
+/* 今日 */
+.ui-datepicker td a.ui-state-highlight {
+	border: 2px solid #E71063;
+}
+
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+	-webkit-appearance: none;
+	
+	font-size: 4vw;
+
+}
+
+#calenderPane {
+    margin-left: 10vw;
+}
+
+#calender {
+   /* width: 50vw;*/
+   margin: auto;
+}
+
+td {
+    font-size: 4vw;
+    width: 10vw;
+}
+
+button {
+    font-size: 4vw;
+}
+
+.valueHeader {
+    vertical-align: auto;
+}
+
+#timeGraph {
+    margin: auto;
+    border: solid;
+    
+}
+
+#timeGraph td {
+    height: 7vw;
+    width: 7vw;
+    text-align: center;
+}
+
+.dataRow {
+    border-top: solid;
+}
+
+.headerColumn {
+    border-right: solid;
+}
+
+.siromaru {
+    border: solid;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 100%;
+}
+
+.today {
+    border: 1px red solid;
+}
+
+.kako {
+    color: gray;
+}
+
+.monthBtn {
+    width: 14vw;
+}
+
+.existDate {
+    background-image: url("../../common/images/stamp10-001.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#userName {
+    position: absolute;
+    top: 15px;
+    right: 5vw;
+    font-size: 4vw;
+}
+
+.planPane {
+    display: inline-block;
+    width : 70vw;
+    line-height: 75%;
+}
+
+.graphHeader {
+    vertical-align: top;
+}
+
+.yokoGraph {
+    width: 3vw;
+    height: 3vw;
+    background-color: blue;
+    display: inline-block;
+    margin: 0.1vw;
+}
+
+.koumokuLeftMargin {
+    margin-left: 10vw;
+}
+
+#nissuu {
+    color: red;
+}
+
+.kyoukaGraphTD {
+    width: 70vw;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/modal.css">
+
+    <!-- jquery読み込み -->
+    <script src="./jquery/jquery.min.js"></script>
+
+    <!-- JavaScript読み込み -->
+    <script src="./js/login.js"></script>
+    <script src="./js/smartRollover.js"></script>
+    <script src="./js/modalContents.js"></script>
+    <script src="./js/loader.js"></script>
+
+    <script src="./js/eventMenu.js"></script>
+    <script src="./js/loadData.js"></script>
+    <script src="./js/staticSessionStrage.js"></script>
+    <script src="./js/menu.js"></script>
+
+    <title>あなうめ君</title>
+</head>
+
+<body>
+    <!-- コンテナー -->
+    <div id="container">
+        <!-- コンテンツ -->
+        <div id="contents">
+            <div id="linkIcon">
+                <a href="../mekurin/"><img src="./images/mekurin_off.png" alt="めくりん" title="めくりん" /></a>
+                <!--<a href="../tamatebako/"><img src="./images/tamatebako_off.png" alt="玉手箱" title="玉手箱" /></a>-->
+            </div>
+            <!-- メインメニュー -->
+            <div id="mainmenu">
+                <dl>
+                    <dt><img src="./images/h_menu1.png" alt="設問の作成・編集" title="設問の作成・編集" /></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="./question.html">・新規作成</a></li>
+                            <li><a id="questionEdit" href="./questionSelect.html">・設問の編集</a></li>
+                        </ul>
+                    </dd>
+                    <dt><img src="./images/h_menu2.png" alt="問題集の作成・編集" title="問題集の作成・編集" /></dt>
+                    <dd>
+                        <ul>
+                            <li><a href="./workbook.html">・新規作成</a></li>
+                            <li><a id="packageEdit" href="./workbookSelect.html">・問題集の編集</a></li>
+                        </ul>
+                    </dd>
+                    <dt><img src="./images/h_menu3.png" alt="教材の閲覧" title="教材の閲覧" /></dt>
+                    <dd>
+                        <ul>
+                            <li><a id="educationBrowse" href="./educationSelect.html">・閲覧する</a></li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

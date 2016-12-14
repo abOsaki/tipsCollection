@@ -1,0 +1,55 @@
+.buttonPane {
+    margin-left: 60vw;
+    font-size: 1.5vw;
+}
+
+.buttonPane *{
+    font-size: 1.5vw;
+}
+
+.gakunenClassPane {
+    margin-top: 1.5vw;
+    margin-left: 6vw;
+    font-size: 1.5vw;
+}
+
+.kyoukaPane {
+    margin-top: 1.5vw;
+    margin-left: 6vw;
+    font-size: 1.5vw;
+}
+
+.questionInsertPane {
+    margin-left: 6vw;
+    font-size: 1.5vw;
+}
+
+#questionInsert {
+    width: 60vw;
+}
+
+.questionAddBtn {
+    width: 8vw;
+}
+
+.kyoukaKubun {
+    width: 1.3vw;
+    height: 1.3vw;
+}
+
+#kyoukaSelect {
+    width: 6vw;
+    margin-right: 2vw;
+}
+
+.toggle {
+    visibility: visible;
+}
+
+.toggle-group {
+    height: 200%;
+}
+
+.btn {
+    font-size: 1vw;
+}

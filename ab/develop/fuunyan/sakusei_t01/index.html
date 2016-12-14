@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="../common/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../common/css/common.css">   
+    <link rel="stylesheet" href="./style.css">
+    <!--jquery読み込み-->
+    <script src="../common/js/jquery.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <script src="../common/js/datepicker-ja"></script>
+
+    <!--JavaScript読み込み-->
+    <script src="../common/js/smartRollover.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./script.js"></script>
+
+    <title>シートの作成／クラス担任用</title>
+</head>
+
+<body>
+    <!-- コンテナー -->
+    <div id="container">
+        <!-- ヘッダー -->
+        <header class="clearfix">
+            <div id="header">健康・生活観察シートの作成</div>
+
+            <div id="img_logout" class="fu_admin_button">ログアウト</div>
+            <div id="img_menu" class="fu_admin_button">メニュー</div>
+            <div id="img_modoru" class="fu_admin_button">戻る</div>
+            <div id="img_userinfo" class="fu_admin_button">ユーザ情報</div>
+        </header>
+        <!-- コンテンツ -->
+        <div id="contents">
+            <!-- 基本情報 -->
+            <div id="basicInfo" class="clearfix">
+
+                <div>種別：<label class="select"><select class="group">
+                </select></label></div>
+                <div>学校名：<label class="select"><select class="school">
+                </select></label></div>
+                <div>学年<label class="select">：<select class="grade">
+                </select></label></div>
+                <div>クラス：<label class="select"><select class="classes">
+                </select></label></div>
+                <div>テーマ<label class="select"><select class="theme">
+                </select></label></div>            
+                <div tiltle="タイトル">タイトル
+                    <input class="title" type="text" placeholder="20文字以内" maxlength="40" />
+                </div>
+                <div>共有：<label class="select"><select class="share">
+                </select></label></div>
+                <div class="displayname">鈴木太郎</div>
+                <div>
+                    <div id="img_kakunin" class="fu_admin_button">確認</div>
+                </div>
+
+            </div>
+
+
+
+            <div id="questionBox">
+                <div id="kakuninBox">
+                    <div id="table02">
+                実施期間：&nbsp;<input type="text" class="dateFrom">&nbsp;～&nbsp;<input type="text" class="dateTo" name="date">
+
+
+                        <div class="tableHeader">
+                                                すべてを
+                        <input type="button" class="bbtn select" value="選択">
+                        <input type="button"  class="bbtn release" value="解除">
+                            <table class="scroll">
+                                <colgroup>
+                                <col class="checkCol" />
+                                <col class="idCol" />
+                                <col class="textCol" />
+                                <col class="answerCol" />
+                                <col class="graphCol" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>質問文</th>
+                                    <th>回答群</th>
+                                    <th style="color:blue">目標</th>
+                                    <th style="color:red">注意ライン</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+<div style="clear:both"></div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- モーダルコンテンツ -->
+<div id="alertModal" class="modal-content">
+    <div id="alertText"></div>
+    <img src="../common/images/b_cancel_off.png" class="modal-close" alt="OK" title="OK" />
+</div>
+
+<div id="questionBox_prev" title="この内容でよろしいですか？" style="display:none">
+
+    <div id="prevWrapper" class="shitsumon">
+        <table>
+            <thead></thead>
+            <tbody class="scrollBody">
+                <tr>
+                    <td width="400px">何時に寝ましたか？</td>
+                    <td colspan="3" width="440px">午後　<select id="time">---</select> 分　<select id="minute">---</select> 分</td>
+                </tr>
+                <tr>
+                    <td>何時に起きましたか？</td>
+                    <td colspan="3">午前　<select>---</select> 時　<select>---</select> 分</td>
+                </tr>
+                <tr>
+                    <td>歯磨きは何回しましたか？</td>
+                    <td colspan="3">　<select>---</select> 回</td>
+                </tr>
+                <tr>
+                   <td>しっかり朝食はとれましたか？</td>
+                   <td><input type="radio" name="breakfast" value="">よい　</td>
+                   <td><input type="radio" name="breakfast" value="">まあまあ　</td>
+                   <td><input type="radio" name="breakfast" value="">よくない</td>
+               </tr>
+               <tr>
+                   <td>しっかり昼食はとれましか？</td>
+                   <td><input type="radio" name="lunch" value="">よい　</td>
+                   <td><input type="radio" name="lunch" value="">まあまあ　</td>
+                   <td><input type="radio" name="lunch" value="">よくない</td>
+               </tr>
+               <tr>
+                <td>しっかり夜食はとれましたか？</td>
+                <td><input type="radio" name="dinner" value="">よい　</td>
+                <td><input type="radio" name="dinner" value="">まあまあ　</td>
+                <td><input type="radio" name="dinner" value="">よくない</td>
+            </tr>
+            <tr>
+                <td>何のドリルをやりましたか？</td>
+                <td colspan="3"><input type="text"></td>
+            </tr>
+            <tr>
+                <td>時間はかかりましたか？</td>
+                <td><input type="radio" name="time" value="">よい　</td>
+                <td><input type="radio" name="time" value="">まあまあ　</td>
+                <td><input type="radio" name="time" value="">よくない</td>
+            </tr>
+            <tr>
+                <td>大きな声で読めましたか？</td>
+                <td><input type="radio" name="time" value="">よい　</td>
+                <td><input type="radio" name="time" value="">まあまあ　</td>
+                <td><input type="radio" name="time" value="">よくない</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><img id="img_tsugie" src="../common/images/tsugie_off.png"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+</body>
+
+</html>

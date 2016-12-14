@@ -1,0 +1,71 @@
+/* question用モーダルウィンドウスタイル */
+
+#insertModal,
+#updateModal,
+#saveFin,
+#linkModal,
+#alertModal {
+    height: auto;
+    width: auto;
+    text-align: center;
+}
+
+#insertModal hr,
+#updateModal hr,
+#saveFin hr,
+#linkModal hr,
+#alertModal hr {
+    margin: 10px auto;
+}
+
+
+/* 新規保存 */
+
+#insertModal #saveText {
+    text-align: left;
+}
+
+
+/* 上書き保存 */
+
+#updateModal #updateText {
+    text-align: left;
+}
+
+
+/* 保存完了 */
+
+#saveFin p {
+    width: 180px;
+}
+
+
+/* アラート */
+
+#alertModal img,
+#alertModal p {
+    margin: 0px auto 15px auto
+}
+
+#alertHozon {
+    color: #ff0000;
+}
+
+
+/* ハイパーリンク */
+
+#linkModal #linkText {
+    text-align: left;
+}
+
+#linkModal {
+    width: auto;
+}
+
+#linkModal input {
+    margin: 5px auto 0px auto;
+    width: 320px;
+}
+
+
+@page { size:portrait; }

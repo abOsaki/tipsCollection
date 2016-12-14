@@ -1,0 +1,58 @@
+#contentPane {
+    margin-top: 5vw;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.topButton {
+    margin-top: 4%;
+}
+
+.menuButton {
+    width: 70vw;
+/*    height : 12vh;*/
+    font-size: 5vw;
+    margin-bottom: 2%;
+}
+
+div{
+    font-size: 4vw;
+}
+
+.mokuhyoHeader {
+    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5%;
+    background-color: #337ab7;
+    color: white;
+    width: 70vw;
+}
+
+.mokuhyoContent {
+    background-color: rgb(207,213,234);
+    margin: auto;
+    width: 70vw;
+}
+
+#kamokuTable {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    
+    margin-left: auto;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-bottom: 2%;
+    border: 1px solid #000000;
+}
+
+#stampImg {
+    width : 30vw;
+}
+
+#nissuu {
+    color: red;
+}

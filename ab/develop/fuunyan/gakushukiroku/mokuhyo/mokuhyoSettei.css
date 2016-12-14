@@ -1,0 +1,180 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 3vh;
+}
+
+.koumoku {
+    margin-bottom: 3vh;
+}
+
+.testKubun {
+    margin-right: 3vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+p {
+    font-size: 4vw;
+}
+
+select {
+    width: 25vw;
+    font-size: 4vw;
+    margin-right: 2vw;
+}
+
+select * {
+    font-size: 4vw;
+}
+
+.koumokuTextSize {
+    font-size: 4vw;
+}
+
+.koumokuTextWidth {
+    width: 25vw;
+}
+
+.nextButton {
+    width: 20vw;
+    font-size: 5vw;
+    margin-left: 60vw;
+}
+
+.stampArea {
+    width : 80vw;
+    margin: auto;
+    background-color: azure;
+}
+
+.stamp {
+    width : 30%;
+}
+
+.selectStampBackground {
+    background-color: blue;
+    width : 30%;
+}
+
+li * {
+    font-size: 4vw;
+}
+
+li {
+    font-size: 4vw;
+}
+
+.breadcrumb > li + li:before {
+  content: ">";
+}
+
+img {
+    width: 5vw;
+    vertical-align: auto;
+}
+
+/* カレンダー自体を大きく */
+.ui-datepicker {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+	
+    
+    
+	width: 70vw;
+	height: 67vw;
+}
+
+/* タイトルと矢印 */
+.ui-datepicker .ui-datepicker-header {
+	padding: 6px;
+	
+	font-size: 4vw;
+
+}
+
+/* 曜日 */
+.ui-datepicker th {
+	padding: 9px 6px;
+	
+	font-size: 4vw;
+
+}
+
+/* 日付の文字と余白を大きく */
+.ui-datepicker td span,
+.ui-datepicker td a {
+	
+	font-size: 4vw;
+	text-align: center;
+
+}
+
+/* 選択中 */
+.ui-datepicker td a.ui-state-active {
+    /*
+	color: #fff;
+	background: #E71063;
+	
+	box-shadow: inset 0 0 0 1px #fff;
+    */
+    
+    
+}
+
+/* 今日 */
+.ui-datepicker td a.ui-state-highlight {
+	border: 2px solid #E71063;
+}
+
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+	-webkit-appearance: none;
+	
+	font-size: 4vw;
+
+}
+
+.calender {
+    width: 50vw;
+}
+
+.kyoukaRow {
+    margin: 2vw;
+}
+
+.breadcrumb a {
+    cursor: pointer;
+}
+
+#userName {
+    position: absolute;
+    top: 15px;
+    right: 5vw;
+    font-size: 4vw;
+}
+
+.ui-icon {
+    transform: scale(5);
+}
+
+.koumokuLeftMargin {
+    margin-left: 10vw;
+}
+
+.kyoukaMokuhyo {
+    width: 14vw;
+    text-align: right;
+}
+
+.kyoukaMokuhyo  * {
+    text-align: right;
+}
+
+.tanni {
+    vertical-align: middle;
+}

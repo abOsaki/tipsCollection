@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="kamokubetuMokuhyoSettei.css">
+        <!-- JavaScript読み込み -->
+        <script src="./kamokubetuMokuhyoSettei.js"></script>
+        <script src="../common/common.js"></script>
+        
+        <title>学習記録科目別目標設定</title>
+    </head>
+    <body>
+        <div>
+            <ol class="breadcrumb">
+              <li><a id="menu" href="../menu/">メニュー</a></li>
+              <li><a href="mokuhyoSettei.html">目標設定</a></li>
+              <li class="active">科目別目標設定</li>
+            </ol>
+        </div>
+        <div class ='text-center topKoumoku topTextSize koumoku'>科目ごとに目標を決めよう</div>
+        <div class ='text-center koumoku'>
+            <span>国語：</span>
+            <select id="kokugoSelect" class="mokuhyoSelect">
+                <option value="5">５</option>
+                <option value="10">１０</option>
+                <option value="15">１５</option>
+                <option value="20">２０</option>
+                <option value="25">２５</option>
+                <option value="30">３０</option>
+                <option value="35">３５</option>
+                <option value="40">４０</option>
+                <option value="45">４５</option>
+                <option value="50">５０</option>
+                <option value="55">５５</option>
+                <option value="60">６０</option>
+                <option value="65">６５</option>
+                <option value="70">７０</option>
+                <option value="75">７５</option>
+                <option value="80">８０</option>
+                <option value="85">８５</option>
+                <option value="90">９０</option>
+                <option value="95">９５</option>
+                <option value="100">１００</option>
+            </select>
+            <span>数学：</span>
+            <select id="suugakuSelect" class="mokuhyoSelect">
+                <option value="5">５</option>
+                <option value="10">１０</option>
+                <option value="15">１５</option>
+                <option value="20">２０</option>
+                <option value="25">２５</option>
+                <option value="30">３０</option>
+                <option value="35">３５</option>
+                <option value="40">４０</option>
+                <option value="45">４５</option>
+                <option value="50">５０</option>
+                <option value="55">５５</option>
+                <option value="60">６０</option>
+                <option value="65">６５</option>
+                <option value="70">７０</option>
+                <option value="75">７５</option>
+                <option value="80">８０</option>
+                <option value="85">８５</option>
+                <option value="90">９０</option>
+                <option value="95">９５</option>
+                <option value="100">１００</option>
+            </select>
+            <span>英語：</span>
+            <select id="eigoSelect" class="mokuhyoSelect">
+                <option value="5">５</option>
+                <option value="10">１０</option>
+                <option value="15">１５</option>
+                <option value="20">２０</option>
+                <option value="25">２５</option>
+                <option value="30">３０</option>
+                <option value="35">３５</option>
+                <option value="40">４０</option>
+                <option value="45">４５</option>
+                <option value="50">５０</option>
+                <option value="55">５５</option>
+                <option value="60">６０</option>
+                <option value="65">６５</option>
+                <option value="70">７０</option>
+                <option value="75">７５</option>
+                <option value="80">８０</option>
+                <option value="85">８５</option>
+                <option value="90">９０</option>
+                <option value="95">９５</option>
+                <option value="100">１００</option>
+            </select>
+        </div>
+        <div class ='text-center koumoku'>
+            <span>理科：</span>
+            <select id="rikaSelect" class="mokuhyoSelect">
+                <option value="5">５</option>
+                <option value="10">１０</option>
+                <option value="15">１５</option>
+                <option value="20">２０</option>
+                <option value="25">２５</option>
+                <option value="30">３０</option>
+                <option value="35">３５</option>
+                <option value="40">４０</option>
+                <option value="45">４５</option>
+                <option value="50">５０</option>
+                <option value="55">５５</option>
+                <option value="60">６０</option>
+                <option value="65">６５</option>
+                <option value="70">７０</option>
+                <option value="75">７５</option>
+                <option value="80">８０</option>
+                <option value="85">８５</option>
+                <option value="90">９０</option>
+                <option value="95">９５</option>
+                <option value="100">１００</option>
+            </select>
+            <span>社会：</span>
+            <select id="shakaiSelect" class="mokuhyoSelect">
+                <option value="5">５</option>
+                <option value="10">１０</option>
+                <option value="15">１５</option>
+                <option value="20">２０</option>
+                <option value="25">２５</option>
+                <option value="30">３０</option>
+                <option value="35">３５</option>
+                <option value="40">４０</option>
+                <option value="45">４５</option>
+                <option value="50">５０</option>
+                <option value="55">５５</option>
+                <option value="60">６０</option>
+                <option value="65">６５</option>
+                <option value="70">７０</option>
+                <option value="75">７５</option>
+                <option value="80">８０</option>
+                <option value="85">８５</option>
+                <option value="90">９０</option>
+                <option value="95">９５</option>
+                <option value="100">１００</option>
+            </select>
+        </div>
+        <div class="text-center koumoku">
+            <button type="button" class="btn btn-primary completeButton" id="completeButton">入力完了！</button>
+        </div>
+    </body>
+</html>

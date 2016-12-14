@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/questionSelect.css">
+
+    <!-- jquery読み込み -->
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="./jquery/jquery.droppy.js"></script>
+
+    <!-- JavaScript読み込み -->
+    <script src="./js/login.js"></script>
+    <script src="./js/smartRollover.js"></script>
+    <script src="./js/modalContents.js"></script>
+    <script src="./js/loader.js"></script>
+
+    <script src="./js/baseInfo.js"></script>
+    <script src="./js/loadData.js"></script>
+    <script src="./js/selectElement.js"></script>
+    <script src="./js/questionSearch.js"></script>
+    <script src="./js/deleteItem.js"></script>
+    <script src="./js/eventQuestionSelect.js"></script>
+    <script src="./js/staticSessionStrage.js"></script>
+    <script src="./js/questionSelect.js"></script>
+    <script src="./js/questionSerchObject.js"></script>
+    
+
+    <title>あなうめ君</title>
+</head>
+
+<body>
+    <!-- コンテンツ -->
+    <div id="contents">
+        <!-- 基本情報 -->
+        <div id="basicInfo">
+            <div id="groupSelect" tiltle="種別">種別
+                <select id="group">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="schoolSelect" tiltle="学校">学校
+                <select id="school">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="gradeSelect" tiltle="学年">学年
+                <select id="grade">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="curriculumSelect" tiltle="教科">教科
+                <select id="curriculum">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="unitSelect" tiltle="単元">単元
+                <select id="unit">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="quesTitle" tiltle="タイトル">タイトル
+                <input id="title" type="text" placeholder="20文字以内" maxlength="20">
+            </div>
+
+            <img id="img_kensaku" alt="検索" title="検索" src="images/kensaku_off.png" onclick="questionSearch()" />
+
+            <div id="headImg">
+                <img src="images/modoru_s_off.png" alt="戻る" title="戻る" onclick="history.back()">
+                <img src="images/menu_s_off.png" alt="メニュー" title="メニュー" onclick="location.href='menu.html'">
+                <img src="images/logout_off.png" alt="ログアウト" title="ログアウト" onclick="logout()">
+            </div>
+        </div>
+
+        <!-- 設問の検索結果表示範囲 -->
+        <div id="questionBox">
+            <h1>設問の検索結果</h1>
+            <img alt="開く" title="開く" src="./images/b_hiraku_off.png" onclick="questionSelect()" />
+            <img alt="選択解除" title="選択解除" src="./images/b_sentakukaijo_off.png" onclick="questionSelectLess()" />
+            <img alt="削除" title="削除" src="./images/sakujo_off.png" onclick="questionDelete()" />
+            <div id="table01">
+                <div class="tableHeader">
+                    <table id="reportListTable">
+                        <thead>
+                            <tr>
+                                <th>選択</th>
+                                <th class="canSortHeader">種別<span class="sort">▼</span></th>
+                                <th class="canSortHeader">学校<span class="sort">▼</span></th>
+                                <th class="canSortHeader">学年<span class="sort">▼</span></th>
+                                <th class="canSortHeader">教科<span class="sort">▼</span></th>
+                                <th class="canSortHeader">単元<span class="sort">▼</span></th>
+                                <th class="canSortHeader">タイトル<span class="sort">▼</span></th>
+                                <th class="canSortHeader">作成者<span class="sort">▼</span></th>
+                                <th class="canSortHeader">共有範囲<span class="sort">▼</span></th>
+                                <th class="canSortHeader">作成日時<span class="sort">▼</span></th>
+                                <th class="canSortHeader">更新日時<span class="sort">▼</span></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="tableBody">
+                    <table>
+                        <tbody id="questionListBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

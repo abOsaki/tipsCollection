@@ -1,0 +1,310 @@
+/*頁総数*/
+
+.pages {
+    margin-top: 10px;
+}
+
+
+/*botann*/
+
+.select {
+    height: 28px;
+    margin-left: 8px;
+}
+
+#button_sort,
+#button_reset,
+#button_search {
+    margin-right: 13px;
+}
+
+
+/*矢印*/
+
+#yajirushi {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 250px;
+    text-align: center;
+}
+
+#yajirushi img {
+    cursor: pointer;
+}
+
+
+/*並び替え*/
+
+.editModal {
+    width: 80% !important;
+    height: 80% !important;
+}
+
+#editModal {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+}
+
+
+/*編集範囲*/
+
+#viewArea {
+    top: 0;
+}
+
+.boxView {
+    top: 65px;
+    border: 1px solid #C0C0C0;
+}
+
+.boxView tr {
+    cursor: pointer;
+}
+
+.tableHead,
+.tHeadView {
+    background-color: #f3e581;
+}
+
+.tHeadView th {
+    height: 48px;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.tHeadView select,
+.tHeadView input {
+    width: 80%;
+}
+
+.tableBody {
+    top: 49px;
+}
+
+#table01,
+#table02 {
+    position: absolute;
+    display: inline-block;
+    margin: 8px;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+}
+
+#table01 {
+    right: auto;
+    left: 0;
+}
+
+#table02 {
+    right: 0;
+    left: auto;
+}
+
+#table01 h1,
+#table02 h1 {
+    margin-bottom: 4px;
+    padding: 5px;
+    background-color: #32B24F;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+
+
+/*テーブル幅設定*/
+
+
+/*設問の検索*/
+
+#table01 th:nth-of-type(1),
+#table01 td:nth-of-type(1) {
+    width: 7%;
+    text-align: center;
+}
+
+#table01 th:nth-of-type(2),
+#table01 td:nth-of-type(2) {
+    width: 10%;
+    text-align: center;
+}
+
+#table01 th:nth-of-type(3),
+#table01 td:nth-of-type(3) {
+    width: 18%;
+    text-align: center;
+}
+
+#table01 th:nth-of-type(4),
+#table01 td:nth-of-type(4) {
+    width: 10%;
+    text-align: center;
+}
+
+#table01 th:nth-of-type(5),
+#table01 td:nth-of-type(5) {
+    width: 10%;
+    text-align: center;
+}
+
+#table01 th:nth-of-type(6),
+#table01 td:nth-of-type(6) {
+    width: 22%;
+}
+
+#table01 th:nth-of-type(7),
+#table01 td:nth-of-type(7) {
+    width: 23%;
+}
+
+
+/*設問の設定*/
+
+#table02 th:nth-of-type(1),
+#table02 td:nth-of-type(1) {
+    width: 7%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(2),
+#table02 td:nth-of-type(2) {
+    width: 7%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(3),
+#table02 td:nth-of-type(3) {
+    width: 11%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(4),
+#table02 td:nth-of-type(4) {
+    width: 15%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(5),
+#table02 td:nth-of-type(5) {
+    width: 10%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(6),
+#table02 td:nth-of-type(6) {
+    width: 10%;
+    text-align: center;
+}
+
+#table02 th:nth-of-type(7),
+#table02 td:nth-of-type(7) {
+    width: 20%;
+}
+
+#table02 th:nth-of-type(7),
+#table02 td:nth-of-type(7) {
+    width: 20%;
+}
+
+
+/*設問の並び替え*/
+
+#editModal .modalArea > span {
+    padding-left: 8px;
+    line-height: 2;
+}
+
+#table03 .quesID {
+    display: none;
+}
+
+#table03 th:nth-of-type(1),
+#table03 td:nth-of-type(1) {
+    width: 5%;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+#table03 td:nth-of-type(1) {
+    color: #fff;
+    background-color: #66666a;
+}
+
+#table03 td:nth-of-type(1)::before {
+    content: '\02195';
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+#table03 th:nth-of-type(2),
+#table03 td:nth-of-type(2) {
+    width: 5%;
+    text-align: center;
+}
+
+#table03 th:nth-of-type(3),
+#table03 td:nth-of-type(3) {
+    width: 8%;
+    text-align: center;
+}
+
+#table03 th:nth-of-type(4),
+#table03 td:nth-of-type(4) {
+    width: 16%;
+    text-align: center;
+}
+
+#table03 th:nth-of-type(5),
+#table03 td:nth-of-type(5) {
+    width: 8%;
+    text-align: center;
+}
+
+#table03 th:nth-of-type(6),
+#table03 td:nth-of-type(6) {
+    width: 8%;
+    text-align: center;
+}
+
+#table03 th:nth-of-type(7),
+#table03 td:nth-of-type(7) {
+    width: 25%;
+}
+
+#table03 th:nth-of-type(7),
+#table03 td:nth-of-type(7) {
+    width: 25%;
+}
+
+
+/*保存情報*/
+
+.infoItem {
+    display: inline-block;
+    width: 35%;
+    text-align: center;
+    line-height: 1.7;
+}
+
+#category,
+#school,
+#grade,
+#curriculum,
+#unit,
+#share,
+#title {
+    width: 150px;
+}
+
+#title {
+    box-sizing: border-box;
+}

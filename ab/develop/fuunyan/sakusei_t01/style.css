@@ -1,0 +1,422 @@
+/* Chromeのuser agentをリセット(table)*/
+
+table {
+    border-spacing: 0;
+    border-color: transparent;
+    border-collapse: collapse;
+}
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: transparent;
+}
+
+html,
+body,
+div,
+ul,
+ol,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+html,
+body {
+    background-image: url(../common/images/bg_green.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-color: #a2d8fe;
+}
+
+header{
+    padding:0 25px;
+}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    min-width:1300px;
+    height: 100%;
+}
+
+#header {
+    position: relative;
+    /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    padding-top: 10px;
+    width: 600px;
+    float: left;
+    height: 40px;
+}
+
+
+#contents {
+    position: relative;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 97%;
+}
+
+#contents {
+    /*　コンテンツ */
+    position: relative;
+    height: 96%;
+}
+
+
+
+
+
+#basicInfo {
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4) inset;
+    padding:13px 10px 0;
+    margin: 0px auto;
+    background-repeat: no-repeat;
+    background-position: 15px;
+}
+
+#basicInfo div {
+    margin: 0px 0px 0px 8px;
+    display: inline;
+    font-size: 13px;
+    /*font-family: "ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;*/
+}
+
+
+
+
+
+#questionBox {
+    font-size: 16px;
+    height: 90%;
+    border: 4px ridge #46a0e2;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    overflow-y:hidden;
+}
+
+#kakuninBox {
+    height: 95%;
+    width: 1200px;
+    margin:0 30px;
+}
+
+
+/*普通のボタン*/
+
+#img_kakunin {
+    display: block;
+    float: right;
+    height:25px;
+    padding-top:5px;
+}
+
+
+/*小さいボタン*/
+
+#img_menu {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+#img_modoru {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+
+/*ログアウト追加*/
+
+#img_logout {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+
+
+td {
+    font-size: 14px;
+    /*font-family: "メイリオ", "Hiragino Kaku Gothic Pro", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    padding: 5px;
+}
+
+#table02 th {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f5d7bc;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    /*background-color: #f5d7bc;*/
+}
+
+
+tr:nth-child(2n+1) {
+    background: #ededed;
+}
+
+
+ul#editing li {
+    list-style: none;
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+/*ボタンスタイル*/
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+input[type=text] {
+    width: 150px;
+    height: 20px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+input[type=button] {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+
+
+/*小さいボタン*/
+
+#img_menu {
+    display:inline-block;
+}
+#img_userinfo {
+    display:inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+
+
+}
+
+#img_modoru {
+    display:inline-block;
+}
+
+/*ログアウト追加*/
+
+#img_logout {
+    display:inline-block;
+}
+
+
+
+/*幅調整*/
+
+#table02 {
+    line-height: 1.8em;
+    padding-top: 20px;
+    margin-left:40px;
+}
+
+#table02 td {
+    font-size: 12px;
+    /*font-family: "メイリオ", "Hiragino Kaku Gothic Pro", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+}
+
+
+
+tbody tr:nth-child(2n+1) {
+    background: #ededed;
+}
+
+tbody tr:nth-child(2n) {
+    background: #fff;s
+}
+
+hr {
+    margin: 8px 0;
+    clear: both;
+    height: 0;
+}
+
+
+
+
+
+/*ボタンスタイル*/
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+input[type=button] {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+#table01 .tableHeader{
+    max-height:600px;
+    width:450px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+#table02 .tableHeader{
+    margin:16px auto;
+    width:1150px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+/* tableスタイル追加 */
+
+#table01,
+#table02 {
+    border-collapse: collapse;
+}
+
+
+
+
+/* 左側 */
+
+
+#table01 th:nth-child(1),
+#table01 td:nth-child(1),
+#table01 th:nth-child(2),
+#table01 td:nth-child(2)  {
+    text-align: center;
+}
+
+#table01 th:nth-child(3),
+#table01 td:nth-child(3) {
+}
+
+/* 右側 */
+
+#table02 th:nth-child(1),
+#table02 td:nth-child(1),
+#table02 th:nth-child(2),
+#table02 td:nth-child(2)  {
+    text-align: center;
+}
+
+#table02 th:nth-child(3),
+#table02 td:nth-child(3) {
+}
+
+#table02 th:nth-child(3),
+#table02 td:nth-child(3) {
+}
+
+#table02 th:nth-child(4),
+#table02 td:nth-child(4) {
+}
+
+
+.tableHeader table{
+    /*height:200px;*/
+}
+
+#table01 table.scroll {
+    width:400px;
+    border-spacing: 0;
+    border: 2px solid black;
+}
+
+#table02 table.scroll {
+    margin-top:5px;
+    width:1150px;
+    border-spacing: 0;
+    border: 2px solid black;
+}
+
+/*#table01 table.scroll tbody,
+#table01 table.scroll thead { 
+    display: block; 
+}*/
+table.scroll thead
+{
+        background-color: #f5d7bc;
+}
+
+thead tr th { 
+    height: 30px;
+    line-height: 30px;
+    /* text-align: left; */
+}
+
+table.scroll tbody {
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody { border-top: 2px solid black; }
+
+tbody td, thead th {
+    /* width: 20%; */ /* Optional */
+    /*border-right: 1px solid black;*/
+    /* white-space: nowrap; */
+}
+
+tbody td:last-child, thead th:last-child {
+    border-right: none;
+}
+
+td{border-bottom:solid 1px #000;}
+
+#prevWrapper table{
+    width:100%;
+}
+
+
+#table02 th,#table02 td{
+    border:solid 1px #727272;
+}

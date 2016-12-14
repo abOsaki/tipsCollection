@@ -1,0 +1,41 @@
+body {
+    background: url(../common/images/anaumekun_bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+#menu {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 50px 55px;
+    width: 403px;
+    height: 438px;
+    background: url(../common/images/menu_bg.png) center center no-repeat;
+}
+
+#menu ul {
+    position: absolute;
+    margin: auto;
+    font-weight: bold;
+}
+
+#menu li {
+    margin-bottom: 14px;
+    font-size: 22px;
+}
+
+#menu a {
+    margin-left: 50px;
+    color: #4d4c55;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    position: relative;
+    left: 1px;
+    top: 1px;
+    color: #f00;
+}

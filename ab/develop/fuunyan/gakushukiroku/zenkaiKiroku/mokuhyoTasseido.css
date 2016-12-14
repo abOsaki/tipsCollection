@@ -1,0 +1,120 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 2vh;
+}
+
+.koumoku {
+    margin-bottom: 2vh;
+}
+
+.okBtn {
+    width: 25vw;
+    font-size: 5vw;
+    margin-left: 60vw;
+}
+
+li * {
+    font-size: 4vw;
+}
+
+li {
+    font-size: 4vw;
+}
+
+.hyoukaPane {
+    margin-left: 1vw;
+}
+
+#stampImg {
+    width : 40vw;
+}
+
+#userName {
+    position: absolute;
+    top: 15px;
+    right: 5vw;
+    font-size: 4vw;
+}
+
+.kubunBtn {
+    width: 16vw;
+    font-size: 3.5vw;
+}
+
+.tabPane {
+    width: 90vw;
+}
+
+.contentPane {
+    width: 90vw;
+    border: solid;
+    margin: auto;
+}
+
+.planYokoGraph {
+    width : 2.2vw;
+    height: 2.2vw;
+    display: inline-block;
+    margin: 0.1vw;
+    background: blue;
+}
+
+.logYokoGraph {
+    width : 2.2vw;
+    height: 2.2vw;
+    display: inline-block;
+    margin: 0.1vw;
+    background: red;
+}
+
+.graphPane {
+    display: inline-block;
+}
+
+.dummy{
+    height: 3vw;
+    display: inline;
+}
+
+.graphContentPane {
+    line-height: 75%;
+    margin-left: 1.5vw;
+}
+
+.graphHeader {
+    vertical-align: top;
+}
+
+.kyoukaTable {
+    line-height: 75%;
+    margin-left: 1vw;
+    margin-top: 1vw;
+}
+
+.graphContentArea {
+    width: 50vw;
+}
+
+.score {
+    text-align: right;
+    width: 15vw;
+    font-size: 4vw;
+}
+
+.resultPercent {
+    text-align: right;
+    width : 10vw;
+    font-size: 4vw;
+}
+
+.graphHeaderTD {
+    width: 10vw;
+}
+
+.colHeader {
+    font-size: 3vw;
+    text-align: center;
+}

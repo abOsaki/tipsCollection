@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="gakushuKeikakuCalender.css">
+        <!-- JavaScript読み込み -->
+        <script src="./gakushuKeikakuCalender.js"></script>
+        <script src="../common/common.js"></script>
+        <script src="../../common/js/common.js"></script>
+        
+        <title>学習記録日別学習内容設定ページ</title>
+    </head>
+    <body>
+        <span id="userName"></span>
+        <div>
+            <ol class="breadcrumb">
+              <li><a href="../menu/">メニュー</a></li>
+              <li class="active">学習計画日程</li>
+            </ol>
+        </div>
+        
+        <div class="text-left topKoumoku koumoku"><span class="topTextSize" >学習の計画を立てよう！</span></div>
+        <div class="text-center topKoumoku koumoku topTextSize" id="nissuTitle"><span>試験まであと</span><span id='nissuu'></span><span>日</span></div>
+        <div class="text-center koumoku">
+            <div id="calenderPane">
+            </div>
+        </div>
+        
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="kokugoPane">
+            <span class="graphHeader">国語</span>
+            <div class="planPane" id="kokugoPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="suugakuPane">
+            <!--
+            <table >
+                <tr>
+                    <td>数学</td>
+                    <td class="kyoukaGraphTD" >
+                        <div id="suugakuPlanPane">
+                            
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            -->
+            <span class="graphHeader">数学</span>
+            <div class="planPane"  id="suugakuPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="eigoPane">
+            <span class="graphHeader">英語</span>
+            <div class="planPane" id="eigoPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="rikaPane">
+            <span class="graphHeader">理科</span>
+            <div class="planPane" id="rikaPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="shakaiPane">
+            <span class="graphHeader">社会</span>
+            <div class="planPane" id="shakaiPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="ongakuPane">
+            <span class="graphHeader">音楽</span>
+            <div class="planPane" id="ongakuPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="bijutuPane">
+            <span class="graphHeader">美術</span>
+            <div class="planPane" id="bijutuPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="gijutuPane">
+            <span class="graphHeader">技家</span>
+            <div class="planPane" id="gijutuPlanPane"></div>
+        </div>
+        <div class="hyoukaPane topTextSize koumokuLeftMargin" id="hotaiPane">
+            <span class="graphHeader">保体</span>
+            <div class="planPane" id="hotaiPlanPane"></div>
+        </div>
+        
+        <!--
+        <div class="text-center topKoumoku koumoku">
+            <table id="timeGraph">
+                
+            </table>
+        </div>
+        -->
+    </body>
+</html>

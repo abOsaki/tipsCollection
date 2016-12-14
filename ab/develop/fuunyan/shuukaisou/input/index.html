@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="css/kiroku.css">
+    <link rel="stylesheet" href="css/shuukaisouInput.css">
+    <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+    
+    <!--jquery読み込み-->
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/jquery-ui.min.js"></script>
+    <script src="../../common/js/datepicker-ja"></script>
+    <script src="../../common/js/jqfloat.min.js"></script>
+
+    <!-- JavaScript読み込み -->
+    <script src="js/smartRollover.js"></script>
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/shukaisouSession.js"></script>
+    <script src="../../common/js/shuukaisouMokuhyoObject.js"></script>
+    <script src=".././shukaisouDBAccess.js"></script>
+    <script src=".././shuukaisouRecodeObject.js"></script>
+    <script src="../commonShuukaisou.js"></script>
+    <script src="./inputShuukaisou.js"></script>
+    <script src="../wrapTime.js"></script>
+    <script src="./script.js"></script>
+    <script src="../../common/js/ccchart.js"></script>
+    
+    <title>周回走</title>
+</head>
+
+<body>
+<!-- コンテナー -->
+<div id="container"> 
+  <!-- ヘッダー -->
+  <header id="headerH">
+    <div id="header"></div>
+    <div id="headImg">
+        <img  id='modoru_Button' alt="戻る" title="戻る" src="../images/modoru_s_off.png" >
+        <img  id='menu_Button' alt="メニュー" title="メニュー" src="../images/menu_s_off.png" >
+        <img  id='logout_Button' alt="ログアウト" title="ログアウト" src="../images/logout_off.png" >
+    </div>
+     
+  </header>
+  <!-- コンテンツ -->
+  <div id="contents">
+    <div id="menu_non"> </div>
+    
+    <table id="tryTable" >
+        <tr>
+            <td>
+                <button class="kaimeButton" id="kaimeButton1" value="1">1回目</button>
+            </td>
+            <td>
+                <button class="kaimeButton" id="kaimeButton2" value="2">2回目</button>
+            </td>
+            <td>
+                <button class="kaimeButton" id="kaimeButton3" value="3">3回目</button>
+            </td>
+            <td>
+                <button class="kaimeButton" id="kaimeButton4" value="4">4回目</button>
+            </td>
+            <td>
+                <button class="kaimeButton" id="kaimeButton5" value="5">5回目</button>
+            </td>
+        </tr>
+    </table>  
+      
+    <!-- 基本情報 -->
+    <!--
+    <div id="basicInfo">
+      <div class="tab"> <img src="../images/tb_date_on.png"><img src="../images/tb_aggregate_off.png" ><img src="../images/tb_analysis_off.png" ></div>
+    </div>
+    -->
+    <div id="questionBox">
+      <div id="kakuninBox">
+        <div id="table01">
+          <div class="tableHeader">
+            <!--
+            <div class="executiondate">
+              <table class="date">
+                <tr>
+                  <td class="info2"><img src="../images/b_zenjitsu.png" ></td>
+                  <td class="event2">2016年11月1日</td>
+                  <td class="info2"><img src="../images/b_gojitsu.png" ></td>
+                  <td class="info2"><img src="../images/hyouji_off.png" ></td>
+                </tr>
+              </table>
+            </div>
+            -->
+            
+            <datalist id="kyori">
+                <option value="85">85</option>
+                <option value="95">95</option>
+                <option value="180">180</option>
+                <option value="200">200</option>
+            </datalist>
+            
+            <table class="inputHeader">
+                <tr>
+                    <td class="inputHeaderMargin"><div id="inputHeaderMargin"> </div></td>
+                    <td class="stopWatch"><div id="stopWatch">00:00</div></td>
+                    <td id="headerInfo" >
+                        <div>
+                            <table id="headerInfoTable" >
+                                <tr>
+                                    <td class="headerInfoHeader">
+                                        <div class="headerHeader">1周</div>
+                                        <div class="headerHeaderData">
+                                            
+                                            <input id="kyoriSelect" type="number" list="kyori">
+                                            
+                                            <!--
+                                            <select id="kyoriSelect">
+                                                <option value="85">85</option>
+                                                <option value="95">95</option>
+                                                <option value="180">180</option>
+                                                <option value="200">200</option>
+                                            </select>
+                                            -->
+                                            <div class="tanni">m</div>
+                                        </div>
+                                        
+                                    </td>
+                                    <td class="headerInfoHeader">
+                                        <div class="headerHeader">周回数</div>
+                                        <div class="headerHeaderData">
+                                            <select id="shuukaisuuSelect">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                            </select>
+                                            <div class="tanni">周</div>
+                                        </div>
+                                    </td>
+                                    <td class="headerInfoHeader">
+                                        <div class="headerHeader">目標ラップ</div>
+                                        <div class="headerHeaderData">
+                                            <select id="mokuhyoLapSelect">
+                                                <option value="0"> 0</option>
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                                <option value="3"> 3</option>
+                                                <option value="4"> 4</option>
+                                                <option value="5"> 5</option>
+                                                <option value="6"> 6</option>
+                                                <option value="7"> 7</option>
+                                                <option value="8"> 8</option>
+                                                <option value="9"> 9</option>
+                                                <option value="10">10</option>
+                                                <option value="11"> 11</option>
+                                                <option value="12"> 12</option>
+                                                <option value="13"> 13</option>
+                                                <option value="14"> 14</option>
+                                                <option value="15"> 15</option>
+                                                <option value="16"> 16</option>
+                                                <option value="17"> 17</option>
+                                                <option value="18"> 18</option>
+                                                <option value="19"> 19</option>
+                                                <option value="20">20</option>
+                                                <option value="21"> 21</option>
+                                                <option value="22"> 22</option>
+                                                <option value="23"> 23</option>
+                                                <option value="24"> 24</option>
+                                                <option value="25"> 25</option>
+                                                <option value="26"> 26</option>
+                                                <option value="27"> 27</option>
+                                                <option value="28"> 28</option>
+                                                <option value="29"> 29</option>
+                                                <option value="30">30</option>
+                                                <option value="31"> 31</option>
+                                                <option value="32"> 32</option>
+                                                <option value="33"> 33</option>
+                                                <option value="34"> 34</option>
+                                                <option value="35"> 35</option>
+                                                <option value="36"> 36</option>
+                                                <option value="37"> 37</option>
+                                                <option value="38"> 38</option>
+                                                <option value="39"> 39</option>
+                                                <option value="40">40</option>
+                                                <option value="41"> 41</option>
+                                                <option value="42"> 42</option>
+                                                <option value="43"> 43</option>
+                                                <option value="44"> 44</option>
+                                                <option value="45"> 45</option>
+                                                <option value="46"> 46</option>
+                                                <option value="47"> 47</option>
+                                                <option value="48"> 48</option>
+                                                <option value="49"> 49</option>
+                                                <option value="50">50</option>
+                                                <option value="51"> 51</option>
+                                                <option value="52"> 52</option>
+                                                <option value="53"> 53</option>
+                                                <option value="54"> 54</option>
+                                                <option value="55"> 55</option>
+                                                <option value="56"> 56</option>
+                                                <option value="57"> 57</option>
+                                                <option value="58"> 58</option>
+                                                <option value="59"> 59</option>
+                                            </select>
+                                            <div class="tanni">秒</div>
+                                        </div>
+                                        
+                                    </td>
+                                    <td class="headerInfoHeader" id="mokuhyoTimeHeaderTd">
+                                        <div class="headerHeader" >目標タイム</div>
+                                        <div class="headerHeaderData" id="mokuhyoTimeHeaderPane">
+                                            <select id="mokuhyoTimeMinutesSelect">
+                                                <option value="0"> 0</option>
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                                <option value="3"> 3</option>
+                                                <option value="4"> 4</option>
+                                                <option value="5"> 5</option>
+                                                <option value="6"> 6</option>
+                                                <option value="7"> 7</option>
+                                                <option value="8"> 8</option>
+                                                <option value="9"> 9</option>
+                                                <option value="10">10</option>
+                                                <option value="11"> 11</option>
+                                                <option value="12"> 12</option>
+                                                <option value="13"> 13</option>
+                                                <option value="14"> 14</option>
+                                                <option value="15"> 15</option>
+                                                <option value="16"> 16</option>
+                                                <option value="17"> 17</option>
+                                                <option value="18"> 18</option>
+                                                <option value="19"> 19</option>
+                                                <option value="20">20</option>
+                                                <option value="21"> 21</option>
+                                                <option value="22"> 22</option>
+                                                <option value="23"> 23</option>
+                                                <option value="24"> 24</option>
+                                                <option value="25"> 25</option>
+                                                <option value="26"> 26</option>
+                                                <option value="27"> 27</option>
+                                                <option value="28"> 28</option>
+                                                <option value="29"> 29</option>
+                                                <option value="30">30</option>
+                                                <option value="31"> 31</option>
+                                                <option value="32"> 32</option>
+                                                <option value="33"> 33</option>
+                                                <option value="34"> 34</option>
+                                                <option value="35"> 35</option>
+                                                <option value="36"> 36</option>
+                                                <option value="37"> 37</option>
+                                                <option value="38"> 38</option>
+                                                <option value="39"> 39</option>
+                                                <option value="40">40</option>
+                                                <option value="41"> 41</option>
+                                                <option value="42"> 42</option>
+                                                <option value="43"> 43</option>
+                                                <option value="44"> 44</option>
+                                                <option value="45"> 45</option>
+                                                <option value="46"> 46</option>
+                                                <option value="47"> 47</option>
+                                                <option value="48"> 48</option>
+                                                <option value="49"> 49</option>
+                                                <option value="50">50</option>
+                                                <option value="51"> 51</option>
+                                                <option value="52"> 52</option>
+                                                <option value="53"> 53</option>
+                                                <option value="54"> 54</option>
+                                                <option value="55"> 55</option>
+                                                <option value="56"> 56</option>
+                                                <option value="57"> 57</option>
+                                                <option value="58"> 58</option>
+                                                <option value="59"> 59</option>
+                                            </select>
+                                            <div class="tanni">秒</div>
+                                            <select id="mokuhyoTimeSeccondSelect" class="tanni">
+                                                <option value="0"> 0</option>
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                                <option value="3"> 3</option>
+                                                <option value="4"> 4</option>
+                                                <option value="5"> 5</option>
+                                                <option value="6"> 6</option>
+                                                <option value="7"> 7</option>
+                                                <option value="8"> 8</option>
+                                                <option value="9"> 9</option>
+                                                <option value="10">10</option>
+                                                <option value="11"> 11</option>
+                                                <option value="12"> 12</option>
+                                                <option value="13"> 13</option>
+                                                <option value="14"> 14</option>
+                                                <option value="15"> 15</option>
+                                                <option value="16"> 16</option>
+                                                <option value="17"> 17</option>
+                                                <option value="18"> 18</option>
+                                                <option value="19"> 19</option>
+                                                <option value="20">20</option>
+                                                <option value="21"> 21</option>
+                                                <option value="22"> 22</option>
+                                                <option value="23"> 23</option>
+                                                <option value="24"> 24</option>
+                                                <option value="25"> 25</option>
+                                                <option value="26"> 26</option>
+                                                <option value="27"> 27</option>
+                                                <option value="28"> 28</option>
+                                                <option value="29"> 29</option>
+                                                <option value="30">30</option>
+                                                <option value="31"> 31</option>
+                                                <option value="32"> 32</option>
+                                                <option value="33"> 33</option>
+                                                <option value="34"> 34</option>
+                                                <option value="35"> 35</option>
+                                                <option value="36"> 36</option>
+                                                <option value="37"> 37</option>
+                                                <option value="38"> 38</option>
+                                                <option value="39"> 39</option>
+                                                <option value="40">40</option>
+                                                <option value="41"> 41</option>
+                                                <option value="42"> 42</option>
+                                                <option value="43"> 43</option>
+                                                <option value="44"> 44</option>
+                                                <option value="45"> 45</option>
+                                                <option value="46"> 46</option>
+                                                <option value="47"> 47</option>
+                                                <option value="48"> 48</option>
+                                                <option value="49"> 49</option>
+                                                <option value="50">50</option>
+                                                <option value="51"> 51</option>
+                                                <option value="52"> 52</option>
+                                                <option value="53"> 53</option>
+                                                <option value="54"> 54</option>
+                                                <option value="55"> 55</option>
+                                                <option value="56"> 56</option>
+                                                <option value="57"> 57</option>
+                                                <option value="58"> 58</option>
+                                                <option value="59"> 59</option>
+                                            </select>
+                                            <div class="tanni">分</div>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                                
+                                <!--
+                                <tr>
+                                    <td class="headerInfoHeader">
+                                        <div>周回数</div>
+                                    </td>
+                                    <td>
+                                        <select id="shuukaisuuSelect">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div>周</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="headerInfoHeader">
+                                        <div>目標ラップ</div>
+                                    </td>
+                                    <td>
+                                        <select id="mokuhyoLapSelect">
+                                            <option value="0"> 0</option>
+                                            <option value="1"> 1</option>
+                                            <option value="2"> 2</option>
+                                            <option value="3"> 3</option>
+                                            <option value="4"> 4</option>
+                                            <option value="5"> 5</option>
+                                            <option value="6"> 6</option>
+                                            <option value="7"> 7</option>
+                                            <option value="8"> 8</option>
+                                            <option value="9"> 9</option>
+                                            <option value="10">10</option>
+                                            <option value="11"> 11</option>
+                                            <option value="12"> 12</option>
+                                            <option value="13"> 13</option>
+                                            <option value="14"> 14</option>
+                                            <option value="15"> 15</option>
+                                            <option value="16"> 16</option>
+                                            <option value="17"> 17</option>
+                                            <option value="18"> 18</option>
+                                            <option value="19"> 19</option>
+                                            <option value="20">20</option>
+                                            <option value="21"> 21</option>
+                                            <option value="22"> 22</option>
+                                            <option value="23"> 23</option>
+                                            <option value="24"> 24</option>
+                                            <option value="25"> 25</option>
+                                            <option value="26"> 26</option>
+                                            <option value="27"> 27</option>
+                                            <option value="28"> 28</option>
+                                            <option value="29"> 29</option>
+                                            <option value="30">30</option>
+                                            <option value="31"> 31</option>
+                                            <option value="32"> 32</option>
+                                            <option value="33"> 33</option>
+                                            <option value="34"> 34</option>
+                                            <option value="35"> 35</option>
+                                            <option value="36"> 36</option>
+                                            <option value="37"> 37</option>
+                                            <option value="38"> 38</option>
+                                            <option value="39"> 39</option>
+                                            <option value="40">40</option>
+                                            <option value="41"> 41</option>
+                                            <option value="42"> 42</option>
+                                            <option value="43"> 43</option>
+                                            <option value="44"> 44</option>
+                                            <option value="45"> 45</option>
+                                            <option value="46"> 46</option>
+                                            <option value="47"> 47</option>
+                                            <option value="48"> 48</option>
+                                            <option value="49"> 49</option>
+                                            <option value="50">50</option>
+                                            <option value="51"> 51</option>
+                                            <option value="52"> 52</option>
+                                            <option value="53"> 53</option>
+                                            <option value="54"> 54</option>
+                                            <option value="55"> 55</option>
+                                            <option value="56"> 56</option>
+                                            <option value="57"> 57</option>
+                                            <option value="58"> 58</option>
+                                            <option value="59"> 59</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div>秒</div>
+                                    </td>
+                                </tr>-->
+                            </table>
+                        </div>
+                    </td>
+                    <td class="ketteiButtonArea"><button id="ketteiButton">決定</button></td>
+                    <td class="startButtonArea" >
+                        <div id="startButtonParentPane">
+                            <button class="startbButton" id="shukaisouStartButton">スタート</button>
+                        </div>
+                    </td>
+                    <td class="resetButtonArea" ><button class="resetButton" id="resetButton">やり直し</button></td>
+                </tr>
+            </table>
+            
+            
+              
+            <table id="dataTable" class="list" cellpadding="5" cellspacing="1" width="100%">
+              <tbody>
+                <tr align="center">
+                  <td width="10%" class="shuukaiHeader" colspan="2">単位（秒）</td>
+                  <td id="header1" class="ttl shuukaiHeader" width="7%">1周目</td>
+                  <td id="header2" class="ttl shuukaiHeader" width="7%">2周目</td>
+                  <td id="header3" class="ttl shuukaiHeader" width="7%">3周目</td>
+                  <td id="header4" class="ttl shuukaiHeader" width="7%">4周目</td>
+                  <td id="header5" class="ttl shuukaiHeader" width="7%">5周目</td>
+                  <td id="header6" class="ttl shuukaiHeader" width="7%">6周目</td>
+                  <td id="header7" class="ttl shuukaiHeader" width="7%">7周目</td>
+                  <td id="header8" class="ttl shuukaiHeader" width="7%">8周目</td>
+                  <td id="header9" class="ttl shuukaiHeader" width="7%">9周目</td>
+                  <td id="header10" class="ttl shuukaiHeader" width="7%">10周目</td>
+                  <td id="header11" class="ttl shuukaiHeader" width="7%">11周目</td>
+                  <td class="info" width="10%">&nbsp;</td>
+                </tr>
+                <!--新形式-->
+                <tr align="center">
+                  <td id="lapHeader" width="10%" colspan="2" class="event ttl recordSize">ラップ</td>
+                  <td id="lap1" class="lap recordSize" width="7%"></td>
+                  <td id="lap2" class="lap recordSize" width="7%"></td>
+                  <td id="lap3" class="lap recordSize" width="7%"></td>
+                  <td id="lap4" class="lap recordSize" width="7%"></td>
+                  <td id="lap5" class="lap recordSize" width="7%"></td>
+                  <td id="lap6" class="lap recordSize" width="7%"></td>
+                  <td id="lap7" class="lap recordSize" width="7%"></td>
+                  <td id="lap8" class="lap recordSize" width="7%"></td>
+                  <td id="lap9" class="lap recordSize" width="7%"></td>
+                  <td id="lap10" class="lap recordSize" width="7%"></td>
+                  <td id="lap11" class="lap recordSize" width="7%"></td>
+                  <td class="info footerLapHeader ttl" width="7%">
+                    <div id="averagePane">
+                        <div >平均</div>
+                        <div id="averageiLap" >0</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr align="center">
+                  <td width="10%" colspan="2" id="timeHeader" class="event ttl recordSize">タイム</td>
+                  <td class="time recordSize" id="time1" width="7%"></td>
+                  <td class="time recordSize" id="time2" width="7%"></td>
+                  <td class="time recordSize" id="time3" width="7%"></td>
+                  <td class="time recordSize" id="time4" width="7%"></td>
+                  <td class="time recordSize" id="time5" width="7%"></td>
+                  <td class="time recordSize" id="time6" width="7%"></td>
+                  <td class="time recordSize" id="time7" width="7%"></td>
+                  <td class="time recordSize" id="time8" width="7%"></td>
+                  <td class="time recordSize" id="time9" width="7%"></td>
+                  <td class="time recordSize" id="time10" width="7%"></td>
+                  <td class="time recordSize" id="time11" width="7%"></td>
+                  <td class="info footerLapHeader ttl" width="7%">
+                    <div id="sumPane">
+                        <div >合計</div>
+                        <div id="sumTime" >0</div>
+                    </div>
+                  </td>
+                </tr>
+                <!--新形式-->
+                
+                <tr align="center" id="graphTr">
+                  <td class="event ttl" width="10%"><div class="mokuhyoTime" id="mokuhyoTimeTitle" > 目標タイム</div>
+                    <div class="mokuhyoTime" id="mokuhyoTime" ></div>
+                    <br>
+                    <div class="mokuhyoLap" >目標ラップ</div>
+                    <div class="mokuhyoLap" id="mokuhyoLap" ></div>
+                    </td>
+                    
+                  <td class="event" width="1%">
+                    
+                    <div id="memoriParent">
+                        <!--
+                        <div>+5</div>
+                        <div>+4</div>
+                        <div>+3</div>
+                        <div>+2</div>
+                        <div>+1</div>
+                        <div>00</div>
+                        <div>-1</div>
+                        <div>-2</div>
+                        <div>-3</div>
+                        <div>-4</div>
+                        <div>-5</div>
+                        -->
+                        
+                        +5<br><br>
+                        +4<br><br>
+                        +3<br><br>
+                        +2<br><br>
+                        +1<br><br>
+                        00<br><br>
+                        -1<br><br>
+                        -2<br><br>
+                        -3<br><br>
+                        -4<br><br>
+                        -5
+                    </div>
+                  </td>
+                  <!--<td class="event" height="430" colspan="10"><canvas id="graph"></canvas></td>-->
+                  <td class="event" height="400" colspan="11">
+                      <canvas id="graph"></canvas>
+                  </td>
+                  <td id="sumKyoriHeaderTd">
+                      <div class="headerHeader">距離</div>
+                      <div class="headerHeaderData" id="sumKyori">-m</div>
+                  </td>
+                    <!--
+                  <td class="info" width="10%"><div class="timeinfo">目標ラップ</div>
+                    <div id="mokuhyoLap" class="timenumber"></div>
+                    <br>
+                    <div class="timeinfo"> 目標タイム</div>
+                    <div id="mokuhyoTime" class="timenumber"></div></td>-->
+                </tr>
+                    
+                  
+                <!--元祖型  
+                <tr align="center">
+                  <td id="lapHeader" width="10%" colspan="2" class="event ttl recordSize">ラップ</td>
+                  <td id="lap1" class="lap recordSize" width="7%"></td>
+                  <td id="lap2" class="lap recordSize" width="7%"></td>
+                  <td id="lap3" class="lap recordSize" width="7%"></td>
+                  <td id="lap4" class="lap recordSize" width="7%"></td>
+                  <td id="lap5" class="lap recordSize" width="7%"></td>
+                  <td id="lap6" class="lap recordSize" width="7%"></td>
+                  <td id="lap7" class="lap recordSize" width="7%"></td>
+                  <td id="lap8" class="lap recordSize" width="7%"></td>
+                  <td id="lap9" class="lap recordSize" width="7%"></td>
+                  <td id="lap10" class="lap recordSize" width="7%"></td>
+                  <td id="lap11" class="lap recordSize" width="7%"></td>
+                  <td class="info footerLapHeader ttl" width="7%">
+                    <div id="averagePane">
+                        <div >平均</div>
+                        <div id="averageiLap" >0</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr align="center">
+                  <td width="10%" colspan="2" id="timeHeader" class="event ttl recordSize">タイム</td>
+                  <td class="time recordSize" id="time1" width="7%"></td>
+                  <td class="time recordSize" id="time2" width="7%"></td>
+                  <td class="time recordSize" id="time3" width="7%"></td>
+                  <td class="time recordSize" id="time4" width="7%"></td>
+                  <td class="time recordSize" id="time5" width="7%"></td>
+                  <td class="time recordSize" id="time6" width="7%"></td>
+                  <td class="time recordSize" id="time7" width="7%"></td>
+                  <td class="time recordSize" id="time8" width="7%"></td>
+                  <td class="time recordSize" id="time9" width="7%"></td>
+                  <td class="time recordSize" id="time10" width="7%"></td>
+                  <td class="time recordSize" id="time11" width="7%"></td>
+                  <td class="info footerLapHeader ttl" width="7%">
+                    <div id="sumPane">
+                        <div >合計</div>
+                        <div id="sumTime" >0</div>
+                    </div>
+                  </td>
+                </tr>
+                -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+  <div id="startButtonInvalid" class="modal-content" >
+      <div id="riyuu">決定ボタンを押してください</div>
+  </div>
+  -->
+</div>
+</body>
+</html>

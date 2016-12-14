@@ -1,0 +1,85 @@
+/*検索*/
+
+#largeCategory,
+#middleCategory {
+    width: 90px;
+    font-size: 15px;
+}
+
+#keyword {
+    width: 300px;
+    font-size: 15px;
+}
+
+#searchMemo {
+    margin-left: 5px;
+    font-size: 0.8rem;
+    vertical-align: bottom;
+}
+
+#button_search {
+    margin-left: 30px;
+}
+
+
+/*結果表示*/
+
+.boxView {
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 80%;
+}
+
+.boxView tbody tr {
+    cursor: pointer;
+}
+
+.boxView td {
+    padding: 9px 12px;
+}
+
+.boxView th:nth-child(1),
+.boxView td:nth-child(1) {
+    width: 30%;
+}
+
+.boxView th:nth-child(2),
+.boxView td:nth-child(2) {
+    width: 20%;
+}
+
+.boxView th:nth-child(3),
+.boxView td:nth-child(3) {
+    width: 50%;
+}
+
+
+/*dialogタイトルバー*/
+
+#ui-id-1 {
+    display: none;
+}
+
+
+/*プレビュー*/
+
+#chiezouText h1 {
+    padding: 8px 0 0 13px;
+    font-size: 2rem;
+}
+
+#naiyouText,
+#geninText,
+#taishoText {
+    padding: 3px 5px 8px 5px;
+    font-size: 12pt;
+    line-height: 1.5;
+    letter-spacing: 0.8pt;
+    min-height: 50px;
+}
+
+#genin {
+    border-top: solid 1px #c6e3f0;
+    border-bottom: solid 1px #c6e3f0;
+}

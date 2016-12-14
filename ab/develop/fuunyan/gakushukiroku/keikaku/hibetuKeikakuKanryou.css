@@ -1,0 +1,69 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 5vh;
+}
+
+.koumoku {
+    margin-bottom: 5vh;
+}
+
+.buttonStyle {
+    width: 70vw;
+    font-size: 5vw;
+}
+
+.contentArea {
+    width : 80vw;
+    margin: auto;
+    background-color: azure;
+    border-style: solid;
+}
+
+.koumokuSpan {
+    margin: 2vw;
+    border-style: solid;
+    background-color: white;
+}
+
+.kamokuSpan {
+    width: 15vw;
+}
+
+.hourSpan {
+    width: 15vw;
+}
+
+.kyouzaiSpan {
+    width: 25vw;
+    margin-top: 0vw;
+}
+
+.pageSpan {
+    width: 15vw;
+    margin-top: 0vw;
+}
+
+
+
+.contentKoumoku {
+    margin-bottom: 1vh;
+}
+
+span {
+    font-size: 4vw;
+}
+
+li * {
+    font-size: 3vw;
+}
+
+li {
+    font-size: 3vw;
+}
+
+.breadcrumb > li + li:before {
+  content: ">";
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <meta charset="utf-8">
+        <title>動画再生</title>
+
+        <style>
+            .lists {
+                width: 520px;
+                margin: 20px 0;
+            }
+            .lists li {
+                display: inline-block;
+                width: 30%;
+            }
+            .lists li a {
+                display: block;
+                text-align: center;
+                background-color: #4169E1;
+                color: white;
+                padding: 10px;
+            }
+            .lists li a:hover {
+                background-color: #6495ED;
+            }
+        </style>
+    </head>
+
+    <body>
+       <video id="video" preload="auto" controls autobuffer width="520px" height="auto">
+            <source src="../movie/test.mp4" type="video/mp4">
+            <p>このブラウザは動画再生に対応していません</p>
+        </video>
+
+        <div class="lists">
+            <ul>
+                <li><a onclick="skipMovie(0)">最初</a></li>
+                <li><a onclick="skipMovie(7)">test1</a></li>
+                <li><a onclick="skipMovie(12)">test2</a></li>
+            </ul>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        //videoオブジェクトの取得
+        var media = document.getElementById("video");
+
+        function skipMovie(sec) {
+            media.currentTime = sec;
+            media.play();
+        }
+    </script>
+</html>

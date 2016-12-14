@@ -1,0 +1,386 @@
+html,
+body,
+div,
+ul,
+ol,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    display: block;
+    zoom: 1;
+}
+
+html,
+body {}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(../common/images/bg_sky.jpg);
+    background-position: left bottom;
+    background-repeat: repeat-x;
+    background-color: #8fcbff;
+}
+
+table {
+    border-spacing: 0;
+    /*    border-color: transparent;*/
+    border-collapse: collapse;
+}
+
+#questionareArea {
+    position: absolute;
+    top: 150px;
+    left: 300px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.container_input {
+    position: absolute;
+    width: 1235px;
+    height: 617px;
+    margin: auto;
+    top: 5px;
+    right: 0px;
+    bottom: auto;
+    left: 0px;
+    /*background-image: url(../common/images/binder.png);*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#container_confirm {
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    top: 40px;
+    right: 0px;
+    bottom: auto;
+    left: 0px;
+    background-image: url(../common/images/whiteboard.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#img_modoru {
+    position: absolute;
+    right: 215px;
+    top: 600px;
+}
+
+
+/*
+    #img_kakunin {
+*/
+
+#shitsumon {
+    position: absolute;
+    margin: auto;
+    width: 1000px;
+    top: 150px;
+    right: 0;
+    bottom: 0;
+    left: 45px;
+    color: #333;
+    font-size: 18pt;
+}
+
+#shitsumon_kakunin {
+    position: absolute;
+    padding-top: 110px;
+    padding-left: 70px;
+    color: #777;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+table.shitsumon {
+    line-height: 1.4em;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+table.shitsumon td {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0px;
+    border-bottom: solid 1px #b7dbff;
+    padding-left: 3px;
+}
+
+table.shitsumon_kakunin {
+    line-height: 2em;
+    width: 850px;
+}
+
+table.shitsumon_kakunin td {
+    border: solid 1px #b7dbff;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+input[type=text] {
+    width: 200px;
+    height: 24px;
+    font-size: 24px;
+    position: relative;
+}
+
+select {
+    width: 80px;
+    height: 28px;
+    position: relative;
+}
+
+
+/*スクロール用*/
+
+thead.scrollHead,
+tbody.scrollBody {
+    /*display:block;*/
+}
+
+tbody.scrollBody {
+    overflow-y: scroll;
+    /*height:360px;*/
+}
+
+
+/* モーダルコンテンツ */
+
+.modal-content {
+    position: fixed;
+    display: none;
+    z-index: 2;
+    width: auto;
+    margin: 0;
+    padding: 15px 20px;
+    border: 6px solid #36C;
+    background: #fff;
+}
+
+.modal-content p {
+    margin: 0;
+    padding: 0;
+}
+
+.modal-overlay {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-open {
+    color: #00f;
+}
+
+.modal-open:hover {
+    cursor: pointer;
+    color: #f00;
+}
+
+.modal-close {
+    color: #00f;
+}
+
+.modal-close:hover {
+    cursor: pointer;
+    color: #f00;
+}
+
+#modalContents_kakunin {
+    width: auto;
+    height: auto;
+}
+
+.img {
+    text-align: center;
+}
+
+#modalContents_kakunin p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #36C;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+}
+
+p.error {
+    font-size: 16px;
+    color: #ff0000;
+    line-height: 1.5em;
+    padding-bottom: 10px;
+}
+
+
+/*
+select {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #999;
+    background: #eee;
+}
+*/
+
+select {
+    width: 130px;
+    height: 50px;
+    font-size: 23pt;
+    border: 1px solid #999;
+    background: #eee;
+    margin-left: 20px;
+}
+
+input {
+    padding: 5px;
+    border: 1px solid #999;
+    width: 27px;
+    height: 27px;
+    margin-left: 30px;
+}
+
+hr {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0: border-top: 1px dashed #bbb;
+}
+
+.itemBox {
+    margin: 5px auto;
+}
+
+.itemName {
+    display: inline-block;
+    width: 100px;
+}
+
+.kakunin {
+    font-size: 14px;
+    width: 120px;
+    padding: 5px;
+    height: 20px;
+    display: inline-block;
+    border: solid 1px #ccc;
+}
+
+.itemInput {
+    width: 140px;
+}
+
+.modal-content hr {
+    margin: 30px 0px;
+}
+
+#questionBox_prev {
+    transform: scale(0.9);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 16px;
+    height: 90%;
+    border: 4px ridge #46a0e2;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+
+#questionBox_prev .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    background-color: yellow;
+}
+
+#questionBox_prev .container_input {
+    top: 15px;
+    margin: 0 auto;
+}
+
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+    font-size: 12px;
+}
+
+.bbtn {
+    width: 100px !important;
+    font-size: 24px !important;
+}
+
+#shitsumon td {
+    padding: 10px 0;
+    letter-spacing: 0.2em;
+}
+
+input:checked + .label {
+    color: #3d3dff;
+}
+
+#img_tsugi {
+    position: absolute;
+    left: 1085px;
+    top: 40px;
+}
+
+#img_modoru {
+    position: absolute;
+    left: 970px;
+    top: 40px;
+}
+
+table.shitsumon td:nth-child(1) {
+    width: 50%;
+}
+
+#checkText {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    color: #06c;
+    font-weight: bold;
+    font-size: 30pt;
+    text-align: center;
+}
+
+.alert {
+    background-color: #ffedf4;
+}
+
+#student #img_tsugi::after {
+    /*commonに記述あり（位置がずれるため追加。文言の違いでずれる？）*/
+    transform: translate(37px, -4px) !important;
+}
+
+/*
+@media print{
+    #printButton {
+        visibility: collapse;
+    }
+    
+    #student {
+        transform-origin: top left;
+        transform: translate(850px,0px) rotate(90deg);
+    }
+    
+}
+*/

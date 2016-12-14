@@ -1,0 +1,418 @@
+#contents {
+    height: 555px;
+}
+
+#headerImg1 {
+    position: absolute;
+    width: 90px;
+    left: 12px;
+    top: 9px;
+}
+
+#headerImg2 {
+    position: absolute;
+    width: 120px;
+    right: 120px;
+/*    top: 20px; */
+    top: 4px;
+    z-index: 1;
+}
+
+
+/*戻る・ログアウトボタン*/
+
+#headImg {
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    width: 120px;
+    height: 25px;
+    text-align: center;
+}
+
+#headerInfo {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 130px;
+}
+
+#headerInfo select:nth-child(6) {
+    width: 135px;
+}
+
+#reportTitle {
+    color: #233b6b;
+    font-size: 1.2em;
+    font-weight: bolder;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+/*
+#menuTab {
+    height: 28px;
+    padding-top: 5px;
+    background-image: url(../img/back_01.png);
+    background-repeat: repeat;
+}
+
+#menuTab img {
+    float: left;
+}
+*/
+
+#frmSubmitButton,
+#menuTab,
+#reportView {
+    position: relative;
+    /*    background-color: #FFFFFF;*/
+}
+
+.reportContent {
+/*    position: absolute; */
+    position: relative;
+    width: 1332px;
+    height: 515px;
+    margin: 0px auto;
+    border: 4px solid #287AD8;
+    background-color: #FFFFFF;
+    /*    overflow-y: auto;*/
+}
+
+#reportView .itemSelect {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#reportView p {
+    height: 50px;
+    overflow: auto;
+}
+
+table {
+    /*    width: 100%;*/
+    /*    overflow-y: scroll;*/
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 1px solid #C0C0C0;
+}
+
+thead {
+    color: #fefefe;
+    background-image: url(../img/back_01.png);
+    background-repeat: repeat;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #E0E0E0;
+}
+
+
+/* 送信ボタン・日付範囲セレクト */
+
+#dispYearDate {
+    margin-left: 20px;
+}
+
+#dispYear {
+    position: absolute;
+    top: 10px;
+    left: 1180px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: gray;
+    z-index: 2;
+}
+
+#dispMonth {
+    position: absolute;
+    top: 10px;
+    left: 1225px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: gray;
+    z-index: 2;
+}
+
+#nextMonthButton {
+    position: absolute;
+    top: 8px;
+    left: 1250px;
+}
+
+#prevMonthButton {
+    position: absolute;
+    top: 8px;
+    left: 1105px;
+}
+
+#frmSubmitButton {
+    position: absolute;
+    top: 2px;
+/*    left: 900px; */
+    left: 980px;
+}
+
+
+/*スクロール時にテーブルタイトルを固定*/
+
+.tableHeader {
+    width: 100%;
+    height: 20px;
+}
+
+.tableBody {
+    width: 100%;
+    height: 495px;
+    overflow-y: scroll;
+}
+
+
+/* テーブルスタイル共通指定 */
+
+col {
+    width: 100px;
+}
+
+.dateCol {
+    width: 120px;
+}
+
+.schoolCol {
+    width: 135px;
+}
+
+.scrollCol {
+    width: 17px;
+}
+
+/* シフト入力テーブルスタイル */
+#inputWorkShiftView .dateCol {
+    width: 150px;
+}
+#inputWorkShiftView .amCol {
+    width: 350px;
+}
+#inputWorkShiftView .pmCol {
+    width: 350px;
+}
+#inputWorkShiftView .areaCol {
+    width: 100px;
+}
+#inputWorkShiftView .schooltypeCol {
+    width: 100px;
+}
+#inputWorkShiftView .schoolCol {
+    width: 150px;
+}
+#inputWorkShiftView .scrollCol {
+    width: 17px;
+}
+
+/* 業務報告テーブルスタイル */
+
+#inputReportView col {
+    width: 130px;
+}
+
+#inputReportView .scrollCol {
+    width: 17px;
+}
+
+#inputReportView .itemCol {
+    width: 210px;
+}
+
+#inputReportView .unitCol {
+    width: 340px;
+}
+
+
+/* ICT活用授業報告テーブルスタイル */
+
+#ictReportView .purposeCol {
+    width: 140px;
+}
+
+#ictReportView .equipmentCol {
+    width: 140px;
+}
+
+#ictReportView .appliCol {
+    width: 234px;
+}
+
+
+/* 要望トラブル報告テーブルスタイル */
+
+#demandReportView col {
+    width: 130px;
+}
+
+#demandReportView .scrollCol {
+    width: 17px;
+}
+
+#demandReportView .equipmentCol {
+    width: 130px;
+}
+
+#demandReportView .appliCol {
+    width: 160px;
+}
+
+#demandReportView .souceCol {
+    width: 160px;
+}
+
+#demandReportView .memoCol {
+    width: 474px;
+}
+
+
+/* 業務報告一覧テーブルスタイル */
+
+#reportListView col {
+    width: 120px;
+}
+
+#reportListView .scrollCol {
+    width: 17px;
+}
+
+#reportListView .unitCol {
+    width: 234px;
+}
+
+
+/* ICT活用授業報告一覧テーブルスタイル */
+
+#ictListView .datelCol {
+    width: 120px;
+}
+
+#ictListView .schoollCol {
+    width: 135px;
+}
+
+#ictListView .timetableCol {
+    width: 69px;
+}
+
+#ictListView .locationCol {
+    width: 70px;
+}
+
+#ictListView .gradeCol {
+    width: 50px;
+}
+
+#ictListView .classCol {
+    width: 50px;
+}
+
+#ictListView .suportCol {
+    width: 70px;
+}
+
+#ictListView .purposeCol {
+    width: 150px;
+}
+
+#ictListView .equipmentCol {
+    width: 150px;
+}
+
+#ictListView .appliCol {
+    width: 150px;
+}
+
+
+/* 要望トラブル報告一覧テーブルスタイル */
+
+#demandListView .datelCol {
+    width: 120px;
+}
+
+#demandListView .schoollCol {
+    width: 135px;
+}
+
+#demandListView .equipmentCol {
+    width: 120px;
+}
+
+#demandListView .appliCol {
+    width: 150px;
+}
+
+#demandListView .statusCol {
+    width: 60px;
+}
+
+#demandListView .souceCol {
+    width: 140px;
+}
+
+#demandListView .memoCol {
+    width: 154px;
+}
+
+#demandListView .checkCol {
+    width: 80px;
+}
+
+#demandListView .commentCol {
+    width: 155px;
+}
+
+
+/* 提出状況テーブルスタイル */
+
+#reportStateView .dateCol {
+    width: 110px;
+}
+
+#reportStateView .dowCol {
+    width: 50px;
+}
+
+#reportStateView td:nth-child(2),
+#reportStateView td:nth-child(5),
+#reportStateView td:nth-child(6),
+#reportStateView td:nth-child(7) {
+    text-align: center;
+}
+
+#reportStateView .schoolCol {
+    width: 130px;
+}
+
+#reportStateView .userCol {
+    width: 100px;
+}
+
+#reportStateView .reportCol {
+    width: 110px;
+}
+
+#reportStateView .ictCol {
+    width: 160px;
+}
+
+#reportStateView .demandCol {
+    width: 170px;
+}
+
+#reportStateView .spaceCol {
+    width: 484px;
+}

@@ -1,0 +1,110 @@
+html,
+body,
+div,
+ul,
+ol,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+html,
+body {
+    height: 100%;
+    letter-spacing: 1px;
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI', 'メイリオ', Verdana, 'ＭＳ Ｐゴシック', sans-serif;
+    font-size: 10pt;
+    background-image: url(../img/back_01.png);
+    background-repeat: repeat;
+}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 1360px;
+    height: 670px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0px 0px 10px #333000;
+}
+
+#contents {
+    position: relative;
+    margin: 0px auto;
+    width: 1340px;
+    height: 610px;
+}
+
+#header {
+    position: relative;
+    height: 80px;
+}
+
+#footer {
+    position: relative;
+    padding: 5px 0px;
+    text-align: center;
+}
+
+/******************************
+ * bootstrap
+ ******************************/
+#tabtype1 a {
+    color: #fff;
+    background-color: #5882fa;
+    border-color: #c0c0c0;
+}
+
+#tabtype1 a:hover {
+	color: #d7df01;
+    background-color: #5882fa;
+    border-color: #c0c0c0;
+}
+
+#tabtype1 a:focus {
+    color: #555;
+    background-color: #81daf5;
+    border-color: #ddd;
+}
+
+#tabtype2 a {
+    color: #fff;
+	background-color: #31b404;
+    border-color: #c0c0c0;
+}
+
+#tabtype2 a:hover {
+    color: #d7df01;
+    background-color: #31b404;
+    border-color: #c0c0c0;
+}
+
+#tabtype2 a:focus {
+    color: #555;
+    background-color: #a5df00;
+    border-color: #ddd;
+}
+
+#tabtype3 a {
+    color: #fff;
+    background-color: #DBA901;
+    border-color: #c0c0c0;
+}
+
+#tabtype3 a:hover {
+    color: #d7df01;
+    background-color: #DBA901;
+    border-color: #c0c0c0;
+}
+
+#tabtype3 a:focus {
+    color: #555;
+    background-color: #F5D0A9;
+    border-color: #ddd;
+}

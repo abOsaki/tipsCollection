@@ -1,0 +1,66 @@
+html,
+body {
+    background-image: url(./../images/back_01.jpg);
+}
+
+.ui-dialog-title {
+    color: #04AD57;
+}
+
+
+/*グラデーションはわずかに濃い色から薄い色へ*/
+
+.contentsButton,
+.ui-button {
+    background: #20A64F !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#20A64F), to(#68E634)) !important;
+    background: -webkit-linear-gradient(top, #20A64F, #68E634) !important;
+    background: -moz-linear-gradient(top, #20A64F, #68E634) !important;
+    background: -ms-linear-gradient(top, #20A64F, #68E634) !important;
+    background: -o-linear-gradient(top, #20A64F, #68E634) !important;
+    background: linear-gradient(top, #20A64F, #68E634) !important;
+}
+
+
+/*マウスオーバー時は薄い背景に濃い文字*/
+
+.contentsButton:hover,
+.ui-button:hover {
+    background: #20A64F !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#D2FFD2), to(#64FF64)) !important;
+    background: -webkit-linear-gradient(top, #D2FFD2, #64FF64) !important;
+    background: -moz-linear-gradient(top, #D2FFD2, #64FF64) !important;
+    background: -ms-linear-gradient(top, #D2FFD2, #64FF64) !important;
+    background: -o-linear-gradient(top, #D2FFD2, #64FF64) !important;
+    color: #177939 !important;
+}
+
+
+/*コンテンツ内モーダルウィンドウ共通設定*/
+
+.ui-dialog {
+    border: 6px solid #04AD57;
+}
+
+
+/* 表示エリア */
+
+#viewArea {
+    /* baseinfoのheight分下げる */
+    top: 40px;
+    border: 4px ridge #31B404;
+}
+
+.tableHead {
+    background-color: #F5D7BC;
+    padding-right: 17px;
+}
+
+.tHeadView {
+    background-color: #F5D7BC;
+    color: #272727;
+}
+
+.tBodyView tr:nth-child(even) {
+    background-color: #ebebeb;
+}

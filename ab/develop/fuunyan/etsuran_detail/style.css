@@ -1,0 +1,726 @@
+/* Chromeのuser agentをリセット(table)*/
+
+table {
+    border-spacing: 0;
+    border-color: transparent;
+    border-collapse: collapse;
+}
+
+.table>thead>tr>th {
+    border-bottom-width: 1px;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: transparent;
+}
+
+html,
+body,
+div,
+ul,
+ol,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+    left: 0px;
+    font-size: 10pt;
+}
+
+html,
+body {
+    background-image: url(../common/images/bg_green.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+    background-color: #a2d8fe;
+}
+
+header{
+padding:0 25px;    
+}
+
+#container {
+    margin: auto;
+    width: 100%;
+    height: 99%;
+}
+
+#header {
+    position: relative;
+    /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFF;
+    padding-top: 10px;
+    width: 600px;
+    float: left;
+    height: 40px;
+}
+
+#header span {
+    /*font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #06C;
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+#contents {
+    position: relative;
+    margin: auto;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    min-width:1300px;
+}
+
+#contents {
+    /*　コンテンツ */
+    position: relative;
+}
+
+
+/*20160413_ak変更*/
+
+#navigation_tab {
+    margin-top: 10px;
+    font-size: 0;
+}
+
+#navigation_tab img {
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+    box-sizing: padding-box;
+}
+
+#quesInfo {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+}
+
+#averageFilter {
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+
+#menu_non {
+    position: relative;
+    height: 10px;
+}
+
+.sp {
+    width: 295px;
+}
+
+#basicInfo {
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 50px;
+    background-color: #ffffff;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4) inset;
+    margin: 0px auto;
+    background-repeat: no-repeat;
+    background-position: 15px;
+}
+
+#basicInfo div {
+    margin: 0px 0px 0pc 15px;
+    display: inline;
+    font-size: 16px;
+    /*font-family: "ＭＳ ゴシック", "MS Gothic", "Osaka－等幅", Osaka-mono, monospace;*/
+}
+
+#grade {
+    width: 80px;
+}
+
+#curriculum {
+    width: 100px;
+}
+
+#unitSelect {
+    width: 100px;
+}
+
+#quesTitle {
+    width: 220px;
+}
+
+#quesAuthor {
+    width: 110px;
+}
+
+#questionBox {
+    font-size: 16px;
+    /*    min-height: 800px;*/
+    border: 4px ridge #46a0e2;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+
+/*普通のボタン*/
+
+#img_hyouji {}
+
+#img_csv {}
+
+
+/*小さいボタン*/
+
+#img_menu {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+#img_modoru {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+#img_print {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+
+/*ログアウト追加*/
+
+#img_logout {
+    float: right;
+    margin-top: 10px;
+    margin-right: 6px;
+    top: 15px;
+}
+
+
+/*検索情報*/
+
+#group {
+    width: 70px;
+}
+
+#school {
+    width: 100px;
+}
+
+#grade {
+    width: 70px;
+}
+
+#curriculum {
+    width: 70px;
+}
+
+#unit {
+    width: 100px;
+}
+
+#title {
+    width: 220px;
+}
+
+#author {
+    width: 110px;
+}
+
+td {
+    font-size: 15px;
+    /*font-family: "メイリオ", "Hiragino Kaku Gothic Pro", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    /*height: 40px;*/
+}
+
+th {
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(189,215,238);
+    color: #0f0f0f;
+    height: 40px;
+/*    padding-left: 5px;
+    padding-right: 5px;*/
+}
+
+.allTable th {
+    font-size: 14px;
+    text-align: center;
+    background-color: rgb(189,215,238);
+    color: #0f0f0f;
+    cursor: pointer;
+}
+
+.allTable tbody tr:nth-child(2n) .fill {
+    background: #ededed;
+}
+
+hr {
+    margin: 8px 0;
+    clear: both;
+    height: 0;
+}
+
+ul#editing li {
+    list-style: none;
+    display: inline;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+/*ボタンスタイル*/
+
+#averageFilter input {
+    vertical-align: middle;
+}
+
+
+/*テーブル*/
+
+.tableHeader,
+.tableBody {
+    padding: 30px;
+}
+
+#questionBox {
+    position: relative;
+    height: 96%;
+}
+
+#questionBox > img {
+    position: relative;
+    z-index: 1;
+}
+
+#questionBox h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #32B24F;
+    text-align: center;
+    padding: 5px;
+}
+
+#table01 {
+    padding-top: 10px;
+    /*min-width: px;*/
+    padding-left: 40px;
+}
+
+#table01 table {
+    /*border-collapse: collapse;*/
+    /*margin:10px auto;*/
+}
+
+.tableHeader {
+    /* padding-left: 195px; */
+    /* float: left; */
+/*    position: absolute;
+    top: 64px;
+    left: 261px;*/
+}
+
+.tableHeader tr {
+    height: 25px;
+    font-size: 11pt;
+}
+
+.tableBody {
+    position: absolute;
+    width: 100%;
+    top: 115px;
+    bottom: 0px;
+    overflow-y: scroll;
+}
+
+th,
+td {
+    border: solid 1px #999;
+    border-width: 0 1px 1px 0;
+    text-align: center;
+}
+
+td img {
+    margin: 5px auto 0;
+}
+
+.tableBody tr:nth-child(2n) {
+    background: #ededed;
+}
+
+
+/*選択*/
+
+#img_edit,
+#img_search {
+    display: block;
+    float: right;
+    margin-right: 20px;
+}
+
+#basicInfo div {
+    display: inline-block;
+    margin: 15px 10px;
+}
+
+#btnImg {
+    position: absolute;
+    display: inline-block;
+    top: -5px;
+    left: 900px;
+    margin: 0px;
+    width: 300px;
+}
+
+.hide {
+    display: none;
+}
+
+.allTable {
+    border-collapse: separate;
+    border: 1px solid #999;
+    border-width: 2px;
+/*    -webkit-border-top-left-radius: 25px;
+    -moz-border-top-left-radius: 25px;
+    border-top-left-radius: 25px;
+    -webkit-border-top-right-radius: 25px;
+    -moz-border-top-right-radius: 25px;
+    border-top-right-radius: 25px;*/
+}
+
+.allTable thead tr th:nth-child(1) {
+/*    -webkit-border-top-left-radius: 25px;
+    -moz-border-top-left-radius: 25px;
+    border-top-left-radius: 25px;*/
+}
+
+.allTable thead tr th:nth-last-child(1) {
+/*    -webkit-border-top-right-radius: 25px;
+    -moz-border-top-right-radius: 25px;
+    border-top-right-radius: 25px;*/
+}
+
+.allTable thead tr th,
+.allTable tbody tr td,
+.student thead tr th,
+.student tbody tr td {
+    font-size: 18px;
+    padding:0 5px;
+}
+
+.allTable thead tr th:nth-child(1),
+.student thead tr th:nth-child(1),
+.allTable tbody tr td:nth-child(1),
+.student tbody tr td:nth-child(1) {
+/*    text-align:left;*/
+    white-space: nowrap;
+    border-right-width: 1px;
+}
+
+.allTable tbody tr td:nth-child(1),
+.student tbody tr td:nth-child(1) {
+
+    font-weight: bolder;
+    text-align:center;
+    /*background-color: #e9e9e9;*/
+}
+
+.allTable thead tr th:nth-child(1),
+.student thead tr th:nth-child(1) {
+/*    padding:0 20px;
+    font-weight: bolder;*/
+    /*background-color: #e9e9e9;*/
+}
+
+.allTable thead th{
+    border-bottom-width:3px;
+    border-bottom-style:double;
+}
+
+.allTable .warning {
+/*    background-position: center center;
+    background-image: url(../common/images/warning2.png);
+    background-size: 85% auto;
+    background-repeat: no-repeat;*/
+    text-align:right;
+user-select: none; /* CSS3 */
+-moz-user-select: none; /* Firefox */
+-webkit-user-select: none; /* Safari、Chromeなど */
+-ms-user-select: none; /* IE10かららしい */
+}
+
+.allTable .error {
+/*    background-position: center center;
+    background-image: url(../common/images/error2.png);
+    background-size: 85% auto;
+    background-repeat: no-repeat;*/
+
+    text-align:right;
+user-select: none; /* CSS3 */
+-moz-user-select: none; /* Firefox */
+-webkit-user-select: none; /* Safari、Chromeなど */
+-ms-user-select: none; /* IE10かららしい */
+
+}
+.allTable .nodata {
+    text-align: right;
+user-select: none; /* CSS3 */
+-moz-user-select: none; /* Firefox */
+-webkit-user-select: none; /* Safari、Chromeなど */
+-ms-user-select: none; /* IE10かららしい */
+}
+.allTable .selectarea,
+.allTable .selectarea-all{
+    cursor:pointer;
+}
+
+.allTable .selectarea:hover,
+.allTable .selectarea-all:hover
+{
+    background-color:#ffecc7!important;
+}
+
+
+.red {
+    /*font-weight: bolder;*/
+    color: #FF3100;
+    /*font-size: 16px!important;*/
+    /*    text-shadow: #333 1px 1px 0px, #333 -1px 1px 0px,
+             #333 1px -1px 0px, #333 -1px -1px 0px;*/
+}
+
+.orange {
+    color: #FF3100;
+}
+
+.student {
+    border: 2px solid #999;
+
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.studentWrap {
+    margin-top:30px;
+    padding-left:50px;
+    overflow:auto;
+    height:400px;
+}
+
+#graphBox {
+/*    display: none;
+    padding: 10px 50px;*/
+}
+
+#kakuninBox {}
+
+#outputArea {
+    width: 1300px;
+    height: 88%;
+    overflow: auto;
+}
+
+/*#-ccchart-css-hybrid {
+    display: none;
+}*/
+
+#tagselectArea .tagSelect,
+#sexselectArea .tagSelect {
+    user-select: none;
+    /* CSS3 */
+    -moz-user-select: none;
+    /* Firefox */
+    -webkit-user-select: none;
+    /* Safari、Chromeなど */
+    -ms-user-select: none;
+    /* IE10かららしい */
+    margin: 5px;
+    cursor: pointer;
+}
+
+.gbtn {
+    width: 50px;
+    margin: 1px;
+    font-size: 12px!important;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 3px 5px;
+    color: #fff;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.rbtn-on {
+    width: 50px;
+    margin: 1px;
+    font-size: 12px!important;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 3px 5px;
+    color: #fff;
+    background-color: orange;
+    border-radius: 5px;
+}
+
+.txt {
+    vertical-align: middle;
+}
+
+#grade,
+#class,
+#pMonth,
+#pTitle {
+    vertical-align: middle;
+    font-weight: bold;
+    border: solid 1px #a0a0a0;
+    padding: 3px 3px 0 3px;
+}
+
+#graph,.#-ccchart-css-hybrid{
+    border: 4px ridge #46a0e2;
+    margin: auto;
+    width: 100%;
+}
+
+#averageFilter {
+    display: none;
+}
+
+.allTable thead tr th:nth-child(1),
+.allTable tbody tr td:nth-child(1) {
+}
+/* ツールチップ */
+
+.-ccchart-css-tooltip{ 
+
+    width:300px!important;
+    height:80px!important;
+    padding:20px 20px 0;
+    line-height:200%!important;
+/*background-image: -webkit-linear-gradient(rgba(200, 200, 200, 0.6) 0%, rgba(255, 255, 255, 0.6) 50%);*/
+    background-color:white!important;
+    
+}
+.-ccchart-css-tooltip span{
+      font-size:16px; 
+}
+
+#questionSelector{
+    font-size:18px;
+}
+
+.menuTab {
+    display: inline-block;
+    width: 155px;
+    padding: 7px 3px 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-right: 1px solid #646464;
+    border-bottom: 1px solid #646464;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.blueTab {
+    background-color: #3b8fe7;
+}
+
+.greenTab {
+    background-color: #3ba78c;
+}
+
+.bdb3{
+    border-bottom-width:2px;
+}
+
+.sumnum{
+    text-align:right;
+}
+
+.bdczero{
+    border-bottom-color:rgba(0,0,0,0);
+}
+.bgltblue{
+    /*background-color: rgb(189,215,238);*/
+}
+.bgltred{
+    color:red;
+    font-weight:bolder;
+    /*background-color: rgb(238,189,215);*/
+}
+.bgltyellow{
+    color:#efc114;
+    font-weight:bolder;
+
+    /*background-color: rgb(255,230,153);*/
+}
+
+/*.labelArea{
+    width: 240px;
+    height:600px;
+    float: left;
+    margin-left:30px;
+}*/
+
+.label_studentnum{
+/*    width:200px;
+    font-size:24px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#000;
+    border-radius:20px;
+    margin-bottom:15px;
+
+    border:solid 3px #ccc;*/
+
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+
+
+
+
+
+#dispGraph{
+    cursor:pointer;
+}
+
+.-ccchart-css-arc{
+    cursor:pointer;
+}

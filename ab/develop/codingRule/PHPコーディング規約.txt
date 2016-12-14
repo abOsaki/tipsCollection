@@ -1,0 +1,298 @@
+＊2016年10月からの運用のため、既存のコードは準じていない部分が多々ある可能性が高い
+＊既存のコードが規約に従っていない場合、動作に影響が無い範囲で修正する（無理には修正しない）
+＊基本的にFuelPHPのドキュメント化された最新バージョンのコーディング標準に従う、以下FuelPHP1.7Documentation
+
+============
+ファイル書式
+============
+
+***PHP タグの閉じ方***
+
+PHP のコードだけしか含まないファイルは常に PHP の閉じタグ (?>) を省略します。 これは見つけにくい「死の白い画面」を避けるためです。
+
+***インデント***
+
+すべてのインデントはスペースではなくタブを使用すべきです。
+しかし、インデントをした後はタブではなくスペースを使用して整形します。
+        // 2 つのタブでインデント
+        $var       = 'something';  // タブと整形された値とコメントでインデント
+        $variable  = 'else';       // スペースを使用して上下をインデント
+
+***行の末尾***
+
+行の末尾は Unix 形式の LF にします。
+
+***ファイル名***
+
+すべてのファイル名は、すべて小文字にしなければなりません。例外はありません。
+
+***エンコーディング***
+
+ファイルは UTF-8 で保存し、BOM は使用しません。
+
+
+========
+命名規則
+========
+
+***名前空間***
+
+コアクラスはすべて Fuel\Core というネームスペースにします。
+
+namespace Fuel\Core;
+
+***クラス***
+
+クラス名は単語の境界にアンダースコアを使用し、クラス名の各単語は大文字で始めます。 しかし、アンダースコアはオートロードの際にディレクトリの境界に使用されていいます。 キャメルケースの使用は避けてください。しかし、サブディレクトリにクラスを置くことが意味がない場合には 避けることができません。
+
+namespace Fuel\Core;
+
+class Session
+{
+
+}
+ namespace Fuel\Core;
+
+class Session_Cookie extends Session_Driver
+{
+
+}
+
+これは、次のようなファイルパスになります:
+
+core/classes/session.php
+core/classes/session/cookie.php
+
+***メソッド***
+
+クラス名同様、メソッド名は単語の境界でキャメルケースではなくアンダースコアを使用します。 メソッド名はすべて小文字です。スコープ (public, protected, private) は常に含めます。
+名前の１文字目にアンダースコアをを使用できます。これはメソッドが protected/private であることを明記したり、 public にする必要があると考えられることを示すためです。
+
+class Session
+{
+
+    public static function get_flash($name, $data)
+    {
+        // ここにコードを記述する
+    }
+
+}
+ class View
+{
+
+    // グローバルに見せる配列データ
+    protected static $_global_data = array();
+
+    protected static function capture($view_filename, array $view_data)
+    {
+        // ここにコードを記述する
+    }
+
+}
+
+***変数***
+
+変数名は簡潔にし、小文字とアンダースコアだけを含むようにします。 ループイテレータは短く、なるべく単一文字にするようにします。
+
+$first_name
+$buffer
+for ($i = 0; $i < $max; $i++)
+
+***定数***
+
+定数は全て大文字にすること以外は変数と同じガイドラインに 従います。
+
+MY_CONSTANT
+TEMPLATE_PATH
+TEXT_DEFAULT
+
+==========
+キーワード
+==========
+
+true, false, null, as などのようなキーワードは、すべて小文字にします。大文字は定数のために予約されているためです。 同じことが array, integer, string のようなプリミティブ型にも当てはまります。
+
+$var = true;
+$var = false;
+$var = null;
+foreach ($array as $key => $value)
+public function my_function(array $array)
+function my_function($arg = null)
+
+========
+制御構造
+========
+
+if, for, foreach, while, switch のような制御に関するキーワードは、 パラメータや引数のリストまたは値にスペースを続けます。ブレースは新しい行にします。 break は case と同じインデントにします。
+
+if ($arg === true)
+{
+    //ここで何かする
+}
+elseif ($arg === null)
+{
+    //ここで何か別のことをする
+}
+else
+{
+    //ここで何かするキャッチオール
+}
+
+foreach ($array as $key => $value)
+{
+    //ここでループする
+}
+
+for ($i = 0; $i < $max; $i++)
+{
+    //loop here
+}
+
+while ($i < $max)
+{
+    //ここでループする
+}
+
+do
+{
+    //ここでループする
+}
+while ($i < $max)
+
+switch ($var)
+{
+    case 'value1':
+        //ここで何かする
+    break;
+    default :
+        //ここで何かする
+    break;
+}
+
+***もう 1 つの if 文***
+
+ある場合において、完全な if 文が単純な条件や関数呼び出しにしてはコードが多すぎることがあります。 このような場合、 より短い論理演算子構文を使用することで、PHP の実行ロジックを使用できます。 and を使用すると、最初の部分が true である場合のみ２番目の部分が実行されます。 or を使用すると、最初の部分が false である場合のみ２番目の部分が実行されます。
+if や else が必要な場合は使用しないでください。単一の条件文のような場合にのみしようしてください。
+
+// if (isset($var)) { Config::set('var', $var); } の代替
+isset($var) and Config::set('var', $var);
+
+// if ( ! isset($var)) { $var = Config::get('var'); } の代替
+isset($var) or $var = Config::get('var');
+
+// これをしてはいけません
+Uri::segment(3) and $var = Uri::segment(3);
+Uri::segment(3) or $var = 'default';
+
+// こちらのほうがいいです:
+if (Uri::segment(3))
+{
+    $var = Uri::segment(3);
+}
+else
+{
+    $var = 'default';
+}
+
+// またはこうします:
+$var = Uri::segment(3) ? Uri::segment(3) : 'default';
+// または実際にはこうします:
+$var = Uri::segment(3) ?: 'default';
+
+================
+比較と論理演算子
+================
+
+関数/メソッドの返値や変数を比較するには型に注意します。たとえば、関数が false を返すときに、 この返値を === や !== のような型に注意した演算子を使用して比較します。 さらに and や or を使用することが、&& や || よりも読みやすさの観点から好ましいです。 場合によってはこれを避けることができないこともありますので、必要に応じて && や || を使用します。! を使用する場合は、両端にスペースを置きます。
+
+if ($var == false and $other_var != 'some_value')
+if ($var === false or my_function() !== false)
+if ( ! $var)
+
+***クラス/インターフェースの定義***
+
+クラス/インターフェースの定義では次の行に開始ブレースを置きます:
+
+class Session
+{
+
+}
+
+クラスが空の場合、ブレースは定義と同じ行に置きます:
+
+class Empty_Class { }
+
+***関数/メソッド/クロージャの宣言***
+
+関数/メソッド/クロージャの開始ブレースは常に次の行から始め、 構文と同じインデントにします。
+class Session
+{
+
+    public static function get_flash($name, $data)
+    {
+        $closure = function($a, $b)
+        {
+            // クロージャのコードをここに
+        }
+    }
+
+}
+
+***変数***
+
+変数を初期化する際に、1 行に 1 つの変数を宣言します。コードの可読性をあげるために、各変数は別の行にします。 値とコメントは適切に整形します。
+
+$var        = ''; // 1 行に 1 つ
+$other_var  = ''; //  1 行に 1 つ
+
+***ブラケットと丸カッコ***
+
+開始ブラケット/丸カッコの前後にはスペースをいれません。閉じブラケット/丸カッコの前にスペースをいれません。
+
+$array = array(1, 2, 3, 4);
+$array['my_index'] = 'something';
+for ($i = 0; $i < $max; $i++)
+
+***文字列のクォート***
+
+なるべくダブルクォートよりもシングルクォートを使用します。
+
+***連結***
+
+文字列の連結は結合するパーツ間にスペースをいれません。
+
+//yes
+$string = 'my string '.$var.' the rest of my string';
+
+//no
+$string = 'my string ' . $var . ' the rest of my string';
+
+***演算子***
+
+$var = 'something';
+if ($var == 'something') //論理演算子の前後にスペースをいれる
+$var = $some_var + $other_var; //算術演算子の前後にスペースをいれる
+$var++; // 加算演算子の前にスペースをいれない
+++$var; //加算演算子の後にスペースをいれない
+
+***配列のドット表記***
+
+厳密に言えば、コーディング標準ではありませんが、このフレームワークのクラス内やこのドキュメントで多用されていますが、 PHPでの表記として一般的でないため、このフレームワークに不慣れな人を混乱させるかも知れません。
+
+// "always_load.packages = array()" は次のコードの省略表現です:
+array("always_load" => array("packages" => array(...) ) );
+
+この表記は Arr クラスで使われますが、Lang クラス、Config クラスそして Session クラスでも、多次元配列から個々の要素に素早くアクセスするために使われます。
+
+// このような構造の配列がある場合
+$array = array(
+    "always_load" => array(
+        "packages" => array(
+            "orm",
+            "package" => "/my/special/package.php",
+        )
+     )
+);
+
+// 次のコードは "/my/special/package.php" を返します:
+$path = Arr::get($array, 'always_load.packages.package');

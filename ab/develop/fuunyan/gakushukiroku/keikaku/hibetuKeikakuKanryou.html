@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="hibetuKeikakuKanryou.css">
+        <!-- JavaScript読み込み -->
+        <script src="./hibetuKeikakuKanryou.js"></script>
+        <script src="../common/common.js"></script>
+        <script src="../../common/js/common.js"></script>
+        <script src="../../common/js/ccchart.js"></script>
+        
+        <title>学習記録日別学習内容設定完了ページ</title>
+    </head>
+    <body>
+        <div>
+            <ol class="breadcrumb">
+              <li><a href="../menu/">メニュー</a></li>
+              <li><a href="hibetuKeikaku.html">日別計画設定</a></li>
+              <li class="active">日別計画確認</li>
+            </ol>
+        </div>
+        <div id="keikakuTitle" class="text-center topKoumoku koumoku topTextSize">○月×日の計画</div>
+        <div id='contantContainer' >
+            <!--
+            <div id='contentTemplate' class="text-center contentKoumoku">
+                <div class="contentArea">
+                    <span class="kamokuSpan koumokuSpan">国語</span>
+                    <span class="hourSpan koumokuSpan">１</span>
+                    <span>時間</span>
+                    <p></p>
+                    <span class="kyouzaiSpan koumokuSpan">教材１</span>
+                    <span class="pageSpan koumokuSpan">５</span>
+                    <span>ページ</span>
+                </div>
+            </div>
+            <div class="text-center contentKoumoku">
+                <div class="contentArea">
+                    <span class="kamokuSpan koumokuSpan">数学</span>
+                    <span class="hourSpan koumokuSpan">１</span>
+                    <span>時間</span>
+                </div>
+            </div>
+            -->
+        </div>
+        <div class="text-center koumoku">
+            <button type="button" class="btn btn-primary buttonStyle" id="menuButton">メニューへ</button>
+        </div>
+        <div class="text-center koumoku">
+            <button type="button" class="btn btn-warning buttonStyle" id="keikakuButton">次の日の計画を立てる</button>
+        </div>
+    </body>
+</html>

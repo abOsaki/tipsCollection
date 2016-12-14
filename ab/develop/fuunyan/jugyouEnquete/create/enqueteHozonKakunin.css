@@ -1,0 +1,17 @@
+.kakuninTitle {
+    color: blue;
+    font-size: 4vw;
+    margin-top: 10vh;
+}
+
+button {
+    width: 30vw;
+    margin-top: 10vh;
+    font-size: 3vw;
+}
+
+#executeInput {
+    width: 30vw;
+    margin-top: 10vh;
+    font-size: 3vw;
+}

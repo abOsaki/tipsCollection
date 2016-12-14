@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../common/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../common/css/common.css">
+    <link rel="stylesheet" href="./style.css">
+    <!--jquery読み込み-->
+    <script src="../common/js/jquery.min.js"></script>
+    <script src="../common/js/jquery-ui.min.js"></script>
+    <script src="../common/js/datepicker-ja"></script>
+    <script src="../common/js/jqfloat.min.js"></script>
+    <!--JavaScript読み込み-->
+    <script src="../common/js/smartRollover.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./script.js"></script>
+    <title>みまもりふぅーにゃん│質問の検索</title>
+  </head>
+  <body>
+    <!-- コンテナー -->
+    <div id="container">
+      <!-- ヘッダー -->
+      <header class="clearfix">
+        <div id="header">健康・生活観察シートの編集</div>
+        <div id="img_logout" class="fu_admin_button">ログアウト</div>
+        <div id="img_menu" class="fu_admin_button">メニュー</div>
+        <div id="img_modoru" class="fu_admin_button">戻る</div>
+      </header>
+      <!-- コンテンツ -->
+      <div id="contents">
+        <!-- 基本情報 -->
+        <div id="basicInfo">
+          <div>
+            <!-- 目的 -->
+            <!-- <select class="purpose" disabled="disabled"></select> -->種別 
+            <select class="group"></select>学年
+            <select class="grade"></select>タイトル
+            <input type="text" class="title" />
+            <span id="author"></span>
+          </div>
+          <div id="btnImg">
+            <div id="img_search" class="fu_admin_button">検索</div>
+            <div id="img_edit" class="fu_admin_button">編集</div>
+          </div>
+        </div>
+        <div id="questionBox">
+          <div id="areaBox">
+            <div id="kakuninBox">
+              <div id="table01">
+                <div class="tableHeader">
+                <table id="reportListTable">
+                    <thead>
+                      <tr>
+                        <th class="checkCol" style=""></th>
+                        <!-- <th class="purposeCol">目的</th> -->
+                        <th class="groupCol" style="">種別</th>
+                        <th class="gradeCol" style="">学年</th>
+                        <th class="curriculumCol" style="">教科</th>
+                        <th class="titleCol" style="">タイトル</th>
+
+                      <th>実施期間</th>
+                      <th>設定・解除</th>
+                        <th class="dateCol" style="">作成日時</th>
+                        <th class="renewalDateCol" style="">更新日</th>
+                      </tr>
+                    </thead>
+                  <tbody id="educationListBody">
+                      <tr data="1">
+                        <td class="checkCol">&nbsp;
+                          <input type="radio" name="select" class="radioselect" value="1">
+                        </td>
+                        <td class="groupCol">&nbsp;L小学校</td>
+                        <td class="gradeCol">&nbsp;2年</td>
+                        <td class="curriculumCol">&nbsp;その他</td>
+                        <td class="titleCol">&nbsp;春の健康記録【小学校】</td>
+                        <td>
+                          <span>2016/04/27~2016/05/06</span>
+                        </td>
+                        <td><span class="apply">設定</span></td>
+                        <td class="dateCol">&nbsp;2016-04-01</td>
+                        <td class="renewalDateCol">&nbsp;2016-04-25</td>
+                      </tr>
+                      <tr data="26">
+                        <td class="checkCol">&nbsp;
+                          <input type="radio" name="select" class="radioselect" value="26">
+                        </td>
+                        <td class="groupCol">&nbsp;L小学校</td>
+                        <td class="gradeCol">&nbsp;4年</td>
+                        <td class="curriculumCol">&nbsp;その他</td>
+                        <td class="titleCol">&nbsp;春の健康記録【小学校】</td>
+                        <td>
+                          <span>2016/04/27~2016/12/31</span>
+                        </td>
+                        <td><span class="apply">設定</span></td>
+
+                        <td class="dateCol">&nbsp;2016-05-11</td>
+                        <td class="renewalDateCol">&nbsp;2016-05-16</td>
+                      </tr>
+                      <tr data="27">
+                        <td class="checkCol">&nbsp;
+                          <input type="radio" name="select" class="radioselect" value="27">
+                        </td>
+                        <td class="groupCol">&nbsp;L小学校</td>
+                        <td class="gradeCol">&nbsp;5年</td>
+                        <td class="curriculumCol">&nbsp;その他</td>
+                        <td class="titleCol">&nbsp;春の健康記録【小学校】デモ</td>
+                        <td>
+                          <span>2016/04/27~2016/05/06</span>
+                        </td>
+                        <td><span class="apply">設定</span></td>
+
+                        <td class="dateCol">&nbsp;2016-05-11</td>
+                        <td class="renewalDateCol">&nbsp;2016-05-23</td>
+                      </tr>
+                      <tr data="28">
+                        <td class="checkCol">&nbsp;
+                          <input type="radio" name="select" class="radioselect" value="28">
+                        </td>
+                        <td class="groupCol">&nbsp;L小学校</td>
+                        <td class="gradeCol">&nbsp;5年</td>
+                        <td class="curriculumCol">&nbsp;----</td>
+                        <td class="titleCol">&nbsp;生活習慣</td>
+                       <td>
+                          <span>2016/04/27~2016/05/06</span>
+                        </td>
+                        <td><span class="apply">設定</span></td>
+
+                        <td class="dateCol">&nbsp;2016-05-25</td>
+                        <td class="renewalDateCol">&nbsp;2016-05-25</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="questionBox_prev" title="実施期間を設定して下さい。" style="display:none">
+            <div id="prevWrapper" class="shitsumon">
+              <div class="inputarea">タイトル：&nbsp;
+                <input type="text" class="title" />&nbsp;&nbsp;
+                <input type="text" style="display:none">実施期間：&nbsp;
+                <input type="text" class="dateFrom">&nbsp;～&nbsp;
+                <input type="text" class="dateTo" name="date">&nbsp;&nbsp;対象：
+                <select class="share"></select>&nbsp;&nbsp;
+              </div>
+              <table class="scroll">
+                <tbody class="scrollBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--angularjs-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0-rc.2/angular.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="index.css">
+        <!-- JavaScript読み込み -->
+        <script src="./index.js"></script>
+        <script src="../common/common.js"></script>
+        <script src="../common/kamokubetu.js"></script>
+        <script src="../common/mokuhyo.js"></script>
+        <script src="../common/kamokubetu.js"></script>
+        <script src="../../common/js/common.js"></script>
+        
+        <title>学習記録日別学習内容設定ページ</title>
+    </head>
+    <body ng-app>
+        <span id="userName"></span>
+        <div>
+            <ol class="breadcrumb">
+              <li><a href="../menu/">メニュー</a></li>
+              <li class="active">試験結果入力</li>
+            </ol>
+        </div>
+        
+        <div class="text-left topKoumoku koumoku"><span class="topTextSize" >試験結果を入力しよう！</span></div>
+        <div class="text-left topKoumoku koumoku"><span class="topTextSize" >・試験期間</span></div>
+        <div class="text-left topKoumoku koumoku topTextSize koumokuLeftMargin">
+            <span>開始日</span>
+            <span id="startCalender" class="calender"></span>
+            <!--<input type="text" readonly="readonly" cmanCLDat="USE:ON" id="startCalender" class="calender" >-->
+        </div>
+        <div class="text-left topKoumoku koumoku topTextSize koumokuLeftMargin">
+            <span>終了日</span>
+            <span id="endCalender" class="calender"></span>
+            <!--<input type="text" readonly="readonly" cmanCLDat="USE:ON" id="endCalender" class="calender" >-->
+        </div>
+        <!--
+        <div class="text-center topKoumoku koumoku topTextSize">
+            <input type="text" readonly="readonly" cmanCLDat="USE:ON" id="startCalender" class="calender" >　～　<input type="text" readonly="readonly" cmanCLDat="USE:ON" id="endCalender" class="calender" >
+        </div>
+        -->
+        <div class="text-left topKoumoku koumoku"><span class="topTextSize" >・試験区分</span></div>
+        <div class="text-left koumokuLeftMargin">
+            <p id="testKubun">
+            </p>
+        </div>
+        <div class="text-left topKoumoku koumoku">
+            <div class="topTextSize">
+                <span class="kyoukaHeader">・教科</span><span class="mokuhyoHeader">目標</span><span class="kekkaHeader">結果</span>
+            </div>
+        </div>
+        <form name="userForm" action="indexAction.php" method="post" novalidate>
+            <div class="text-left">
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">国語</span>
+                    <span class="mokuhyoSpan" id='kokugoMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id='kokugoMokuhyo' >
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input type="number" class="kekkaInput" name="kokugokekka" id='kokugokekka'  />
+                    <span class="tanni">点</span>
+                </div>
+                
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">数学</span>
+                    <span class="mokuhyoSpan" id='suugakuMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="suugakuMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="suugakukekka" id='suugakukekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">英語</span>
+                    <span class="mokuhyoSpan" id='eigoMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="eigoMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="eigokekka" id='eigokekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">理科</span>
+                    <span class="mokuhyoSpan" id='rikaMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="rikaMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="rikakekka" id='rikakekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">社会</span>
+                    <span class="mokuhyoSpan" id='shakaiMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="shakaiMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="shakaikekka" id='shakaikekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+
+            </div>
+            <div class="text-left" id="additionalKyouka">
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">音楽</span>
+                    <span class="mokuhyoSpan" id='ongakuMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="ongakuMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="ongakukekka" id='ongakukekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">美術</span>
+                    <span class="mokuhyoSpan" id='bijutuMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="bijutuMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="bijutukekka" id='bijutukekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">技家</span>
+                    <span class="mokuhyoSpan" id='gijutuMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="gijutuMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="gijutukekka" id='gijutukekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+                <div class="topTextSize">
+                    <span class="kyoukaRowHeader">保体</span>
+                    <span class="mokuhyoSpan" id='hotaiMokuhyo'></span>
+                    <!--
+                    <select class="mokuhyoSelect" disabled id="hotaiMokuhyo">
+                        <option value="100">100</option>
+                        <option value="95">95</option>
+                        <option value="90">90</option>
+                        <option value="85">85</option>
+                        <option value="80">80</option>
+                        <option value="75">75</option>
+                        <option value="70">70</option>
+                        <option value="65">65</option>
+                        <option value="60">60</option>
+                    </select>
+                    -->
+                    <span class="tanni">点</span>
+                    <input class="kekkaInput" name="hotaikekka" id='hotaikekka' type="number" />
+                    <span class="tanni">点</span>
+                </div>
+            </div>
+            
+        <div id="okBtnPane" class="row text-center koumoku">
+            <button type="submit" class="btn btn-primary okBtn" id="okBtn">ＯＫ</button>
+        </div>
+            <input type="hidden" id="userIDInput" name="userID" >
+            <input type="hidden" name="periodID" value="0" >
+        </form>
+        
+        
+        
+    </body>
+</html>

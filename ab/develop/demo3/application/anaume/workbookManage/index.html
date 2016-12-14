@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./../../../admin/css/admin.css" />
+    <link rel="stylesheet" href="./../../../admin/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="./../common/css/common.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- JS -->
+    <script src="./../../../admin/js/jquery.min.js"></script>
+    <script src="./../../../admin/js/jquery-ui.min.js"></script>
+    <script src="./../../../admin/js/admin.js"></script>
+    <script src="./../common/js/common.js"></script>
+    <script src="./script.js"></script>
+
+    <title>あなうめ君</title>
+
+    <!--[if lt IE 9]>
+    <script src="./../../../admin/js/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- コンテンツ -->
+    <div id="container">
+        <!-- ヘッダー -->
+        <div id="header">
+            <div id="headerInfo">
+                問題集の編集
+                <!-- 基本情報 -->
+                <span id="userSchool"></span>
+                <span id="userGrade"></span>
+                <span id="userClass"></span>
+                <span id="userName"></span>
+            </div>
+            <div id="headerButton">
+                <button id="button_modoru" class="headerButton">戻る</button>
+                <button id="button_menu" class="headerButton">メニュー</button>
+                <button id="button_logout" class="headerButton">ログアウト</button>
+            </div>
+        </div>
+        <!-- コンテンツ -->
+        <div id="contents">
+            <!-- 検索メニュー -->
+            <div id="baseInfo">
+                種別
+                <select id="category"></select>
+                学校
+                <select id="school"></select>
+                学年
+                <select id="grade"></select>
+                教科
+                <select id="curriculum"></select>
+                テーマ
+                <select id="unit"></select>
+                タイトル
+                <input type="text" placeholder="20文字以内" 　maxlength="20" id="title" />
+                <button id="button_search" class="contentsButton">検&emsp;索</button>
+            </div>
+
+            <!-- 表示画面領域 -->
+            <div id="viewArea">
+                <div class="boxView">
+                    <h1>問題集の検索結果</h1>
+                    <button id="button_open" class="contentsButton">開&emsp;く</button>
+                    <button id="button_delete" class="contentsButton">削&emsp;除</button>
+                    <div class="tableHead">
+                        <table>
+                            <thead class="tHeadView">
+                                <tr>
+                                    <th>選択</th>
+                                    <th>種別<span class="sort">▼</span></th>
+                                    <th>学校<span class="sort">▼</span></th>
+                                    <th>学年<span class="sort">▼</span></th>
+                                    <th>教科<span class="sort">▼</span></th>
+                                    <th>テーマ<span class="sort">▼</span></th>
+                                    <th>タイトル<span class="sort">▼</span></th>
+                                    <th>頁数<span class="sort">▼</span></th>
+                                    <th>作成者<span class="sort">▼</span></th>
+                                    <th>共有範囲<span class="sort">▼</span></th>
+                                    <th>作成日時<span class="sort">▼</span></th>
+                                    <th>更新日時<span class="sort">▼</span></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="tableBody">
+                        <table>
+                            <tbody class="tBodyView">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

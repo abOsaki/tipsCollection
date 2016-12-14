@@ -1,0 +1,116 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 5vh;
+}
+
+.koumoku {
+    margin-bottom: 5vh;
+}
+
+.buttonStyle {
+    width: 40vw;
+    font-size: 5vw;
+}
+
+.contentArea {
+    width : 80vw;
+    margin: auto;
+    background-color: azure;
+    border-style: solid;
+}
+
+.nonRead {
+    background-color: silver;
+}
+
+.koumokuSpan {
+    margin: 2vw;
+    border-style: solid;
+    background-color: white;
+}
+
+.kamokuSpan {
+    width: 15vw;
+}
+
+.hourSpan {
+    width: 15vw;
+}
+
+.kyouzaiSpan {
+    width: 25vw;
+    margin-top: 0vw;
+}
+
+.pageSpan {
+    width: 15vw;
+    margin-top: 0vw;
+}
+
+
+
+.contentKoumoku {
+    margin-bottom: 1vh;
+}
+
+span {
+    font-size: 4vw;
+}
+
+.detail {
+    width: 80%;
+    margin: auto;
+    margin-right: 0px;
+}
+
+#graph {
+    margin: auto;
+    text-align: center;
+    width: 60vw;
+}
+
+.shousaiKoumoku {
+    margin: 1vw;
+    margin-top: 0;
+    font-size: 4vw;
+    border-style: solid;
+    background-color: white;
+}
+
+.shuuseiButton {
+    font-size:  3vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 1vw;
+}
+
+.shousaiTopColumn {
+    width: 30%;
+}
+
+.stamp {
+    /*width: 50%;*/
+    width: 7vw;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 1vw;
+}
+
+.nonReadStamp {
+    visibility: hidden;
+}
+
+li * {
+    font-size: 3vw;
+}
+
+li {
+    font-size: 3vw;
+}
+
+.breadcrumb > li + li:before {
+  content: ">";
+}

@@ -1,0 +1,127 @@
+html,
+body,
+div,
+table,
+thead,
+tbody,
+th,
+td,
+tr,
+ul,
+ol,
+li,
+p,
+a {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    letter-spacing: 1px;
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI', 'メイリオ', Verdana, 'ＭＳ Ｐゴシック', sans-serif;
+    font-size: 10pt;
+    background-image: url(../images/back_01.jpg);
+    background-repeat: repeat;
+}
+
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: 97%;
+    min-width: 1100px;
+    height: 97%;
+}
+
+#contents,
+#header,
+#footer {
+    /* コンテンツ・ヘッダー・フッター共通設定 */
+    position: relative;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 97%;
+}
+
+#contents {
+    /*　コンテンツ */
+    position: relative;
+    height: 100%;
+}
+
+#basicInfo div {
+    display: inline-block;
+}
+
+#footer {
+    /*　フッター */
+    position: absolute;
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+    left: auto;
+    width: auto;
+    color: #e6e6e6;
+    font-weight: bold;
+    text-align: center;
+}
+
+img[onclick] {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* アラート */
+
+#alertWindow {
+    position: absolute;
+    margin: auto;
+    width: auto;
+    height: auto;
+    background-color: #ffffff;
+    line-height: 20pt;
+    text-align: center;
+}
+
+#alertText {
+    padding: 15px 20px;
+}
+
+#alertBtn {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-top: solid 1px #bcbaba;
+    background-color: #e1f0dc;
+    text-align: center;
+}
+
+#alertBtn img {
+    cursor: pointer;
+    margin: 10px 3px;
+}
+
+#alert-overlay {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+

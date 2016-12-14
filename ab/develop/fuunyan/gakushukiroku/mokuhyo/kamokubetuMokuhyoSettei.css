@@ -1,0 +1,42 @@
+.topTextSize {
+    font-size:  5vw;
+}
+
+.topKoumoku{
+    margin-top: 5vh;
+}
+
+span {
+    font-size: 4vw;
+}
+
+select {
+    width: 15vw;
+    font-size: 4vw;
+    margin-right: 2vw;
+}
+
+select * {
+    font-size: 4vw;
+}
+
+.koumoku {
+    margin-bottom: 5vh;
+}
+
+.completeButton {
+    width: 40vw;
+    font-size: 5vw;
+}
+
+li * {
+    font-size: 4vw;
+}
+
+li {
+    font-size: 4vw;
+}
+
+.breadcrumb > li + li:before {
+  content: ">";
+}

@@ -1,0 +1,303 @@
+body {
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Meiryo UI', 'メイリオ', Verdana, 'ＭＳ Ｐゴシック', sans-serif!important;
+    background-image: url(../common/images/homesuke_bg.jpg);
+    background-repeat: repeat-x;
+    background-color: #fff;
+}
+
+A:hover {
+    left: 1px;
+    position: relative;
+    top: 1px
+}
+
+#container {
+    width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+#content {
+    min-height: 580px;
+    position: relative;
+}
+
+.cloud {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left: -420px;
+}
+
+.cat4 {
+    position: absolute;
+    top: -100px;
+    left: 700px;
+}
+
+.bird4 {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+
+.nyantaro {
+    position: absolute;
+    top: 320px;
+    left: 38%;
+}
+
+.dog1 {
+    position: absolute;
+    top: 400px;
+    left: 55%;
+}
+
+.clear {
+    clear: both;
+}
+
+.clear hr {
+    display: none;
+}
+
+
+/*
+footer {
+    font-size: 16px;
+    font-family: arial, sans-serif;
+    text-align: center;
+    clear: both;
+    padding-top: 14px;
+}
+*/
+
+#footer {
+    /*　フッター */
+    position: absolute;
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+    left: auto;
+    width: auto;
+    color: #333333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.itemBox {
+    margin: 8px 0;
+    text-align: left;
+}
+
+#modalContents01 .fu_button {
+    font-size: 1em;
+}
+
+#modalContents01 .itemName,
+#modalContents01 .itemInput {
+    width: 45%;
+}
+
+#modalContents02 {
+    font-size: 21pt;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+
+/* Dialog */
+
+.ui-widget-overlay {
+    /*Overlay色*/
+    background: #292929 !important;
+    opacity: 0.7 !important;
+    filter: Alpha(Opacity=70) !important;
+}
+
+.ui-dialog {
+    /*Dialogスタイル 追加*/
+    border: 6px solid #36C !important;
+    width: auto !important;
+    font-weight: bold !important;
+    letter-spacing: 0.3em !important;
+}
+
+.ui-dialog-title {
+    font-size: 24pt;
+}
+
+.ui-dialog-titlebar {
+    /*Dialogタイトル*/
+    background: none !important;
+    border: none !important;
+}
+
+.ui-dialog-titlebar-close {
+    /*Dialogタイトル右Closeボタン*/
+    display: none !important;
+}
+
+.ui-dialog-buttonpane {
+    padding: 0 !important;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    background: -moz-linear-gradient(top, #54cdfa 0%, #54cdfa 50%, #00a3eb 50%, #00a3eb);
+    background: -webkit-gradient(linear, left top, left bottom, from(#54cdfa), color-stop(0.5, #54cdfa), color-stop(0.5, #00a3eb), to(#00a3eb));
+    background: -ms-linear-gradient(top, #54cdfa, #00a3eb);
+    border: 1px solid #DDD;
+    color: white;
+    font-weight: bold;
+}
+
+.ui-dialog-title {
+    color: #36C;
+    text-align: center;
+}
+
+.itemName {
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+}
+
+.ui-dialog-buttonset {
+    display: inline-block;
+}
+
+#studentNumber {
+    text-align: right;
+    margin: 10px auto 0;
+    width: 205px;
+}
+
+.nobd {
+    border: 0;
+}
+
+#additionalForm {
+    display: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: none!important;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: .5em .4em .5em .4em;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    padding: .3em 1em .5em 1em;
+}
+
+
+/*20160418*/
+
+#schoolGrade,
+#schoolClass,
+#studentNumber {
+    width: 217px;
+}
+
+.fu_button {
+    width: auto;
+    text-align: center;
+    border-top: 1px solid #96d1f8;
+    background: #65a9d7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7))!important;
+    background: -webkit-linear-gradient(top, #3e779d, #65a9d7)!important;
+    background: -moz-linear-gradient(top, #3e779d, #65a9d7)!important;
+    background: -ms-linear-gradient(top, #3e779d, #65a9d7)!important;
+    background: -o-linear-gradient(top, #3e779d, #65a9d7)!important;
+    padding-top: 4px!important;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+    text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+    color: white!important;
+    font-size: 20pt;
+    font-weight: bold;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+#modalContents02 .fu_button {
+    font-size: 20pt !important;
+}
+
+.fu_button:hover {
+    border-top-color: #e3d642;
+    background: rgb(244, 236, 35);
+    color: #407791;
+    cursor: pointer;
+}
+
+.fu_button:active {
+    border-top-color: #1b435e;
+    background: #1b435e;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    padding: 20px;
+    background-color: #f1ebdb;
+}
+
+select {
+    margin: 5px auto;
+    position: relative;
+    width: 100%;
+    padding: 5px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #999;
+    background: #eee;
+    background: -webkit-linear-gradient(top, #fff 0%, #efebe1 100%);
+    background: linear-gradient(to bottom, #fff 0%, #efebe1 100%);
+    padding-right: 35px;
+}
+
+label.select {
+    position: relative;
+}
+
+label.select:after {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 45%;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -8px;
+    background: url(../common/images/arrow01.png) 0 0 no-repeat;
+    background-size: 20px;
+    pointer-events: none;
+}
+
+.itemInput {
+    width: 207px;
+    padding: 4px;
+    border: 1px solid #ccc;
+    background: none;
+}
+
+input[name="schoolSex"] {
+    width: 20px;
+    height: 20px;
+}

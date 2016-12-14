@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="setteizumi.css">
+        <!-- JavaScript読み込み -->
+        <script src="./setteizumi.js"></script>
+        <script src="../common/kamokubetu.js"></script>
+        <script src="../common/common.js"></script>
+        <script src="../../common/js/common.js"></script>
+        <script src="../../common/js/ccchart.js"></script>
+        
+        <title>学習記録設定済み日別学習内容確認</title>
+    </head>
+    <body>
+        <div>
+            <ol class="breadcrumb">
+              <li><a href="../menu/">メニュー</a></li>
+              <li class="active">学習計画</li>
+            </ol>
+        </div>
+        <div class="text-center topKoumoku koumoku topTextSize">現在の学習計画</div>
+        <div id='contantContainer' >
+            <!--
+            <div id='contentTemplate' class="text-center contentKoumoku">
+                <div class="contentArea" >
+                    <span >○月×日</span>
+                    <span class="koumokuSpan">国語：１時間</span>
+                    <span class="koumokuSpan">数学：２時間</span>
+                    <div class="detailPane">
+                    </div>
+                </div>
+            </div>
+            <div id='contentTemplate' class="text-center contentKoumoku">
+                <div class="contentArea" >
+                    <span >○月×日</span>
+                    <span class="koumokuSpan">国語：２時間</span>
+                    <span class="koumokuSpan">理科：２時間</span>
+                    <div class="detailPane"></div>
+                </div>
+            </div>
+            <div id='contentTemplate' class="text-center contentKoumoku">
+                <div class="contentArea" >
+                    <span >○月×日</span>
+                    <span class="koumokuSpan">理科：２時間</span>
+                    <span class="koumokuSpan">社会：２時間</span>
+                    <div class="detailPane"></div>
+                </div>
+            </div>
+            <div id='contentTemplate' class="text-center contentKoumoku">
+                <div class="contentArea" >
+                    <span >○月×日</span>
+                    <span class="koumokuSpan">英語：１時間</span>
+                    <span class="koumokuSpan">社会：２時間</span>
+                    <div class="detailPane"></div>
+                </div>
+            </div>
+            -->
+        </div>
+        <div>
+            <canvas id="graph" ></canvas>
+        </div>
+    </body>
+</html>

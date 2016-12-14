@@ -1,0 +1,75 @@
+/*結果表示*/
+
+.boxView td {
+    height: 140px;
+    padding: 2px 3px;
+    text-align: center;
+}
+
+.boxView th:nth-child(1),
+.boxView td:nth-child(1) {
+    width: 7%;
+    vertical-align: top;
+}
+
+.boxView th:nth-child(2),
+.boxView td:nth-child(2) {
+    width: 8%;
+    vertical-align: top;
+}
+
+.boxView th:nth-child(3),
+.boxView td:nth-child(3) {
+    width: 8%;
+    vertical-align: top;
+    text-align: center;
+}
+
+.boxView th:nth-child(4),
+.boxView td:nth-child(4) {
+    width: 8%;
+}
+
+.boxView th:nth-child(5),
+.boxView td:nth-child(5) {
+    width: 15%;
+}
+
+.boxView th:nth-child(6),
+.boxView td:nth-child(6) {
+    width: 15%;
+}
+
+.boxView th:nth-child(7),
+.boxView td:nth-child(7) {
+    width: 15%;
+}
+
+.boxView td > input {
+    width: 76px;
+    text-align: center;
+}
+
+.boxView td > button {
+    margin: 2px 0;
+    width: 80px;
+    text-align: center;
+}
+
+.largeCategory,
+.middleCategory {
+    width: 100%;
+}
+
+.boxView textarea {
+    resize: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.keyword,
+.cause,
+.content,
+.countermeasure {
+    width: 97%;
+    height: 98%;
+}

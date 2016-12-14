@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="ja">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+        
+        <!--jquery読み込み-->
+        <script src="../../common/js/jquery.min.js"></script>
+        <script src="../../common/js/jquery-ui.min.js"></script>
+        <script src="../../common/js/datepicker-ja"></script>
+        <script src="../../common/js/jqfloat.min.js"></script>
+
+        <!-- BootstrapのCSS読み込み -->
+        <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- BootstrapのJS読み込み -->
+        <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        
+        <!--スタイルシート読み込み-->
+        <link rel="stylesheet" href="jissekiKanryou.css">
+        <!-- JavaScript読み込み -->
+        <script src="./jissekiKanryou.js"></script>
+        <script src="../common/common.js"></script>
+        <script src="../common/kamokubetu.js"></script>
+        <script src="../../common/js/common.js"></script>
+        <script src="../../common/js/ccchart.js"></script>
+        
+        <title>学習記録実績入力完了</title>
+    </head>
+    <body>
+        <div>
+            <ol class="breadcrumb">
+              <li><a href="../menu/">メニュー</a></li>
+              <li><a href="hibetuJisseki.html">日別実績設定</a></li>
+              <li class="active">日別実績確認</li>
+            </ol>
+        </div>
+        <div id="hidukeTitle" class="text-center topKoumoku koumoku topTextSize">○月×日の振り返り</div>
+        <div class="koumoku">
+            <table id="planLogTable" class="table table-bordered">
+                <tr class="info">
+                    <td class="firstCollum"></td>
+                    <td class="dataCollum">当初の予定</td>
+                    <td class="dataCollum">実績</td>
+                </tr>
+                <!--
+                <tr>
+                    <td>国語</td>
+                    <td>２時間</td>
+                    <td>２時間</td>
+                </tr>
+                <tr>
+                    <td>数学</td>
+                    <td>１時間</td>
+                    <td>２時間</td>
+                </tr>
+                -->
+            </table>
+        </div>
+        <div class='row'>
+            <div class='col-sm-7' >
+                <canvas id="graph" ></canvas>
+            </div>
+            <div class='col-sm-5' >
+                <div class="hyoukaParentPane">
+                    <div>評価</div>
+                    <div class="hyoukaContent">A</div>
+                    <img class="stamp" src="../../common/images/mimamori_35.png">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

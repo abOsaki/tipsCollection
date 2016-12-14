@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="css/kiroku.css">
+    <link rel="stylesheet" href="css/shuukaisouKiroku.css">
+    <link rel="stylesheet" href="../../common/css/jquery-ui.min.css">
+    
+    <!--jquery読み込み-->
+    <script src="../../common/js/jquery.min.js"></script>
+    <script src="../../common/js/jquery-ui.min.js"></script>
+    <script src="../../common/js/datepicker-ja"></script>
+    <script src="../../common/js/jqfloat.min.js"></script>
+    
+    <!-- BootstrapのCSS読み込み -->
+    <link href="../../common/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+    <!-- BootstrapのJS読み込み -->
+    <script src="../../common/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript読み込み -->
+    <script src="js/smartRollover.js"></script>
+    <script src="../../common/js/common.js"></script>
+    <script src="../../common/js/shukaisouSession.js"></script>
+    <script src="../../common/js/shuukaisouMokuhyoObject.js"></script>
+    <script src="../shukaisouDBAccess.js"></script>
+    <script src="../wrapTime.js"></script>
+    <script src="../commonShuukaisou.js"></script>
+    <script src="../inputShuukaisou.js"></script>
+    <script src="./script.js"></script>
+    <script src="./showShuukaisou.js"></script>
+    <script src="./shuukeiMode.js"></script>
+    <script src="./bunsekiMode.js"></script>
+    <script src="../../common/js/ccchart.js"></script>
+    
+    <title>周回走</title>
+</head>
+
+<body>
+<!-- コンテナー -->
+<div id="container"> 
+  <!-- ヘッダー -->
+  <header>
+    <div id="header"></div>
+    <div id="headImg">
+        <img  id='modoru_Button' alt="戻る" title="戻る" src="../images/modoru_s_off.png" >
+        <img  id='menu_Button' alt="メニュー" title="メニュー" src="../images/menu_s_off.png" >
+        <img  id='logout_Button' alt="ログアウト" title="ログアウト" src="../images/logout_off.png" >
+    </div>
+  <!-- コンテンツ -->
+  <div id="contents">
+    <div id="menu_non"> </div>
+    
+    <!-- 基本情報 -->
+    <div id="basicInfo">
+      <div class="tab btn-group"> 
+          <!--<img id="hidukebetsuButton" src="../images/tb_date_on.png">-->
+          <!--<img id="bunnsekiButton" src="../images/tb_analysis_off.png" >
+          <img id="shuukeiButton" src="../images/tb_aggregate_off.png" >-->
+          <button id="bunnsekiButton" class="btn btn-primary">当日（集計）</button>
+          <!--
+          <button id="shuukeiButton" class="btn btn-primary">期間（分析）</button>
+          -->
+      </div>
+    </div>
+    <div id="questionBox">
+      <div id="kakuninBox">
+        <div id="table01">
+        <!--
+          <div id="hidukebetsuPane" class="tableHeader">
+            <div class="executiondate">
+              <table class="date">
+                <tr>
+                  <td class="info2"><img id="hidukebetsuZenjitu" src="../images/b_zenjitsu.png" ></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="hidukebetsuCalender" ></td>
+                  <td class="info2"><img id="hidukebetsuGojitu" src="../images/b_gojitsu.png" ></td>
+                  <td class="info2"><img id="hyouji" src="../images/hyouji_off.png" ></td>
+                </tr>
+              </table>
+            </div>
+            <table id="dataTable" class="list" cellpadding="5" cellspacing="1" width="100%">
+              <tbody>
+                <tr align="center">
+                  <td width="10%" colspan="2">単位（秒）</td>
+                  <td id="header1" class="ttl" width="8%">1週目</td>
+                  <td id="header2" class="ttl" width="8%">2週目</td>
+                  <td id="header3" class="ttl" width="8%">3週目</td>
+                  <td id="header4" class="ttl" width="8%">4週目</td>
+                  <td id="header5" class="ttl" width="8%">5週目</td>
+                  <td id="header6" class="ttl" width="8%">6週目</td>
+                  <td id="header7" class="ttl" width="8%">7週目</td>
+                  <td id="header8" class="ttl" width="8%">8週目</td>
+                  <td id="header9" class="ttl" width="8%">9週目</td>
+                  <td id="header10" class="ttl" width="8%">10週目</td>
+                  <td class="info" width="10%">&nbsp;</td>
+                </tr>
+                <tr align="center">
+                  <td class="event ttl" width="10%"><div id="mokuhyoTimeTitle"> 目標タイム</div>
+                    <div id="mokuhyoTime" ></div>
+                    <br>
+                    <div class="mokuhyoLap">目標ラップ</div>
+                    <div class="mokuhyoLap" id="mokuhyoLap" ></div></td>
+                    <td class="event" width="1%">
+                        <div id="memoriParent">
+                            
+                    +5<br>
+                    <br>
+                    +4<br>
+                    <br>
+                    +3<br>
+                    <br>
+                    +2<br>
+                    <br>
+                    +1<br>
+                    <br>
+                    00<br>
+                    <br>
+                    -1<br>
+                    <br>
+                    -2<br>
+                    <br>
+                    -3<br>
+                    <br>
+                    -4<br>
+                    <br>
+                    -5
+                    </td>
+                  <td class="event" height="400" colspan="10"><canvas id="graph"></canvas></td>
+                    
+                </tr>
+                <tr align="center">
+                  <td width="10%" colspan="2" class="event ttl">ラップ</td>
+                  <td id="lap1" class="lap" width="8%"></td>
+                  <td id="lap2" class="lap" width="8%"></td>
+                  <td id="lap3" class="lap" width="8%"></td>
+                  <td id="lap4" class="lap" width="8%"></td>
+                  <td id="lap5" class="lap" width="8%"></td>
+                  <td id="lap6" class="lap" width="8%"></td>
+                  <td id="lap7" class="lap" width="8%"></td>
+                  <td id="lap8" class="lap" width="8%"></td>
+                  <td id="lap9" class="lap" width="8%"></td>
+                  <td id="lap10" class="lap" width="8%"></td>
+                  <td class="info footerLapHeader ttl" width="8%"><div >平均ラップ</div>
+                    <div id="averageiLap" >0</div></td>
+                </tr>
+                <tr align="center">
+                  <td width="10%" colspan="2" class="event ttl">タイム</td>
+                  <td class="time" id="time1" width="8%"></td>
+                  <td class="time" id="time2" width="8%"></td>
+                  <td class="time" id="time3" width="8%"></td>
+                  <td class="time" id="time4" width="8%"></td>
+                  <td class="time" id="time5" width="8%"></td>
+                  <td class="time" id="time6" width="8%"></td>
+                  <td class="time" id="time7" width="8%"></td>
+                  <td class="time" id="time8" width="8%"></td>
+                  <td class="time" id="time9" width="8%"></td>
+                  <td class="time" id="time10" width="8%"></td>
+                  <td class="info footerLapHeader ttl" width="8%"><div >合計タイム</div>
+                    <div id="sumTime" >0</div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          -->
+          <div id="bunnsekiPane">
+              <div class="executiondate">
+              <table class="date">
+                <tr>
+                  <td class="info2"><div>期間：　</div></td>
+                    <!--
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="bunsekiStartCalender" ></td>
+                  <td class="info2"><div>　～　</div></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="bunsekiEndCalender" ></td>-->
+                  <td class="info2"><img id="hidukebetsuZenjitu" src="../images/b_zenjitsu.png" ></td>
+                  <td><input type="date" class="calender" cmanCLDat="USE:ON" id="bunsekiCalender" ></td>
+                  <td class="info2"><img id="hidukebetsuGojitu" src="../images/b_gojitsu.png" ></td>
+                  <td class="info2"><img id="bunsekiHyouji" src="../images/hyouji_off.png" ></td>
+                </tr>
+              </table>
+            </div>
+            <!--
+            <table>
+                <tr>
+                    <td>
+                        <div>単位（秒）</div>
+                        <canvas class="graph" id="bunsekiGraph" width="100%"></canvas>
+                    </td>
+                    <td>
+                        <div class="headerHeader">合計周数</div>
+                        <div class="headerHeaderData">周</div>
+                        <div class="headerHeader">合計距離</div>
+                        <div class="headerHeaderData">m</div>
+                        <div class="headerHeader">合計タイム</div>
+                        <div class="headerHeaderData">00:00</div>
+                        <div class="headerHeader">平均ラップ</div>
+                        <div class="headerHeaderData">0</div>
+                    </td>
+                </tr>
+            </table>
+            -->
+            <div class="row headerDataPane">
+                <div class="col-sm-2">
+                    <div class="headerHeader" id="goukeiShuusuu">合計周数</div>
+                    <div class="headerHeaderData" id="shuuData">周</div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="headerHeader">合計距離</div>
+                    <div class="headerHeaderData" id="kyoriData">m</div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="headerHeader">合計タイム</div>
+                    <div class="headerHeaderData" id="sumTimeData">00:00</div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="headerHeader">平均ラップ</div>
+                    <div class="headerHeaderData" id="aveLapData">0</div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="headerHeader">平均タイム</div>
+                    <div class="headerHeaderData" id="aveTimeData">0</div>
+                </div>
+            </div>
+              
+            <div class="row">
+                <div class="col-sm-10 graphTitle">ラップ記録</div>
+            </div>
+            <div >単位（秒）</div>
+              <div class="row" id="graphRow">
+                  <div class="col-sm-10" id="graphPane" >
+                      <canvas class="graph" id="bunsekiGraph"  width="100%"></canvas>
+                  </div>
+                  
+                  <!--
+                  <div id="dataPane" >
+                    <div class="headerHeader">合計周数</div>
+                    <div class="headerHeaderData" id="shuuData">周</div>
+                    <div class="headerHeader">合計距離</div>
+                    <div class="headerHeaderData" id="kyoriData">m</div>
+                    <div class="headerHeader">合計タイム</div>
+                    <div class="headerHeaderData" id="sumTimeData">00:00</div>
+                    <div class="headerHeader">平均ラップ</div>
+                    <div class="headerHeaderData" id="aveLapData">0</div>
+                    <div class="headerHeader">平均タイム</div>
+                    <div class="headerHeaderData" id="aveTimeData">0</div>
+                  </div>
+                  -->
+              </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id="comment"  ><div class="comment" contenteditable="true"></div></div>
+                </div>
+                <div class="col-sm-6">
+                    <div id="comment2"  ><div class="comment" contenteditable="true"></div></div>
+                </div>
+                
+            </div>
+              <!--
+            <table >
+                <tr>
+                    <td ><div id="comment" ><div class="comment" contenteditable="true"></div></div></td>
+                    <td><div id="comment2"><div class="comment" contenteditable="true"></div></td>
+                </tr>
+            </table>
+            -->
+          </div>
+          
+          <div id="kikanHeikinPane">
+            <div class="executiondate">
+              <table class="date">
+                <tr>
+                  <td class="info2"><div>期間：　</div></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="kikanHeikinStartCalender" ></td>
+                  <td class="info2"><div>　～　</div></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="kikanHeikinEndCalender" ></td>
+                  <td class="info2"><img id="kikanHeikinHyouji" src="../images/hyouji_off.png" ></td>
+                </tr>
+              </table>
+            </div>
+            <div class="kikanHeikinTable">
+                <div class="container" id="kikanHeikinContainer">
+                    <table  class="table table-bordered" cellspacing="0" cellpadding="0">
+                        <thead id="kikanHeikinHeader">
+                            <tr>
+                                <th class="kikanHeikinHeader"></th>
+                                <th class="headerHidukeWidth">
+                                    <div class="bottomBorder kikanHeikinHeader">1</div>
+                                    <div class="kikanHeikinHidukeHeader">XX月XX日</div>
+                                </th>
+                                <th class="headerHidukeWidth">
+                                    <div class="bottomBorder kikanHeikinHeader">2</div>
+                                    <div class="kikanHeikinHidukeHeader">XX月XX日</div>
+                                </th>
+                                <th class="headerHidukeWidth">
+                                    <div class="bottomBorder kikanHeikinHeader">3</div>
+                                    <div class="kikanHeikinHidukeHeader">XX月XX日</div>
+                                </th>
+                                <th class="headerHidukeWidth">
+                                    <div class="bottomBorder kikanHeikinHeader">4</div>
+                                    <div class="kikanHeikinHidukeHeader">XX月XX日</div>
+                                </th>
+                                <th class="headerHidukeWidth">
+                                    <div>
+                                        <div class="bottomBorder kikanHeikinHeader">5</div>
+                                        <div class="kikanHeikinHidukeHeader">XX月XX日</div>
+                                    </div>
+                                    
+                                </th>
+                                <th class="verticalCenter yellowHeader headerWidth">合計</th>
+                                <th class="verticalCenter greenHeader headerWidth">平均</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="kikanHeikinHeader">合計周数（周）</th>
+                                <td id="sumShuu1"></td>
+                                <td id="sumShuu2"></td>
+                                <td id="sumShuu3"></td>
+                                <td id="sumShuu4"></td>
+                                <td id="sumShuu5"></td>
+                                <td id="sumShuuGoukei"></td>
+                                <td id="sumShuuAverage"></td>
+                            </tr>
+                            <tr>
+                                <th class="kikanHeikinHeader">合計距離（m）</th>
+                                <td id="sumKyori1"></td>
+                                <td id="sumKyori2"></td>
+                                <td id="sumKyori3"></td>
+                                <td id="sumKyori4"></td>
+                                <td id="sumKyori5"></td>
+                                <td id="sumKyoriGoukei"></td>
+                                <td id="sumKyoriAverage"></td>
+                            </tr>
+                            <tr>
+                                <th class="kikanHeikinHeader">合計タイム</th>
+                                <td id="sumTime1"></td>
+                                <td id="sumTime2"></td>
+                                <td id="sumTime3"></td>
+                                <td id="sumTime4"></td>
+                                <td id="sumTime5"></td>
+                                <td id="sumTimeGoukei"></td>
+                                <td id="sumTimeAverage"></td>
+                            </tr>
+                            <tr>
+                                <th class="kikanHeikinHeader">目標平均ラップ</th>
+                                <td id="mokuhyoAveLap1"></td>
+                                <td id="mokuhyoAveLap2"></td>
+                                <td id="mokuhyoAveLap3"></td>
+                                <td id="mokuhyoAveLap4"></td>
+                                <td id="mokuhyoAveLap5"></td>
+                                <td id="mokuhyoAveLapGoukei"></td>
+                                <td id="mokuhyoAveLapAverage"></td>
+                            </tr>
+                            <tr>
+                                <th class="kikanHeikinHeader">結果平均ラップ</th>
+                                <td id="kekkaAveLap1"></td>
+                                <td id="kekkaAveLap2"></td>
+                                <td id="kekkaAveLap3"></td>
+                                <td id="kekkaAveLap4"></td>
+                                <td id="kekkaAveLap5"></td>
+                                <td id="kekkaAveLapGoukei"></td>
+                                <td id="kekkaAveLapAverage"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+            
+            <!--
+          <div id="shuukeiPane">
+            <div class="executiondate">
+              <table class="date">
+                <tr>
+                  <td class="info2"><div>期間：　</div></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="shuukeiStartCalender" ></td>
+                  <td class="info2"><div>　～　</div></td>
+                  <td ><input type="date" class="calender" cmanCLDat="USE:ON" id="shuukeiEndCalender" ></td>
+                  
+                    
+                  <td class="info2"><div>　　区分：　</div></td>
+                  <td >
+                      <select id="kubun" class="kubun">
+                        <option>平均ラップ</option>
+                        <option>合計タイム</option>
+                      </select>
+                  </td>
+                  <td class="info2"><img id="shuukeiHyouji" src="../images/hyouji_off.png" ></td>  
+                </tr>
+              </table>
+            </div>
+            <div>単位（秒）</div>
+            <canvas class="graph" id="shuukeiGraph" width="100%"></canvas>
+          </div>
+          -->
+            
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

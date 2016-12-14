@@ -1,0 +1,42 @@
+html,
+body {
+    background-image: url(./../images/back_01.png);
+}
+
+.ui-dialog-title {
+    color: #4a75cb;
+}
+
+
+/*グラデーションはわずかに濃い色から薄い色へ*/
+
+.ui-button {
+    background: #71c3e8 !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1384c1), to(#71c3e8)) !important;
+    background: -webkit-linear-gradient(top, #1384c1, #71c3e8) !important;
+    background: -moz-linear-gradient(top, #1384c1, #71c3e8) !important;
+    background: -ms-linear-gradient(top, #1384c1, #71c3e8) !important;
+    background: -o-linear-gradient(top, #1384c1, #71c3e8) !important;
+    background: linear-gradient(top, #1384c1, #71c3e8) !important;
+}
+
+
+/*マウスオーバー時は薄い背景に濃い文字*/
+
+.ui-button:hover {
+    background: #86cbea !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#cdebf8), to(#86cbea)) !important;
+    background: -webkit-linear-gradient(top, #cdebf8, #86cbea) !important;
+    background: -moz-linear-gradient(top, #cdebf8, #86cbea) !important;
+    background: -ms-linear-gradient(top, #cdebf8, #86cbea) !important;
+    background: -o-linear-gradient(top, #cdebf8, #86cbea) !important;
+    background: linear-gradient(top, #cdebf8, #86cbea) !important;
+    color: #036498 !important;
+}
+
+
+/*コンテンツ内モーダルウィンドウ共通設定*/
+
+.ui-dialog {
+    border: 6px solid #4a75cb;
+}

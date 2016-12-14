@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/question.css">
+
+    <link rel="stylesheet" href="./css/questionModal.css">
+    <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/loader.css">
+    
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    
+
+    <!-- droppy用スタイル -->
+    <!--admin.cssにて他styleが崩れている-->
+    
+    <link rel="stylesheet" href="./css/admin.css">
+    
+    <link rel="stylesheet" href="./css/droppy.css">
+    
+    <!-- jQuery用スタイル -->
+    <link rel="stylesheet" href="./css/jquery-ui.min.css">
+
+    <!-- jquery読み込み -->
+    <script src="./jquery/jquery.min.js"></script>
+    <script src="./jquery/jquery.droppy.js"></script>
+    <script src="./jquery/jquery.jPrintArea.js"></script>
+    <script src="./jquery/jquery-ui.min.js"></script>
+    <script src="./jquery/jquery.autoKana.js"></script>
+
+    <!-- JavaScript読み込み -->
+    <script src="./js/login.js"></script>
+    <script src="./js/smartRollover.js"></script>
+    <script src="./js/modalContents.js"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./js/admin.js"></script>
+
+    <script src="./js/loadData.js"></script>
+    <script src="./js/baseInfo.js"></script>
+    <script src="./js/selectElement.js"></script>
+    <script src="./js/saveQuestion.js"></script>
+    <script src="./js/questionSearch.js"></script>
+    <script src="./js/staticSessionStrage.js"></script>
+    <script src="./js/alertWindow.js"></script>
+
+    <script src="./js/datetime.js"></script>
+    <script src="./js/fusenOperation.js"></script>
+    <script src="./js/imageContentsOperation.js"></script>
+    <script src="./js/imageController.js"></script>
+    <script src="./js/fileController.js"></script>
+    <script src="./js/hyperLink.js"></script>
+    <script src="./js/newCreate.js"></script>
+    <script src="./js/hyperLink.js"></script>
+    <script src="./js/textStyle.js"></script>
+    <script src="./js/eventQuestion.js"></script>
+    <script src="./js/questionTextArea.js"></script>
+    <script src="./js/fileInsert.js"></script>
+    <script src="./js/textCleanUp.js"></script>
+    <script src="./js/html2canvas.js"></script>
+    <script src="./js/printQuestions.js"></script>
+    <script src="./js/undo.js"></script>
+    <script src="./js/rubyOperation.js"></script>
+    <script src="./js/audioOperation.js"></script>
+    <script src="./js/rubyObjectOperation.js"></script>
+
+    <title>あなうめ君</title>
+</head>
+
+<body>
+
+    <!-- コンテンツ -->
+    <div id="contents">
+        <div id="menu" >
+            <ul id="nav1">
+                <li><img src="./images/create_off.png" alt="新規作成" title="新規作成" onclick="newCreate()" />
+                </li>
+                <li><img src="./images/save_off.png" alt="保存する" title="保存する" id = "saveButton" />
+                </li>
+                <!-- 画像挿入場所を引数で指定 -->
+                <li><img alt="画像挿入" title="画像挿入" src="./images/insertimage_off.png" onclick="upImg(document.getElementById(&quot;imageContents&quot;))" />
+                </li>
+                <li><img alt="ファイル挿入" title="ファイル挿入" src="./images/filesounyu_off.png" onclick="upFile()" />
+                </li>
+                <li><img alt="リンク作成" title="リンク作成" src="./images/link_off.png" onclick="insertLink(this)" />
+                </li>
+                <li><img alt="リンク解除" title="リンク解除" src="./images/linkkaijo_off.png" onclick="deleteLink()" />
+                </li>
+                <li><img alt="穴あき" title="穴あき" src="./images/cloze_off.png" onclick="anaaki()" />
+                </li>
+                <li><img alt="穴あき解除" title="穴あき解除" src="./images/uncloze_off.png" onclick="clearAnaaki()" />
+                </li>
+                <li><img alt="ふせん" id="fusenInsert" title="ふせん" src="./images/b_fusen_off.png" onclick="btnClick()"  />
+                </li>
+                <li><img alt="ルビ" id="ruby" title="ルビ" src="./images/ruby_off.png" onclick="btnClick()"  />
+                </li>
+                <li>
+                    <img alt="音声" id="voice" title="音声" src="./images/onsei_off.png" onclick="btnClick()"  />
+                </li>
+                
+            </ul>
+
+            <ul id="nav2">
+                <!--
+                <li><img src="./images/redo.png" title="進む" onclick="redo()" />
+                </li>
+                -->
+                <li><img src="./images/undo.png" title="戻る" onclick="Undo()" />
+                </li>
+                <li><img alt="書式クリア" title="書式クリア" src="./images/formatclear.png" onclick="clearStyle()" />
+                </li>
+                <li><img alt="横書き" title="横書き" src="./images/textyoko.png" onclick="verticalWriting(false)" />
+                </li>
+                <li><img alt="縦書き" title="縦書き" src="./images/texttate.png" onclick="verticalWriting(true)" />
+                </li>
+                <li><img alt="左揃え" title="左揃え" src="./images/text_left.png" onclick="textAlign('left')" />
+                </li>
+                <li><img alt="中央揃え" title="中央揃え" src="./images/text_center.png" onclick="textAlign('center')" />
+                </li>
+                <li><img alt="右揃え" title="右揃え" src="./images/text_right.png" onclick="textAlign('right')" />
+                </li>
+                <li><img alt="行間" title="行間" src="./images/gyoukan3b.png" />
+                    <ul class="sizeChangeUL">
+                        <li onmousedown="lineHeight('normal')">
+                            <a>標準</a>
+                        </li>
+                        <li onmousedown="lineHeight(2)">
+                            <a>2倍</a>
+                        </li>
+                        <li onmousedown="lineHeight(3)">
+                            <a>3倍</a>
+                        </li>
+                        <li onmousedown="lineHeight(4)">
+                            <a>4倍</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><img alt="文字サイズ" title="文字サイズ" src="./images/textmedium.png">
+                    <ul class="sizeChangeUL" id="charSizeUL">
+                        <!--
+                        <li onmousedown="size(1)">
+                            <a>標準</a>
+                        </li>
+                        <li onmousedown="size(2)">
+                            <a>2倍</a>
+                        </li>
+                        <li onmousedown="size(4)">
+                            <a>4倍</a>
+                        </li>
+                        <li onmousedown="size(6)">
+                            <a>6倍</a>
+                        </li>
+                        <li onmousedown="size(8)">
+                            <a>8倍</a>
+                        </li>
+                        -->
+                        <li onmousedown="changeSize(1)">
+                            <a>標準</a>
+                        </li>
+                        <li onmousedown="changeSize(1.2)">
+                            <a>2</a>
+                        </li>
+                        <li onmousedown="changeSize(1.4)">
+                            <a>3</a>
+                        </li>
+                        <li onmousedown="changeSize(1.6)">
+                            <a>4</a>
+                        </li>
+                        <li onmousedown="changeSize(1.8)">
+                            <a>5</a>
+                        </li>
+                        <li onmousedown="changeSize(2)">
+                            <a>6</a>
+                        </li>
+                        <li onmousedown="changeSize(2.2)">
+                            <a>7</a>
+                        </li>
+                        <li onmousedown="changeSize(2.4)">
+                            <a>8</a>
+                        </li>
+                        <li onmousedown="changeSize(2.6)">
+                            <a>9</a>
+                        </li>
+                        <li onmousedown="changeSize(2.8)">
+                            <a>10</a>
+                        </li>
+                        <li onmousedown="changeSize(3)">
+                            <a>11</a>
+                        </li>
+                        <li onmousedown="changeSize(3.2)">
+                            <a>12</a>
+                        </li>
+                        <li onmousedown="changeSize(3.4)">
+                            <a>13</a>
+                        </li>
+                        <li onmousedown="changeSize(3.6)">
+                            <a>14</a>
+                        </li>
+                        <li onmousedown="changeSize(3.8)">
+                            <a>15</a>
+                        </li>
+                        <li onmousedown="changeSize(4)">
+                            <a>16</a>
+                        </li>
+                        <li onmousedown="changeSize(4.2)">
+                            <a>17</a>
+                        </li>
+                        <li onmousedown="changeSize(4.4)">
+                            <a>18</a>
+                        </li>
+                        <li onmousedown="changeSize(4.6)">
+                            <a>19</a>
+                        </li>
+                        <li onmousedown="changeSize(4.8)">
+                            <a>20</a>
+                        </li>
+                        <li onmousedown="changeSize(5)">
+                            <a>21</a>
+                        </li>
+                        <li onmousedown="changeSize(5.2)">
+                            <a>22</a>
+                        </li>
+                        <li onmousedown="changeSize(5.4)">
+                            <a>23</a>
+                        </li>
+                        <li onmousedown="changeSize(5.6)">
+                            <a>24</a>
+                        </li>
+                        <li onmousedown="changeSize(5.8)">
+                            <a>25</a>
+                        </li>
+                        <li onmousedown="changeSize(6)">
+                            <a>26</a>
+                        </li>
+                        <li onmousedown="changeSize(6.2)">
+                            <a>27</a>
+                        </li>
+                        <li onmousedown="changeSize(6.4)">
+                            <a>28</a>
+                        </li>
+                        <li onmousedown="changeSize(6.6)">
+                            <a>29</a>
+                        </li>
+                        <li onmousedown="changeSize(6.8)">
+                            <a>30</a>
+                        </li>
+                        <li onmousedown="changeSize(7)">
+                            <a>31</a>
+                        </li>
+                        <li onmousedown="changeSize(7.2)">
+                            <a>32</a>
+                        </li>
+                        <li onmousedown="changeSize(7.4)">
+                            <a>33</a>
+                        </li>
+                        <li onmousedown="changeSize(7.6)">
+                            <a>34</a>
+                        </li>
+                        <li onmousedown="changeSize(7.8)">
+                            <a>35</a>
+                        </li>
+                        <li onmousedown="changeSize(8)">
+                            <a>36</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><img alt="太字" title="太字" src="./images/bold.png" onclick="bold()">
+                </li>
+                <li><img alt="下腺" title="下腺" src="./images/kasen.png" onclick="underline()">
+                </li>
+                <li><img alt="赤色文字" title="赤色文字" src="./images/red.png" onclick="red()">
+                </li>
+                <li><img alt="青色文字" title="青色文字" src="./images/blue.png" onclick="blue()">
+                </li>
+                <li><img alt="黒色文字" title="黒色文字" src="./images/black.png" onclick="black()">
+                </li>
+            </ul>
+            <div id="headImg">
+                <img src="images/modoru_s_off.png" alt="戻る" title="戻る" onclick="history.back()">
+                <img src="images/menu_s_off.png" alt="メニュー" title="メニュー" onclick="location.href='menu.html'">
+                <img src="images/logout_off.png" alt="ログアウト" title="ログアウト" onclick="logout()">
+            </div>
+        </div>
+        <!--
+        <span id="monitor"></span>
+        -->
+        <!-- 基本情報 -->
+        <div id="basicInfo">
+            <div id="groupSelect" title="種別">種別
+                <select id="group">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="schoolSelect" tiltle="学校">学校
+                <select id="school">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="gradeSelect" title="学年">学年
+                <select id="grade">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="curriculumSelect" title="教科">教科
+                <select id="curriculum">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="unitSelect" title="単元">単元
+                <select id="unit">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="quesTitle" title="タイトル">タイトル
+                <input id="title" type="text" placeholder="20文字以内" maxlength="20" />
+            </div>
+            
+            <div id="shareSelect" title="共有範囲">共有範囲:
+                <select id="share">
+                    <option value="">--</option>
+                </select>
+            </div>
+            <div id="quesAuthor" title="作成者">作成者:
+                <span id="author">名前</span>
+            </div>
+        </div>
+
+        <!-- 問題作成範囲 -->
+        <div id="questionBox">
+            <div id="questionArea">
+                <!--<div id="viewbox">
+                    <div id="print_guideline" data="">&nbsp;</div>
+                    <div id="textContents" contenteditable="true"></div>
+                    <div id="imageContents" ></div>
+                    <div id="fusenContents" ></div>
+                </div>-->
+                <div id="print_guideline" data="">&nbsp;</div>
+                <div id="textContents" contenteditable="true"></div>
+                <!--
+                    <div id="audioContents">
+                        <audio controls >
+                        </audio>
+                    </div>
+                -->
+                
+                <div id="imageContents" ></div>
+                <div id="audioContents" ></div>
+                <div id="fusenContents" ></div>
+                <div id="rubyContents" ></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 以下、モーダルウィンドウ -->
+    <!-- アラート -->
+    <div id="alert-overlay">
+        <div id="alertWindow">
+            <div id="alertText">
+            </div>
+            <div id="alertBtn">
+                <img src="./images/b_ok_off.png" id="alertOK" alt="OK" title="OK" />
+                <img src="./images/b_cancel_off.png" id="alertCancel" alt="キャンセル" title="キャンセル" />
+            </div>
+        </div>
+    </div>
+
+    <!-- 新規保存 -->
+    <div id="insertModal" class="modal-content">
+        <div id="saveText"></div>
+        <hr />
+        <div>
+            <p>上記の内容で保存しますが、よろしいですか？</p>
+            <hr />
+            <img src="./images/b_shinkihozon_off.png" alt="新規保存" title="新規保存" onclick="saveType('insert')" />
+            <img src="./images/b_cancel_off.png" class="modal-close" alt="キャンセル" title="キャンセル" />
+        </div>
+    </div>
+
+    <!-- 上書き保存 -->
+    <div id="updateModal" class="modal-content">
+        <div id="updateText"></div>
+        <hr />
+        <div>
+            <p>上記の内容で上書き保存しますが、よろしいですか？</p>
+            <p>上書き保存すると前のデータが上書きされます。</p>
+            <hr />
+            <img src="./images/b_uwagakihozon_off.png" class="modal-move" alt="上書き保存" title="上書き保存" onclick="saveType('update')" />
+            <img src="./images/b_cancel_off.png" class="modal-close" alt="キャンセル" title="キャンセル" />
+        </div>
+    </div>
+
+    <!-- 保存確認 -->
+    <div id="saveFin" class="modal-content">
+        <div>
+            <img alt="あなうめ君" title="あなうめ君" src="./images/anaumekun.png" />
+            <hr />
+            <p>正常に保存されました</p>
+            <hr />
+            <img class="modal-close" alt="閉じる" title="閉じる" src="./images/b_ok_off" />
+        </div>
+    </div>
+
+    <!-- 項目未入力確認 -->
+    <div id="alertModal" class="modal-content">
+        <div>
+            <img alt="あなうめ君" title="あなうめ君" src="./images/anaumekun.png" />
+            <div id="alertHozon"></div>
+            <hr />
+            <img class="modal-close" alt="OK" title="OK" src="./images/b_ok_off.png" />
+        </div>
+    </div>
+
+    <!-- ハイパーリンク作成 -->
+    <div id="linkModal" class="modal-content">
+        <div id="linkText">URLを入力してください。</div>
+        <div>
+            <input id="linkUrl" type="text" placeholder="ウェブページのURL" />
+            <hr />
+            <img class="modal-close" alt="OK" title="OK" src="./images/b_ok_off.png" onclick="editLink()" />
+            <img class="modal-close" alt="キャンセル" title="キャンセル" src="./images/b_cancel_off.png" />
+        </div>
+    </div>
+    
+    <div id="rubyModal" class="modal-content">
+        <div >書式にチェックを入れてください。</div>
+        <ul id="navi">
+            <!--
+            <li class="check">
+                <input id="left" type="radio" name="eduType" value="question" checked="true" /> 左揃え（上揃え）
+            </li>
+            <li class="check">
+                <input id="center" type="radio" name="eduType" value="package"/> 両端揃え
+            </li>
+            -->
+        </ul>
+        <div >ルビを入力してください。</div>
+        <div>
+            <input id="rubyContent" type="text" placeholder="ルビの入力" />
+            <hr />
+            <img class="modal-close" alt="OK" title="OK" src="./images/b_ok_off.png" onclick="editRuby()" />
+            <img class="modal-close" alt="キャンセル" title="キャンセル" src="./images/b_cancel_off.png" />
+        </div>
+    </div>
+
+    <!-- 印刷画面 -->
+    <div id="previewModal" class="modal-content">
+        <div style="vertical-align: middle">
+            <span class="setPrintline" data="a4_portrait">A4縦</span>
+            <span class="setPrintline" data="b5_portrait">B5縦</span>
+            <span class="setPrintline" data="a4_landscape">A4横</span>
+            <span class="setPrintline" data="b5_landscape">B5横</span>
+            <img src="./images/insatsu_off.png" id="printButton" alt="印刷" title="印刷" onclick="printQuestions()" />
+            <img class="modal-close" alt="キャンセル" title="キャンセル" src="./images/b_cancel_off.png" />
+        </div>
+
+        <!-- <div id="linkText">印刷プレビュー</div> -->
+        <div id="previewImage">
+            <div id="printLine">&nbsp;</div>
+            <img src="" id="printImg" alt="プレビュー画像" title="プレビュー画像" />
+        </div>
+
+    </div>
+</body>
+
+</html>
